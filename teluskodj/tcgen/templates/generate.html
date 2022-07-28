@@ -1,0 +1,66 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'style.css' %}">
+    <script src="{%static 'pdf.js'  %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <title>Document</title>
+</head>
+<body bgcolor="orange">
+<header>
+<div class="topnav">
+    <div class="logo">
+    <h1>logo</h1>
+    </div>
+      <a class="active" href="">Home</a>
+      <a href="app/details">details</a>
+
+      {% if user.is_authenticated %}
+
+      
+      <a href="account/logout">logout</a>
+      <a href="">hello, {{user.first_name}}</a>
+      {% else %}
+      <a href="account/register">Resgister</a>
+      <a href="account/login">login</a>
+      {% endif %}
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    
+    <div style="padding-left:16px">
+      <h2>home</h2>
+      
+    </div>
+</header>
+
+<body>
+    <button class="btn btn-primary" id="download"> download pdf</button>
+
+    <div class="card" id="invoice">
+<p>Introduction to {{data.cname}}</p><br><br>
+located at {{data.cloc}}<br><br>
+
+We are committed to safeguarding the privacy of our website users and our customers and customer personnel; in this policy we explain how we will handle your personal data.<br><br>
+
+This policy applies to all Docular Limited websites and services, including those available at https://docular.net, https://seqlegal.com and https://www.website-contracts.co.uk.<br><br>
+
+How we use your personal data<br><br>
+<li> {{dt1}}</li><br>
+    <li> {{data.dt1}}</li><br>
+    <li> {{data.dt2}}</li><br>
+    <li> {{data.dt3}}</li><br><br>
+
+In this section we have set out:<br><br></div>
+
+    
+</body>
+</html>

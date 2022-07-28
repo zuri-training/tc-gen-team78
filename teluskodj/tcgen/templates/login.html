@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="login" style="border:1px solid #ccc" method="post">
+    <div class="container">
+      <h1>Sign in</h1>
+      <p>login here</p>
+      <hr>
+      {%csrf_token%}
+
+      <label for="uname"><b>uname</b></label>
+      <input type="text" placeholder="name" name="username" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+  
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+      
+  
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Sign in</button>
+      </div>
+    </div>
+  </form>
+
+<!---- error messages --->
+  <div>
+      {% for message in messages %}
+      <h3> {{message}}</h3>
+      {% endfor %}
+  </div>
+  
+  {% endblock %}

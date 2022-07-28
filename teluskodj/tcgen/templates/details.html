@@ -1,0 +1,29 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body bgcolor="orange">
+<h1>hello </h1>
+
+<form action="add" method="post">
+
+    {%csrf_token%}
+    enter your company name : <input type="text" name="cname"><br>
+    enter your company location : <input type="text" name="cloc"><br><br>
+    how do u intend to use our data<br> <input type="text" name="dt1"><br>
+    <input type="text" name="dt2"><br>
+    <input type="text" name="dt3"><br>
+    <input type="text" name="dt4"><br>--
+    <input type="submit">
+
+</form>
+<p>hello</p>
+
+</body>
+</html>
