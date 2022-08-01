@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+button{
+    cursor: pointer;    
+}
+
+h2{
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+}
+
+h3{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+h4{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+h5{
+    line-height: 32px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+h6{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+p{
+    line-height: 24px;
+    font-size: 20px;
+}
+
+body{
+    color: #212121;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#dshbrd-pg nav{
+    background-color: #252525;
+    padding: 4px 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.logo{
+    width: 64px;
+    height: 64px;
+}
+
+#dshbrd-pg .add-btns{
+    display: flex;
+    align-items: center;
+    /* width: 24%; */
+}
+
+#dshbrd-pg .add-btns a{
+    width: 32px;
+    height: 32px;
+}
+
+#dshbrd-pg .add-btns i{
+   color: #fff;
+    /* width: 32px;
+    height: 32px; */
+}
+
+.user-act-btn{
+    margin-left: 64px;
+}
+
+#dshbrd-pg .add-btns span{
+    padding-left: 20px;
+}
+
+#dshbrd-pg main{
+    
+}
+
+#dshbrd-pg h1{
+    text-align: center;
+    padding: 60px 0 24px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+   
+}
+
+#dshbrd-pg .preview-section{
+    width: 83%;
+    margin: 0 auto 113px;
+    display: grid;
+    grid-template-areas: 
+    't-c-gen privacy'
+    'draft completed';
+    height: auto;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#dshbrd-pg .preview-section .preview, .prev{
+    border: 3px solid #212121;
+    height: 396px;
+    display: block;
+    align-items: flex-start;
+    padding: 20px 28px;
+    position: relative;
+}
+
+#dshbrd-pg .preview-section:nth-child(1){
+    grid-area: t-c-gen;
+    
+}
+
+#dshbrd-pg .preview-section:nth-child(2) {
+    grid-area: privacy;
+}
+
+#dshbrd-pg .preview-section:nth-child(3){
+    grid-area: draft;
+}
+
+#dshbrd-pg .preview-section:nth-child(4){
+    grid-area: completed;
+}
+
+.preview-section img{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 37px;
+}
+
+.preview-section h2{
+    padding-bottom: 25px;
+}
+
+.wrap-bottom, .wrap-bottom-b{
+    bottom: 20px;
+    position: absolute;
+    width: 90%;
+}
+
+.rect-btn-wrap{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+/* For drafts& completed */
+.rect-btn-wrap-b{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+
+.rect-wrapper, .rect-wrapper-b{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 65%;
+    height: 92px;
+}
+
+.rect-wrapper-b{
+    width: 100%;
+}
+
+.rect{
+    height: 8px;
+    width: 100%;
+    background-color: #a9a9a9;
+}
+
+.rect:last-of-type{
+    width: 75%;
+}
+
+.rect-btn-wrap-b .start-btn{
+    padding-top: 46px;
+}
+
+.start-btn{
+    font-size: 20px;
+    color: #212121;
+    padding-right: 11px;
+    text-decoration: none;
+}
+
+.start-btn i{
+    color: #212121;
+}
+
+
+footer{
+    height: 176px;
+    background-color: #212121;
+    padding: 64px 0;
+    text-align: center;
+    color: #fefefe;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+
+/* For mobile */
+
+@media (max-width:768px){
+
+    .start-btn{
+        font-size: 1rem;
+    }
+    #dshbrd-pg nav{
+        padding:4px 20px;
+    }
+    #dshbrd-pg .preview-section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        /* grid-template-columns: auto;
+
+        grid-template-areas: 
+        't-c-gen'
+        'privacy'
+        'draft'
+        'completed'; */
+        width: 55%;
+
+        
+    }
+    #dshbrd-pg .preview-section .preview, .prev{
+        width: 100%;
+    }
+    #dshbrd-pg h1{
+        font-size: calc(32px + (48 - 32) * ((100vw - 300px) / (1440 - 300)));
+        line-height: normal;
+    }
+
+    h2{
+        font-size: calc(28px + (40 - 28) * ((100vw - 300px) / (1440 - 300)));
+        line-height: normal;
+    }
+
+}
+
+@media (max-width: 425px) {
+    #dshbrd-pg .preview-section{
+        
+        width: 90%;
+    }
+    #dshbrd-pg .preview-section .preview, .prev{
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    h2{
+        word-break: break-all;
+    }
+}
