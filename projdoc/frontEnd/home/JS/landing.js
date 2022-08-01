@@ -1,3 +1,4 @@
+// Mobile reponsiveness
 let menu = document.querySelector('.hamburger');
 
 function toggleMenu() {
@@ -8,10 +9,12 @@ function toggleMenu() {
         
         navLinks.style.display = 'none';
         navBtns.style.display = 'none';
+        
         console.log(true);
     }else{
         navLinks.style.display = 'flex';
         navBtns.style.display = 'flex';
+        addBtns.style.display = 'flex';
         console.log(false);
     }
 }
@@ -20,4 +23,5 @@ menu.addEventListener('click', (e) => {
     e.preventDefault();
     // toggleMenu();
 });
+
 
