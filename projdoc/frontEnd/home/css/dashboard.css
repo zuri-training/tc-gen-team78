@@ -11,21 +11,9 @@ button{
     cursor: pointer;    
 }
 
-h2{
-    font-weight: 500;
-    font-size: 40px;
-    line-height: 48px;
-}
-
-h3{
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 48px;
-}
-
 h4{
-    font-weight: 600;
-    font-size: 24px;
+    font-weight: 700;
+    font-size: 28px;
     line-height: 32px;
 }
 
@@ -47,13 +35,13 @@ p{
 }
 
 body{
-    color: #212121;
+    color: #505050;
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
 }
 
 #dshbrd-pg nav{
-    background-color: #252525;
+    background-color: #505050;
     padding: 4px 120px;
     display: flex;
     align-items: center;
@@ -88,19 +76,23 @@ body{
 }
 
 #dshbrd-pg .add-btns span{
-    padding-left: 20px;
+    padding-left: 12px;
 }
 
-#dshbrd-pg main{
-    
+#dshbrd-pg .tagline{
+    font-size: 20px;
+    line-height: 24px;
+    color: #858585;
+    padding-bottom: 64px;
+    text-align: center;
 }
 
 #dshbrd-pg h1{
     text-align: center;
-    padding: 60px 0 24px;
+    padding: 136px 0 1rem;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 64px;
+    font-size: 40px;
+    line-height: 48px;
    
 }
 
@@ -112,16 +104,17 @@ body{
     't-c-gen privacy'
     'draft completed';
     height: auto;
-    gap: 30px;
+    gap: 24px;
     grid-template-columns: repeat(2, 1fr);
 }
 
-#dshbrd-pg .preview-section .preview, .prev{
-    border: 3px solid #212121;
-    height: 396px;
+#dshbrd-pg .preview-section .preview-card{
+    border-radius: 16px;
+    box-shadow: 0px 8px 40px rgba(80, 80, 80, 0.1);
+    /* height: 336px; */
     display: block;
     align-items: flex-start;
-    padding: 20px 28px;
+    padding: 32px;
     position: relative;
 }
 
@@ -142,85 +135,80 @@ body{
     grid-area: completed;
 }
 
-.preview-section img{
-    width: 80px;
-    height: 80px;
-    margin-bottom: 37px;
+.preview-card img{
+    width: 88px;
+    height: 88px;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    background-color: #d9d9d9;
 }
 
-.preview-section h2{
-    padding-bottom: 25px;
+.preview-card h4{
+    padding-bottom: 1rem;
 }
 
-.wrap-bottom, .wrap-bottom-b{
-    bottom: 20px;
-    position: absolute;
-    width: 90%;
+.wrap-bottom{
+    /* bottom: 32px;
+    position: absolute; */
+    width: 100%;
 }
 
-.rect-btn-wrap{
+.desc-btn{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
 }
 
-/* For drafts& completed */
-.rect-btn-wrap-b{
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-}
-
-
-.rect-wrapper, .rect-wrapper-b{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 65%;
-    height: 92px;
-}
-
-.rect-wrapper-b{
-    width: 100%;
-}
-
-.rect{
-    height: 8px;
-    width: 100%;
-    background-color: #a9a9a9;
-}
-
-.rect:last-of-type{
-    width: 75%;
-}
-
-.rect-btn-wrap-b .start-btn{
-    padding-top: 46px;
+.desc-btn p{
+    font-size: 1rem;
+    line-height: 24px;
+    width: 60%;
 }
 
 .start-btn{
     font-size: 20px;
-    color: #212121;
+    line-height: 32px;
+    color: #505050;
     padding-right: 11px;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .start-btn i{
-    color: #212121;
+    color: #505050;
 }
 
 
 footer{
-    height: 176px;
-    background-color: #212121;
-    padding: 64px 0;
-    text-align: center;
-    color: #fefefe;
-    font-weight: 500;
-    font-size: 40px;
+    height: auto;
+    background-color: #505050;
+    padding: 24px 120px 32px;
+    color: #fff;
 }
 
+footer .disclaimer-questions, .ft-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer ul{
+    display: flex;
+    list-style-position: inside;
+    list-style: none;
+}
+
+footer p, footer a{
+    font-size: 12px;
+    color: #fff;
+}
+
+footer li{
+    margin-right: 14px;
+}
+
+.ft-logo{
+    align-items: flex-end;
+}
 
 /* For mobile */
 
@@ -247,32 +235,48 @@ footer{
 
         
     }
-    #dshbrd-pg .preview-section .preview, .prev{
-        width: 100%;
-    }
     #dshbrd-pg h1{
         font-size: calc(32px + (48 - 32) * ((100vw - 300px) / (1440 - 300)));
         line-height: normal;
     }
-
-    h2{
-        font-size: calc(28px + (40 - 28) * ((100vw - 300px) / (1440 - 300)));
+    #dshbrd-pg .tagline, #dshbrd-pg h1{
+        width: 85%;
+        margin: 0 auto;
+    }
+    h4{
+        font-size: calc(16px + (28 - 16) * ((100vw - 300px) / (1440 - 300)));
         line-height: normal;
+    }
+    footer{
+        padding-left: 50px;
+        padding-right: 50px;
     }
 
 }
 
 @media (max-width: 425px) {
+    .user-act-btn{
+        margin-left: 30px;
+    }
+    #dshbrd-pg .tagline{
+        font-size: 1rem;
+    }
     #dshbrd-pg .preview-section{
-        
         width: 90%;
     }
-    #dshbrd-pg .preview-section .preview, .prev{
-        padding-right: 12px;
-        padding-left: 12px;
+    #dshbrd-pg .preview-section .preview-card{
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
-
-    h2{
-        word-break: break-all;
+    #dshbrd-pg h1{
+        padding-top: 50px;
+    }
+    footer{
+        padding:24px 40px 32px;
+    }
+    footer .disclaimer-questions, .ft-logo{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2rem;
     }
 }
