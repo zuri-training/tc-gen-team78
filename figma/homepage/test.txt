@@ -2,3 +2,4 @@ link to the figma homepage file - https://www.figma.com/file/FyXNAMzxSQY49B9HW7E
 
 home page size - 333px
 
+color - black
