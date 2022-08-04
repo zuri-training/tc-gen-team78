@@ -26,7 +26,7 @@ class usercd(models.Model):
 
 class savedpdf(models.Model):
     slug = models.CharField(max_length=120)
-    pdf = models.FileField(upload_to='pdfs/',null=True, blank=True )
+    pdffile = models.FileField(upload_to='pdfs/',null=True, blank=True )
 
 
 # to generate and save your pdf to your model
