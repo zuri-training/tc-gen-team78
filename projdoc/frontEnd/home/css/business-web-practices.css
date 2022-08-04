@@ -1,0 +1,131 @@
+:root{
+    accent-color: #721121;
+}
+
+.page2 h4{
+    color: #333;
+    margin-bottom: 19px;
+    padding-bottom: 0;
+}
+
+.form-grp {
+    padding-bottom: 48px;
+}
+
+.page2 .rad-block, .page2 .check-block{
+    display: flex;
+    align-items: center;
+    margin-bottom: 19px;
+}
+
+
+.page2 .rad-block label, .page2 .check-block label{
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+::placeholder{
+    opacity: .5;
+    font-size: 1rem;
+
+}
+
+.page2 #more-qs h4{
+    margin-bottom: 1rem;
+}
+
+#more-qs p, .check-block p{
+    font-size: 1rem;
+    padding-bottom: 1rem;
+}
+
+.form-grp p{
+    margin-bottom: 24px;
+}
+
+#more-qs h6{
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+#more-qs .in-grp{
+    margin-bottom: 1rem;
+}
+
+#more-qs .in-grp input{
+    width: 100%;
+    border: 2px solid #333;
+    outline: none;
+    padding: 16px 24px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+#more-qs .in-grp input:focus{
+    border-color: #721121;
+}
+
+.page2 .button-grp{
+    width: inherit;
+    margin: 0;
+}
+
+.page-two-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.page-two-btns a{
+    color: #721121;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* For checkboxes */
+.check-block input:where([type='checkbox']){
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    outline: none;
+}
+
+@media (max-width:1023px){
+    .page-two-btns a, .button-grp button{
+        font-size: 1rem;
+    }
+    .button-grp button{
+        padding: 8px 18px;
+    }
+    .button-grp button i {
+       padding-left: 70px;
+    }
+}
+
+@media (max-width:768px){
+    .page2 h4{
+        font-size: calc(16px + (20 - 16) * ((100vw - 300px) / (1440 - 300)));
+        line-height: normal;
+    }
+    .form-grp{
+        padding-bottom: 28px;
+    }
+    #more-qs .in-grp input{
+        padding: 12px 20px;
+    }
+    ::placeholder, #more-qs h6, .page2 .rad-block label, .page2 .check-block label, .form-grp p{
+        font-size: .8rem;
+    }
+
+    #more-qs p, .check-block p{
+        font-size: .9rem;
+    }
+    .check-block input:where([type='checkbox']){
+        width: 28px;
+        height: 28px;
+    }
+
+}

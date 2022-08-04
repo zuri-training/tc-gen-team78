@@ -43,11 +43,11 @@ h6{
 
 p{
     line-height: 24px;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 body{
-    color: #212121;
+    color: #333;
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
 }
@@ -62,7 +62,9 @@ body{
     align-items: center;
     height: inherit;
     justify-content: space-between;
-    padding:0 119.5px;
+    /* padding:0 120px; */
+    width: 83%;
+    margin: 0 auto;
 }
 
 #landing-pg header img{
@@ -85,10 +87,9 @@ body{
 
 #landing-pg .nav-links a{
     text-decoration: none;
-    font-size: 14px;
+    font-size: 1rem;
+    color: #333;
     line-height: 24px;
-    color: #212121;
-    
 }
 
 #landing-pg .nav-links:last-child{
@@ -102,25 +103,24 @@ body{
 }
 
 #landing-pg .nav-btns a button{
-    border: 2px solid #212121;
-    border-radius: 20px;
+    border: 2px solid #721121;
+    border-radius: 8px;
     line-height: 32px;
     padding: 4px 1.5rem;
     font-size: 20px;
     font-weight: 600;
+    padding: 4px 24px;
 }
 
 .nav-btns .btn-1{
-    width: 107px;
-    color: #212121;
+    color: #721121;
     background-color: #fff;
     margin-right: 1rem;
 }
 
 .nav-btns .btn-2{
     color:#fff;
-    width: 167px;
-    background-color: #212121;
+    background-color: #721121;
 }
 
 .hamburger{
@@ -129,10 +129,11 @@ body{
 
 /* Hero section */
 .hero-section{
-    width: 70%;
-    margin: 10rem auto;
+    width: 83%;
+    margin: 9rem auto;
     display: grid;
     grid-template-areas: 'text img';
+    gap: 80px;
 }
 
 .hero-section .hero-text{
@@ -149,73 +150,74 @@ body{
 }
 
 .hero-text p{
-    line-height: 24px;
-    width: 486px;
-    height: 128px;
-    margin: 24px 0 72px;
+    margin: 1rem 0 72px;
 }
 
-.hero-text a button, .our-services button, .about-us button{
-    background-color: #212121;
-    border-radius: 20px;
-    width: auto;
+.hero-text a button, .our-services button, .about-us button, .unique button, .samples button{
+    background-color: #721121;
+    border-radius: 16px;
     color: #fff;
     font-weight: 600;
     font-size: 20px;
     line-height: 32px;
     border: none;
-    padding: 10px 24px;
+}
+
+.our-services button, .about-us button, .unique button, .samples button{
+    padding: 1rem 2rem;
+}
+
+.hero-text a button{
+    padding: 16px 84.5px;
 }
 
 .hero-img{
     grid-area: img;
-    width: 486px;
-    border: 1px solid #212121;
 }
 
 /* Justification Section */
 
 .justification{
-    background-color: #ededed;
-    padding: 138px 0;
+    background-color: #ffc07f;
+    padding: 148px 0;
+    
 }
 
 .just-text{
     text-align: center;
-    width: 70%;
+    width: 83%;
     margin: 0 auto;
+    color: #170307;
 }
 
 .just-text p{
     margin-top: 1rem;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 1rem;
 }
 
 /* Our services */
 
 .our-services{
-    padding: 172px 0;
+    padding: 148px 0;
 }
 
 .services-container{
     width: 67%;
     text-align: center;
     margin:0 auto;
-    padding-bottom: 120px;
+    padding-bottom: 176px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.services-container h2, .how-it-works h2{
+.services-container h2{
     text-align: center;
+    color: #170307;
 }
 
 .services-container .desc{
-    font-size: 24px;
-    line-height: 32px;
-    margin: 2rem auto 72px;
+    margin: 1rem auto 56px;
 }
 
 .template-container{
@@ -228,151 +230,175 @@ body{
 }
 
 .template-container .template-card{
-    background-color: #e5e5e5;
+    background-color: #fefefe;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 384px; */
     height: max-content;
-    padding: 24px 24px 22px;
+    padding: 39px 24px ;
     margin-right: 24px;
+    box-shadow: 0px 8px 30px rgba(80, 80, 80, 0.15);
 }
 
 .template-card img{
-    
     width: 90px;
     height: 90px;
 }
 
-.template-card h3{
-    padding-top: 2rem;
-    font-size: 32px;
-    line-height: 40px;
-    width: 336px;
-    font-weight: 600;
+.template-card h4{
+    padding: 2rem 0 0;
+    text-align: center;
 }
 
 .template-container .template-card p{
-    line-height: 24px;
     padding-top: 1rem;
 }
 
 /* How it works */
-.how-it-works .subheading{
+.how-it-works{
     width: 63%;
+    margin: 0 auto;
+}
+
+.how-it-works h2{
     text-align: center;
-    margin: 32px auto 53px;
+}
+
+.how-it-works .subheading{
+    text-align: center;
+    margin: 1rem auto 56px;
+    font-size: 20px;
 }
 
 .how-it-works .frame-container{
-    padding-left: 113px;
+    display: block;
 }
 
 .how-it-works .frame{
     display: flex;
     align-items: center;
-    height: 67px;
-    margin-bottom: 25px;
+    margin-bottom: 2rem;
 }
 
 .how-it-works .frame img{
-    width: 67px;
+    width: 24px;
 }
 
 .how-it-works .frame p{
-    margin-left: 24px;
+    margin-left: 25.62px;
+    font-size: 20px;
 }
 
-.our-services a{
+.our-services a, .samples a{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 72px;
+    margin-top: 64px;
     text-decoration: none;
+}
+
+.our-services button{
+    padding: 1rem 2rem;
 }
 
 
 /* About Us */
 .about-us{
-    background-color: #f8f8f8;
-    padding: 81px 158px;   
+    background-color: #ffead4;
+    padding: 148px 0;   
 }
 
 .about-container{
     display: flex;
     align-items: center;
+    width: 83%;
+    margin: 0 auto;
+    justify-content: space-between;
 }
 
 .about-us h2{
-    padding-bottom: 35px;
+    padding-bottom: 1rem;
 }
 
 .about-us .about-txt{
-    text-align: left;
-    width: 480px;
-    margin-right: 35px;
+    text-align: justify;
+    width: 510px;
 }
 
 .about-us .about-txt p{
-    margin-bottom: 55px;
+    margin-bottom: 40px;
 }
 
 .about-us .about-img{
-    border: 1px solid #212121;
-    /* width: 43%; */
-    width: 618.97px;
-    height: 608.24px;
+    width: 49%;
+    height: 472px;
 }
 
 /* Policy Importance */
 
 .importance{
-    padding: 112px 170px;
+    padding: 148px 0 176px;
 }
 
-.importance h2, .unique h2{
-    text-align: center;
-    padding-bottom: 56px;
+.importance h2{
+    text-align: left;
+    padding: 58px 0 24px;
 }
 
 .importance-container{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    /* width: 76%; */
+    justify-content: space-between;
+    width: 83.47%;
     margin: 0 auto;
 }
 
 .importance-container .about-txt{
     width: 43%;
+    margin-bottom:58px;
 }
 
 .importance-img{
-    /* width: 514.69px;
-     */
     width: 47%;
-    height: 505.76px;
-    background-color: #a5a5a5;
-    margin-left: 112px;
 }
 
 /* Unique section */
-.unique h4{
-    text-transform: uppercase;
+.unique{
+    width: 69%;
+    margin:0 auto 176px;
+}
+
+.unique h2{
     text-align: center;
+    margin-bottom: 56px;
+}
+
+.unique h4{
     padding-bottom: 1rem;
 }
 
+.unique p{
+    text-align: center;
+}
 
+.unique-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.unique a, .samples a{
+    text-decoration: none;
+}
 
 .unique-container{
     display: grid;
     grid-template-areas: 
     'easy updates'
     'customization policies';
-    width: 72%;
-    margin: 0 auto;
-    gap: 140px;
+    column-gap: 24px;
+    row-gap: 72px;
+    margin-bottom: 72px;
 }
 
 .unique-card .a{
@@ -390,9 +416,8 @@ body{
 }
 
 .unique-img{
-    width: 150.51px;
-    height: 106px;
-    background-color: #a5a5a5;
+    width: 80px;
+    height: 80px;
     margin: 0 auto 2rem;
 }
 
@@ -404,21 +429,10 @@ body{
 }
 
 .unique button{
-    margin: 150px auto;
-    width: 329px;
-    padding: 10px 24px;
+    margin: 0 auto;
 }
 
-/* Footer */
-footer{
-    color: #fefefe;
-    background-color: #212121;
-    height:  511px;
-    font-weight: 500;
-    font-size: 4rem;
-    text-align: center;
-
-}
+/* See core features */
 
 .tpl-samples{
     text-align: center;
@@ -430,13 +444,11 @@ footer{
     width: 75%;
     margin: 0 auto;
     grid-template-areas: 
-    'tp1 tp2'
-    'tp3 tp4';
+    'tp1 tp2';
     gap: 88px;
 }
 
 .tpl{
-    background-color: #6f6f6f;
     font-size: 3rem;
     height: 400px;
     border-radius: 10px;
@@ -453,51 +465,145 @@ footer{
 
 }
 
-.t-3{
-    grid-area: tp3;
-}
-
-.t-4{
-    grid-area: tp4;
-}
-
 /* Some core features */
 
 .core-ft h2{
-    padding-bottom: 96px;
+    padding-bottom: 56px;
     text-align: center;
 }
 
 .feature-con{
     display: flex;
     align-items: center;
-    width: 85%;
-    margin: 0 auto 112px;
+    width: 83%;
+    margin: 0 auto 56px;
     justify-content: space-between;
 }
 
-.ft-img:first-of-type{
-    width: 514.69px;
-    height: 717px;
-    background-color: #a5a5a5;
-}
-
-.ft-img:nth-of-type(even){
-    background-color: #a5a5a5;
-    width: 536.68px;
-    height: 601px;
-}
 
 .ft-txt{
-    width: 586px;
-}
-
-.ft-txt p{
-    padding-right: 113px;
+    width: 51%;
+    margin: 96px 0;
 }
 
 .ft-txt h3{
-    margin-bottom: 39px;
+    margin: 0 0 24px;
+}
+
+/* Reviews */
+.reviews{
+    margin-bottom: 148px;
+}
+
+.reviews h2{
+    padding-bottom: 56px;
+    text-align: center;
+}
+
+.reviews .review-wrapper{
+    display: flex;
+    padding-left: 120px;
+    justify-content: space-evenly;
+}
+
+.review-wrapper .review-card{
+    width: 384px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    background-color:#d5a06a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    color: #fff;
+    margin-right: 40px;
+    position: relative;
+}
+
+.review-card .client-img{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+}
+
+.review-card h5{
+    margin-bottom: 24px;
+}
+
+.review-card p{
+    text-align: justify;
+    margin-bottom: 40px;
+    height: 120px;
+}
+
+.review-card .stars{
+    /* position: absolute;
+    bottom: 32px;
+    left: 32px; */
+    align-self: flex-end;
+}
+
+/* Footer */
+footer{
+    background-color: #721121;
+    font-size: 14px;
+    color: #fff;
+    padding: 24px 0 0;
+}
+
+.footer-main, .footer-minor, .footer-divider{
+    width: 81%;
+    margin: 0 auto 40px;
+}
+
+.footer-main, .footer-links{
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-links{
+    justify-content: space-evenly;
+    
+    width: inherit;
+}
+
+.footer-links h6{
+    margin-bottom: 1rem;
+}
+
+.footer-links ul{
+    list-style: none;
+}
+
+.footer-links ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-minor{
+    text-align: center;
+    font-size: 12px;
+}
+
+.footer-minor p{
+    font-size: 12px;
+    padding-bottom: 8px;
+}
+
+.footer-just ul li{
+    padding-bottom: 8px;
+}
+
+.footer-prd-sev ul li, .footer-who ul li{
+    padding-bottom: 1rem;
+}
+
+.footer-minor p a{
+    color: #fff;
+}
+
+.footer-links ul li a:focus, .footer-links ul li a:hover{
+    text-decoration: underline;
 }
 
 /* Media Queries */
@@ -564,7 +670,7 @@ footer{
 
     .hamburger{
         width: 35px;
-        height: 35px;
+        height: 25px;
         background-color: transparent;
         display: flex;
         flex-direction: column;

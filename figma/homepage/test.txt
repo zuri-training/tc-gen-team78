@@ -1,0 +1,5 @@
+link to the figma homepage file - https://www.figma.com/file/FyXNAMzxSQY49B9HW7ElMQ
+
+home page size - 333px
+
+color - black
