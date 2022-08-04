@@ -25,3 +25,6 @@ menu.addEventListener('click', (e) => {
 });
 
 
+let year = document.querySelector('.year');
+let yyyy = new Date();
+year.textContent = yyyy.getFullYear();
