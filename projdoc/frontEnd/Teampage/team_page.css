@@ -1,14 +1,28 @@
-/* TEAM PAGE */
-
+ /* TEAM PAGE */
+.root {
+    --ff-primary: 'Montserrat' sans-serif;
+}
 
 /* NAVBAR */
 * {
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
-    font-family: Exo;
+    font-family: Montserrat;
 }
 
+body ::after{
+    content:'';
+    position:  absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+
+}
 
 #header{
     height: 80px;
@@ -16,51 +30,119 @@
     z-index: 997;
     transition: all 0.5s;
     background: #ffffff;
-    display: flex;
+    padding: 0px;
 }
 
+#header .hero{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+    width: auto;
+}
+
+#header .hero .navbar ol{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#header .hero .navbar ol a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 24px;
+    color: #4C0B16;
+}
+
+
+#header .hero .navbar ol li{
+    float:left;
+}
+
+#header .hero .navbar1 h5{
+    list-style-type: none;
+    margin: 0;
+    padding:5px 21px;
+    overflow: hidden;
+    border: 2px solid #D5A06A;
+    border-radius: 25px;
+}
+
+#header .hero .navbar1 h5 a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+#header .hero .navbar1 h5 a{
+    float: left;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    color: #D5A06A;
+    font-size: 20px;
+}
+
+  
 #header .logo{
-    font-size: 28px;
     margin: 0;
     padding: 4px 0;
-    line-height: 1;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: uppercase;
     
       
 }
-#header .logo a, #header .logo a:hover {
-    color: black;
-    text-decoration: none;
-}
+ 
 
-.hero2{
-    height: 180px;
-    transition: all 0.5s;
-    z-index: 997;
-    transition: all 0.5s;
-    display: flex;
-}
+ 
 
-.hero2{
-    font-size: 28px;
-    margin: 0;
-    padding: 4px 0;
-    line-height: 1;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background-color: #85888a;
-}
 
-.team{
+h1{
     text-align: center;
-    font-size: 24px;
+    font-style:normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+    font-family: Montserrat;
     position: relative;
+    color: #721121;
+}
+
+h3{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+}
+
+h5{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: center;
 }
 
 
+hr {
+    border:none;
+    border-top:2px solid;
+    margin:1em auto; 
+    width:80%;
+    color: rgb(196, 191, 191);
+}
+  
+
+ 
 /* PROFILE CARD */
 .main{
   width: 100%;
@@ -69,21 +151,20 @@
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-   
+  flex-wrap: wrap;
 }
+
 
 .profile-card{
     position: relative;
-    font-family: sans-serif;
+    font-family: Montserrat;
     width: 220px;
     height: 220px;
-    background: #fff;
-    padding: 15px;
     border-radius: 50%;
-    box-shadow: 0 0 22px #3336;
     transition: .6s;
     margin: 0 25px;
-     
+    flex-direction: column;
+    
     
 }
 
@@ -100,7 +181,6 @@
 .img img{
     width: 100%;
     border-radius: 50%;
-    box-shadow: 0 0 22px #3336;
     transition: .6s;
 }
 
@@ -111,49 +191,65 @@
 }
 
 .caption h3{
-    font-size: 21px;
+    font-size: 15px;
     font-family: sans-serif;
 }
 .caption p{
-    font-size: 15px;
+    font-size: 11px;
     color: black;
     font-family: sans-serif;
     margin: 2px 0 9px 0;
 }
 
 
+
+ 
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    padding: 0 0 30px 0;
-    color: black;
-    font-size: 14px;
+    padding: 0 0 10px 0;
+    color: white;
+    font-size: 11px;
+    background: #721121;
 }
    
-  #footer .footer-info {
+#footer .footer-info {
     padding: 60px 0 30px 0;
     display: flex;
     position: relative;
-    justify-content: space-evenly;
+    justify-content: space-around;
     text-align: left;
-
+    flex-wrap: wrap;
 }
 
-#footer .footer-info h4{
-    color: blue;
+#footer .footer-info .disclaimer a{
+    color: #ffffff;
 }
 
-   
-#footer .copyright {
-    text-align: center;
-    padding-top: 30px;
+#footer .footer-info ul{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
 }
-#footer .credits {
-    position: relative;
-    justify-content: space-between;
-    font-size: 13px;
-    color: black;
-    display: flex;
+
+#footer .footer-info ul a{
+    color: white;
+    display: block;
+    overflow: hidden;
+    padding-right: 10px;
+    padding-left: 0px;
 }
+
+#footer .footer-info li{
+    display: inline-block;
+}
+
+
+#footer .questions .logo{
+    float: right;
+}
+
+
  
