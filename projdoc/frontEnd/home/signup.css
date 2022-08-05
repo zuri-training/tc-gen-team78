@@ -226,5 +226,12 @@ form button{
         margin: 0 auto;
     }
 }
-
+@media (max-width: 360px){
+    nav{
+        padding: 20px;
+    }
+    .other-options a i{
+        color: #721121;
+    }
+}
 
