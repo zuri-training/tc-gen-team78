@@ -229,7 +229,7 @@ form button{
 
 @media (max-width: 360px){
     nav{
-        padding: 1px;
+        padding: 10px;
     }
     .other-options{
         display: block;
