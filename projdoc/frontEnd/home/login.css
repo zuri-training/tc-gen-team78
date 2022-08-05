@@ -227,7 +227,7 @@ form button{
     }
 }
 
-@media (max-width: px){
+@media (max-width: 3px){
     nav{
         padding: 32px;
     }
