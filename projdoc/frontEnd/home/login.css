@@ -231,7 +231,7 @@ form button{
     nav{
         padding: 20px;
     }
-    .other-options a i{
+    .other-options{
         color: #721121;
     }
 }
