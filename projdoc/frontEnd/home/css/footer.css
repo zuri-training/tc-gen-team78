@@ -13,6 +13,7 @@ footer{
 footer img{
     width: 88px;
     height: 88px;
+    align-self: flex-end;
 }
 
 footer .disclaimer-questions, .ft-logo{

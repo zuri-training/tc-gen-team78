@@ -133,13 +133,60 @@ body{
     display: none;
 }
 
+/* Hover, Active, Focus states */
+a:active{
+    background-color: transparent;
+}
+
+#landing-pg .nav-links a:hover{
+    color: #a1606b;
+}
+
+#landing-pg .nav-links a:focus{
+    color: #721121;
+    border: 2px solid #e3cfd3;
+    border-radius: 16px;
+    padding: 8px 16px;
+}
+
+#landing-pg .nav-links a:active{
+    color: #4c0b16;
+}
+
+.nav-btns .btn-1:hover{
+    background-color: rgba(138, 57, 70, 0.1);
+    border: 2px solid #b98890;
+}
+
+.nav-btns .btn-1:focus{
+    background-color: rgba(138, 57, 70, 0.2);
+}
+
+.nav-btns .btn-1:active{
+    color: #4c0b16;
+    border: 2px solid #4c0b16;
+}
+
+.nav-btns .btn-2:hover, .hero-text a button:hover, .our-services button:hover, .about-us button:hover, .unique button:hover, .samples button:hover{
+    background-color: #8a3946;
+    box-shadow: 0px 4px 8px rgba(114, 17, 33, 0.32);
+}
+
+.nav-btns .btn-2:focus, .hero-text a button:focus, .our-services button:focus, .about-us button:focus, .unique button:focus, .samples button:focus{
+    border: 2px solid #ffc07f;
+}
+
+.nav-btns .btn-2:active, .hero-text a button:active, .our-services button:active, .about-us button:active, .unique button:active, .samples button:active{
+    background-color: #4c0b16;
+}
+
 /* Hero section */
 .hero-section{
     width: 83%;
     margin: 9rem auto;
     display: grid;
     grid-template-areas: 'text img';
-    gap: 80px;
+    gap: 77px;
 }
 
 .hero-section .hero-text{
@@ -153,6 +200,7 @@ body{
     font-weight: 700;
     font-size: 48px;
     line-height: 64px;
+    width: 70%;
 }
 
 .hero-text p{
@@ -330,6 +378,7 @@ body{
     width: 83%;
     margin: 0 auto;
     justify-content: space-between;
+    gap: 105px;
 }
 
 .about-us h2{
@@ -724,6 +773,8 @@ footer{
     .hero-text h1{
         font-size: calc(32px + (48 - 32) * ((100vw - 300px) / (1440 - 300)));
         line-height: normal;
+        width: auto;
+
     }
 
     h2{
@@ -819,25 +870,44 @@ footer{
 
     .about-container{
         width: 100%;
+        gap: 0;
+        flex-direction: column;
     }
 
     .about-us .about-img{
-        width: 50.6%;
+        /* width: 50.6%; */
+        height: auto;
     }
 
     .about-us .about-txt{
         margin-top: 35px;
         margin-right: 0;
-        width: 46.7%;
+        text-align: center;
+        width: auto;
+    }
+
+    .importance{
+        padding: 96px 0;
     }
 
     .importance-container{
         width: 100%;
         padding: 0 32px;
-    }   
+        flex-direction: column-reverse;
+    }  
+
+    .importance-container .about-txt{
+        margin-bottom: 0;
+    }
+
+    .importance-container .about-txt, .importance h2, .about-txt{
+        width: 100%;
+        text-align:center;
+    }
     
     .unique{
         width: 60.8%;
+        margin-bottom: 96px;
     }
 
     .unique-container{
@@ -854,7 +924,7 @@ footer{
     }
 
     .core-ft{
-        padding-bottom: 100px;
+        padding-bottom: 96px;
     }
 
     .core-ft h2{
@@ -876,7 +946,7 @@ footer{
     }
 
     .ft-txt h3{
-        text-align: center;
+        text-align: left;
     }
 
     .ft-txt p{
@@ -917,6 +987,9 @@ footer{
     .review-card h3, .review-card h5{
         text-align: center;
     }
+    .reviews{
+        margin-bottom: 96px;
+    }
 }
 
 
@@ -925,7 +998,7 @@ footer{
     #landing-pg header nav{
         padding: 0 20px;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
     }
 
@@ -960,7 +1033,12 @@ footer{
 
     }
 
-    .hamburger .bars{
+    .links-btns{
+        flex-direction: column;
+        height: 65%;
+    }
+
+    /* .hamburger .bars{
         width: inherit;
         height: 3px;
         background-color: #721121;
@@ -973,7 +1051,7 @@ footer{
 
     .hamburger .bars:nth-child(odd){
         width: 65%;
-    }
+    } */
 
     .mobile-menu{
         display: flex;
@@ -1076,6 +1154,9 @@ footer{
         'tp1'
         'tp2';
     }
+    .ft-txt h3{
+        text-align: center;
+    }
     /* .footer-main, .footer-links{
         flex-direction: column;
     }
@@ -1093,4 +1174,24 @@ footer{
         display: none;
     }
 
+    /* For active and focu states */
+
+    #landing-pg .nav-links a:hover{
+        color: #a1606b;
+    }
+    
+    #landing-pg .nav-links a:focus, #landing-pg .nav-links a:active{
+        color:#fff;
+    }
+    footer .disclaimer-questions,.footerlinks{
+        text-align: center;
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 1600px){
+    .tpl-wrapper, .about-container{
+        width: 50%;
+    }
 }
