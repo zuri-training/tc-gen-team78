@@ -131,6 +131,9 @@ body{
     padding-right: 11px;
     text-decoration: none;
     font-weight: 600;
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
 }
 
 .start-btn i{
