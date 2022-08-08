@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page title</title>
+    <link rel="stylesheet" href="draft.css">
+</head>
+<body>
+       <header>
+        <nav>
+            <div class="mobile-menu">
+                <img src="./assets/Logo.svg" alt="logo" class="" width="90px" height="39px">
+                <a href="" class="hamburger" onclick="toggleMenu()">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                </a>
+            
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Our team</a></li>
+                <li><a href="#">FAQs</a></li>
+                
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="#"><button class="btn-1">Login</button></a>
+                <a href="#"><button class="btn-2">Get Started</button></a>
+            </div>
+           
+        
+    </header>
+
+        <h1>Draft Documents</h1>
+        <p class="p">Pick up where you left off. Continue generating your legal documents with previously saved data</p>
+        <div class="sec">
+            <a href="#">Terms and Conditions</a>
+            <a href="#" style="text-align:center">Privacy policies</a>
+        </div>
+        <div class="m" style="margin-bottom:100px">
+        <div class="d1">
+            <div class="img">
+               <img src="blur.png" > 
+            </div>
+            <div class="time">
+                <p>Last saved: 22 Aug 2022</p>
+            </div>
+            <h1 class="h1">{website name }</h1> 
+            <div class="a">
+              <a href="#" ><button class="btnu">Update</button></a>  
+                
+            </div>
+            
+        </div>        
+       </div>
+       
+         <div class="m" style="margin-bottom:100px">
+        <div class="d1">
+            <div class="img">
+               <img src="blur.png" > 
+            </div>
+            <div class="time">
+                <p>Last saved: 22 Aug 2022</p>
+            </div>
+            <h1 class="h1">{website name }</h1> 
+            <div class="a">
+              <a href="#" ><button class="btnu">Update</button></a>  
+                
+            </div>
+            
+        </div>        
+       </div>
+       
+       <footer> 
+           <div class="disclaimer-questions"> 
+               <div class="footerlinks"> 
+                   <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p> 
+                   <ul>
+                        <li><a href="">Privacy Policy</a></li> 
+                        <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li> 
+                   </ul> 
+              </div> 
+              <p>Questions? Email us at support@78tcgen.com</p> 
+              </div> 
+              <div class="ft-logo"> 
+                  <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p> 
+                  <img src="./assets/Logo_white.svg" alt="logo"> </div> 
+    </footer>
+    
+    <script>
+        // Mobile reponsiveness
+let menu = document.querySelector('.hamburger');
+
+function toggleMenu() {
+    let navLinks = document.querySelector('.nav-links');
+    let navBtns = document.querySelector('.nav-btns');
+
+    if (((navLinks.style.display === 'flex') && (navBtns.style.display === 'flex')) && (navLinks.style.flexDirection !== 'column')){
+        
+        navLinks.style.display = 'none';
+        navBtns.style.display = 'none';
+        
+        console.log(true);
+    }else{
+        navLinks.style.display = 'flex';
+        navBtns.style.display = 'flex';
+        //addBtns.style.display = 'flex';
+        console.log(false);
+    }
+}
+
+menu.addEventListener('click', (e) => {
+    e.preventDefault();
+    // toggleMenu();
+});
+
+    </script>
+</body>
+</html>
