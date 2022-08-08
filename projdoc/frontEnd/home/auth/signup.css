@@ -124,13 +124,6 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     bottom: 18px;
     right: 18px;
 }
-.eye{
-    position: absolute;
-    left: 8.33%;
-    right: 23.96%;
-    top: 14.29%;
-    bottom: 23.96%;
-}
 
 form button{
     width: 100%;
