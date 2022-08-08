@@ -58,12 +58,18 @@ nav a{
 .navlink a:nth-of-type(odd){
     line-height: 24px;
     margin-right: 24px;
+    font-family: Montserrat;
+    color: #333333;
 }
 
 .navlink a button{
     color: #721121;
     padding: 12px 24px;   
     background-color: transparent;
+    font-family: Montserrat;
+    font-size: 20px;
+    line-height: 32px;
+    
 }
 
 /* Main */
@@ -78,9 +84,11 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     align-items: center;
 }
 
-.signin-illustration, .signin-text{
+.signin-illustration, .signup-text{
     height: auto;
     width: 588px;
+    top: 120px;
+    left: 136;
 }
 
 .input-container{
@@ -95,8 +103,8 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
 
 ::placeholder{
     color: #aaa;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .input-container input, ::placeholder{
@@ -110,6 +118,7 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     outline: none;
 }
 
+
 .input-container i{
     position: absolute;
     color: #808080;
@@ -117,28 +126,6 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     right: 18px;
 }
 
-.remember-pwd{
-    justify-content: space-between;  
-    font-size: 1rem; 
-    margin-bottom: 32px;
-}
-
-.remember-pwd a{
-    color: #ff1212;
-    text-decoration: none;
-}
-
-.remember input:where([type='checkbox']){
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    border: 2px solid #333;
-}
-
-.remember label{
-    color: #000;
-    margin-left: 8px;
-}
 
 form button{
     width: 100%;
@@ -165,7 +152,7 @@ form button{
 
 .terms{
     text-align: center;
-    padding-top: 160px;
+    padding-top: 50px;
 }
 
 .terms a{
@@ -174,7 +161,7 @@ form button{
 
 .other-options{
     justify-content: space-evenly;
-    width: 50%;
+    width: 588px;
     margin: 40px auto 0;
 }
 

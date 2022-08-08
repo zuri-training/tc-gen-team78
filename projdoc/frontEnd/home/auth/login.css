@@ -94,9 +94,10 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
 }
 
 ::placeholder{
-    color: #aaa;
-    font-size: 12px;
-    line-height: 16px;
+    color: #AAAAAA;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: montserrat;
 }
 
 .input-container input, ::placeholder{
@@ -165,7 +166,7 @@ form button{
 
 .terms{
     text-align: center;
-    padding-top: 160px;
+    padding-top: 50px;
 }
 
 .terms a{
@@ -223,7 +224,7 @@ form button{
 
     .terms{
         padding-top: 56px;
-        width: 68.8%;
+        width: 572px;
         margin: 0 auto;
     }
 }
