@@ -236,5 +236,8 @@ form button{
     .other-options{
         display: flex;
     }
-    
+    .terms{
+        padding-top: 56px;
+        width: 572px;
+        margin: 0 auto;
 }
