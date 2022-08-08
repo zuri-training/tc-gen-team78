@@ -120,7 +120,7 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
 
 .input-container i{
     position: absolute;
-    color: #808080;
+    color: #8080;
     bottom: 18px;
     right: 18px;
 }
@@ -207,11 +207,9 @@ form button{
     }
 
     .terms{
-        position: absolute;
-        width: 572px;
-        height: 48px;
-        font-size: 16px;
-        
+        padding-top: 56px;
+        width: 68.8%;
+        margin: 0 auto;
     }
 }
 
