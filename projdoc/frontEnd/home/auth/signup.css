@@ -125,27 +125,7 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     right: 18px;
 }
 
-.remember-pwd{
-    justify-content: space-between;  
-    font-size: 1rem; 
-    margin-bottom: 32px;
-}
-
-.remember-pwd a{
-    color: #ff1212;
-    text-decoration: none;
-}
-
-.remember input:where([type='checkbox']){
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    border: 2px solid #333;
-}
-
-.remember label{
-    color: #000;
-    margin-left: 8px;
+.
 }
 
 form button{
