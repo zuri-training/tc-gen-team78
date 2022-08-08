@@ -79,7 +79,7 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
 }
 
 .signin-illustration, .signin-text{
-    height: 824px;
+    height: auto;
     width: 588px;
     top: 120px;
     left: 136;
