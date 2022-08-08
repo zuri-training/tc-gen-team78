@@ -1,0 +1,79 @@
+.pg-header{
+    padding-block-start: 4rem;
+}
+h1 {
+    text-align: center;
+
+}
+
+.container {
+    padding-block: 2rem;
+    padding-inline: 1rem;
+    width: calc(100% - 15rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.infoInput {
+    width: 38%;
+    border: .1rem solid red;
+    border-radius: 1rem;
+}
+.preview {
+    
+    padding-inline: 2rem;
+    width: 60%;
+    border: .1rem solid #000;
+    border-radius: 1rem;
+}
+ .preview h2{
+    text-align: center;
+ }
+ .form_items{
+    
+    padding-block: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.form_items p {
+    color: inherit;
+}
+.items label{
+    display: block;
+    text-align: left;
+    color: #000;
+}
+.items input {
+    width: 20rem;
+    height: 2rem;
+    padding-inline: 1rem;
+    border-radius: .5rem;
+}
+.span_emp {
+
+    color: navy;
+}
+
+.btn {
+    width: 8rem;
+    height: 2rem;
+    padding: .2rem;
+}
+.previewBtn {
+    background: navy;
+    color: #fff;
+}
+.generateBtn {
+    background: green;
+
+}
+.gen_anchor{
+    text-decoration: none;
+    color: #fff;
+}   
