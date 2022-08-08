@@ -106,6 +106,7 @@ body{
 
 .preview-card h4{
     padding-bottom: 1rem;
+    width: 61%;
 }
 
 .wrap-bottom{
@@ -131,7 +132,24 @@ body{
     padding-right: 11px;
     text-decoration: none;
     font-weight: 600;
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
 }
+
+.start-btn:hover, .start-btn i:hover{
+    color: #a1606b;
+}
+
+.start-btn:focus{
+    border:  2px solid #e3cfd3;
+}
+
+
+.start-btn:active{
+    color: #4c0b16;
+}
+
 
 .start-btn i{
     color: #721121;
@@ -141,7 +159,7 @@ body{
 
 /* For mobile */
 
-@media (max-width:768px){
+@media (max-width:835px){
 
     .start-btn{
         font-size: 1rem;
@@ -149,30 +167,28 @@ body{
    
     #dshbrd-pg .preview-section{
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-evenly;
-        /* grid-template-columns: auto;
-
-        grid-template-areas: 
+        /* grid-template-areas: 
         't-c-gen'
         'privacy'
         'draft'
         'completed'; */
-        width: 55%;
-
-        
+        width:100%;
+        padding: 0 32px; 
+        flex-direction: column; 
     }
     #dshbrd-pg h1{
         font-size: calc(32px + (48 - 32) * ((100vw - 300px) / (1440 - 300)));
         line-height: normal;
+        padding-top: 64px;
     }
+
     #dshbrd-pg .tagline, #dshbrd-pg h1{
         width: 85%;
         margin: 0 auto;
     }
-    h4{
-        font-size: calc(16px + (28 - 16) * ((100vw - 300px) / (1440 - 300)));
-        line-height: normal;
+    .desc-btn p{
+        width: 67%;
     }
 
 }
@@ -183,13 +199,29 @@ body{
         font-size: 1rem;
     }
     #dshbrd-pg .preview-section{
-        width: 90%;
+        padding: 0 16px;
     }
     #dshbrd-pg .preview-section .preview-card{
         padding-right: 1rem;
         padding-left: 1rem;
     }
+    .desc-btn, #dshbrd-pg .preview-section .preview-card{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .desc-btn p, .preview-card h4{
+        width: auto;
+        text-align: center;
+    }
     #dshbrd-pg h1{
         padding-top: 50px;
+        font-size: 40px;
+    }
+    .desc-btn p{
+        padding-bottom: 48px;
+    }
+    .start-btn{
+        position: unset;
     }
 }
