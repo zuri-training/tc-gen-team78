@@ -227,6 +227,6 @@ form button{
         padding: 10px;
     }
     .other-options{
-        display: block;
+        display: none;
     }
 }
