@@ -85,7 +85,7 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
 }
 
 .mobile{
-    display: noon;
+    display: none;
 }
 
 .signin-illustration, .signup-text{
