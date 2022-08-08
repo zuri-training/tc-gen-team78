@@ -118,7 +118,12 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     outline: none;
 }
 
-
+.input-container i{
+    position: absolute;
+    color: #808080;
+    bottom: 18px;
+    right: 18px;
+}
 .eye{
     position: absolute;
     left: 8.33%;
