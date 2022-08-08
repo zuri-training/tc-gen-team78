@@ -235,6 +235,7 @@ form button{
     }
     .other-options{
         display: flex;
+        
     }
     .terms{
         position: absolute;
