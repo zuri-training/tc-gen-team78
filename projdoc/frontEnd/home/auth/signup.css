@@ -190,7 +190,9 @@ form button{
     .signin-illustration{
         display: none;
     }
-    
+    .mobile{
+        display: none;
+    }
 
     h1{
         text-align: center;
