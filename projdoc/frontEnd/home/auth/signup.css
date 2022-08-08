@@ -58,7 +58,7 @@ nav a{
 .navlink a:nth-of-type(odd){
     line-height: 24px;
     margin-right: 24px;
-    font: Montserrat;
+    font-: Montserrat;
 }
 
 .navlink a button{
