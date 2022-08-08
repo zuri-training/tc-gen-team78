@@ -125,7 +125,9 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     right: 18px;
 }
 
-.eye{}
+.eye{
+    
+}
 
 form button{
     width: 100%;
