@@ -84,7 +84,7 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     align-items: center;
 }
 
-.signin-illustration, .signin-text{
+.signin-illustration, .signup-text{
     height: auto;
     width: 588px;
     top: 120px;
