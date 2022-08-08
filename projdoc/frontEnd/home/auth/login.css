@@ -236,7 +236,7 @@ form button{
     .other-options{
         display: flex;
         flex-direction: row;
-        align-items: flex-startz
+        align-items: flex-start
     }
     .terms{
         position: absolute;
