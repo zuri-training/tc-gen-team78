@@ -1,0 +1,63 @@
+{% extends 'main/t_c_website_base.html' %}  
+{% load static %}     
+
+{% block child_styles %}
+<link rel = "stylesheet" href = "{% static 'main/t_c_create.css' %}">  
+{% endblock child_styles %}
+
+{% block content %}   
+
+<header class = 'pg-header'>
+    <h1> Create Website terms and conditions policy</h1> <br/>
+</header>
+
+<main class = 'container'>
+    <section class = 'infoInput'>  
+      
+      <form action = '.' method = 'POST' id ='t_c_createForm'>
+            {% csrf_token %}   
+        <section class = 'form_items'>    
+          <p style="text-align: center">Kindly fill in the form below:</p> <br>
+            <section class = 'items'>
+              <label for = 'business_name'>Business Name</label>
+              <input type = 'text' name = 'business_name' id = 'business_name' placeholder = 'Business Name' autocomplete = 'off'>
+            </section>
+            <section class = 'items'>
+              <label for = 'address'>Address</label>
+              <input type = 'text' name = 'address' id = 'address' placeholder = 'Address'>
+            </section>
+            <section class = 'items'>
+              <label for = 'registration_number'>Registration Number</label>
+              <input type = 'text' name = 'registration_number' id = 'registration_number' placeholder = 'Registration Number' autocomplete = 'off'>
+            </section>
+            <section class = 'items'>
+              <label for = 'registration_place'>Registration Place</label>
+              <input type = 'text' name = 'registration_place' id = 'registration_place' placeholder = 'Registration Place' autocomplete = 'off'>
+            </section>
+            
+            <section class = 'items'>
+              <label for = 'registration_date'>Registration Date</label>
+              <input type = 'date' name = 'registration_date' id = 'registration_date' placeholder = 'Registration Date'>
+            </section>
+            <section class = 'items'>
+              <label for = 'country_name'>Country Name</label>
+              <input type = 'text' name = 'country_name' id = 'country_name' placeholder = 'Country Name'>
+            </section>
+            <section class = 'items'>
+              <label for = 't_c_date'>T_C_Date</label>
+              <input type = 'date'  name = 't_c_date' id = 't_c_date' placeholder = 'T_C_Date'>
+            </section>
+            <section class = 'items'>
+              <button class ='previewBtn btn'>Preview</button>
+              <!--<input type = 'submit' id = 'submit' name = 'submit' value = 'Generate' class = 'btn generate'>-->
+              <button class ='generateBtn btn'><a class = "gen_anchor" href = '/generate'>Generate</a></button>
+            </section>
+        </section>
+      </form>   
+    </section> 
+    <section class = 'preview'>   
+        <h2>Your Terms & Conditions Preview
+     </section>
+</main>
+ <script src = "{% static 'main/main.js' %}"></script> 
+{% endblock content %}
