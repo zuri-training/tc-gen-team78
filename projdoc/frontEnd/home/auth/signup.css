@@ -104,7 +104,7 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
 ::placeholder{
     color: #aaa;
     font-size: 16px;
-    line-height: 16px;
+    line-height: px;
 }
 
 .input-container input, ::placeholder{
