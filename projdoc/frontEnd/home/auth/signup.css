@@ -226,7 +226,9 @@ form button{
     nav{
         padding: 10px;
     }
-    signup-illustration
+    .signup-illustration {
+
+    }
     .other-options{
         display: none;
     }
