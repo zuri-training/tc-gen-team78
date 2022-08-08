@@ -229,5 +229,7 @@ form button{
     .other-options{
         display: none;
     }
-    
+    .mobile{
+        display: none;
+    }
 }
