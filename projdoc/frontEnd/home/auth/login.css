@@ -304,8 +304,8 @@ form button{
         font-size: 14px;
     }
     .forget{
-        display: flex;
         
+
     }
     .continue-with p:first-of-type{
         display: none;
