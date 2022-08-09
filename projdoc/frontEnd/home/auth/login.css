@@ -203,7 +203,7 @@ form button{
     color: #721121;
 }
 
-
+/* worked on the responsiveness*/
 @media (max-width: 835px){
     nav{
         padding: 32px;
