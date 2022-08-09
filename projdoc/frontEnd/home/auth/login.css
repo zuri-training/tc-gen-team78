@@ -296,7 +296,7 @@ form button{
     .input-container label{
         font-size: 16px;
     }
-    .remember input:where([type='checkbox']){
+    .forget:where([type='checkbox']){
         width: 24px;
         height: 24px;
     }
@@ -305,7 +305,7 @@ form button{
     }
     .forget{
         display: flex;
-        
+
         
     }
     .continue-with p:first-of-type{
