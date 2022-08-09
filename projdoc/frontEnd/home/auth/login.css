@@ -308,7 +308,9 @@ form button{
         margin: 0 auto;
     }
     .terms {
-        
+        font-size: 12px !important;
+        width: 90%;
+      
         
 
     }
