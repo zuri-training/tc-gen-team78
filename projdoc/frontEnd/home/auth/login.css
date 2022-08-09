@@ -306,6 +306,7 @@ form button{
     .forget{
         display: flex;
         
+        
     }
     .continue-with p:first-of-type{
         display: none;
