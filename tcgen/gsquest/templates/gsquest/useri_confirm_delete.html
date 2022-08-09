@@ -1,0 +1,18 @@
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete Post</legend>
+                <h2>ARE YOU SURE YOU WANNA DELETE THIS POST "{{ object.cname }}"?</h2>
+                <div class="form-group">
+                    <button class="btn btn-outline-danger" type="submit">YES, Delete</button>
+                    <a href="{% url 'post-detail' object.id %}" class="btn btn-outline-success" >NO, Cancel</a>
+                </div>
+            </fieldset>
+        </form>
+        
+
+    </div>
+{% endblock content %}

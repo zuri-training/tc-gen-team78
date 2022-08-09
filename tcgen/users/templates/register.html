@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="si.css">
+    <title>signup</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            
+            align-items: center;
+            height: 9vh;
+        }
+        .logo{
+            position: relative;
+            left: 50px;
+            font-size: 27px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        .dont{
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            position: relative;
+            right: 80px;
+        }
+        .sign{
+            background-color: white;
+            text-decoration: none;
+            color: black;
+            padding: 10px 15px 10px 15px;
+            position: relative;
+            border: 3px solid grey;
+            border-radius: 20px;
+            right: 50px;
+            font-size: 17px;
+        }
+        
+        .sec{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 91vh;
+        }
+        .div1{
+            width: 45vw;
+            height: 70vh;
+            background-color: rgb(194, 189, 189);
+        }
+        
+        .div2{
+            width: 35vw;
+            height: 70vh;
+            
+            position: relative;
+            /* right: 40px; */
+        }
+        
+        .welcome{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .form{
+            position: relative;
+            top: 10px;
+        }
+        .label1{
+            font-size: 18px;
+            position: relative;
+            top: 35px;
+            
+        }
+        #email{
+            width: 25rem;
+            height: 30px;
+            border: none;
+            background-color: white;
+            color: black;
+            border-radius: 3px;
+            padding-left: 20px;
+            position: relative;
+            top: 40px;
+            box-shadow: 2px 3px 3px 2px rgb(212, 211, 211);
+        }
+        
+        
+        .label3{
+            font-size: 18px;
+            position: relative;
+            top: 10px;
+            
+        }
+        #name{
+            width: 25rem;
+            height: 30px;
+            border: none;
+            background-color: white;
+            color: black;
+            border-radius: 3px;
+            padding-left: 20px;
+            position: relative;
+            top: 13px;
+            box-shadow: 2px 3px 3px 2px rgb(212, 211, 211);
+        }
+        
+        .label2{
+            font-size: 18px;
+            position: relative;
+            top: 65px;
+        }
+        #password{
+            position: relative;
+            top: 70px;
+            padding-left: 20px;
+            width: 25rem;
+            height: 30px;
+            border: none;
+            margin-bottom: 30px;
+            background-color: white;
+            border-radius: 3px;
+            color: black;
+            box-shadow: 2px 3px 3px 2px rgb(212, 211, 211)
+        }
+        #password2{
+            position: relative;
+            top: 70px;
+            padding-left: 20px;
+            width: 25rem;
+            height: 30px;
+            border: none;
+            background-color: white;
+            border-radius: 3px;
+            color: black;
+            box-shadow: 2px 3px 3px 2px rgb(212, 211, 211)
+        }
+        
+        
+        .btnsign{
+            position: relative;
+            top: 110px;
+            margin-bottom: 20px;
+            padding: 7px 187px 7px 187px;
+            font-size: 16px;
+            background-color: grey;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .secondpart{
+            width: 30.5vw;
+            height: 33vh;
+            position: relative;
+            top: 84px;
+            left: 4px;
+            text-align: center;
+        }
+        .er {
+            color: red;
+        }
+        .or{
+            position: relative;
+            top: 50px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .with{
+            position: relative;
+            top: 20px;
+        }
+        
+        .ops{
+            
+            width: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+            top: 70px;
+        }
+        .op{
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            background-color: rgb(194, 189, 189);
+        }
+        
+        .op1{
+            position: relative;
+            left: 50px;
+        }
+        .op2{
+            position: relative;
+            right: 50px;
+        }
+        
+        .last{
+            position: relative;
+            top: 100px;
+            font-size: 12px;
+        }
+        
+        .li{
+            color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <p class="logo">LOGO</p>
+
+        <div class="navlinks">
+            <a class="dont">Already have an account?</a>
+
+            <a href="{% url 'login' %}" class="sign">Log in</a>
+        </div>
+    </div>
+
+    <section class="sec">
+        <div class="div1"></div>
+
+        <div class="div2">
+            <p class="welcome">Create your free account</p>
+
+            <div class="form">
+                <form method="POST">
+                    {% csrf_token %}
+                    <small class="er">{{form.username.errors}}</small>
+                    <small class="er">{{form.email.errors}}</small>
+                    <small class="er">{{form.password1.errors}}</small>
+                    <small class="er">{{form.password2.errors}}</small>
+                    <label for="name" class="label3"> {{form.username.label}} </label> <br>
+                    {{ form.username }}<br>
+                    
+                    
+                    <label for="email" class="label1"> {{form.email.label}} </label> <br>                    
+                    {{ form.email }}<br>
+                    
+                    
+                    <label for="password" class="label2"> {{form.password1.label}} </label> <br>   
+                    {{ form.password1 }}
+                    
+                  
+                    <label for="password" class="label2"> {{form.password2.label}} </label> <br>  
+                    {{ form.password2 }}
+                    
+
+                    <input type="submit" class="btnsign" value="sign up">
+                </form>
+            </div>
+            
+            
+
+            <div class="secondpart">
+                <p class="or">Or continue with</p>
+
+                
+
+
+                <div class="ops">
+                    <div class="op op1"></div>
+                    <div class="op"></div>
+                    <div class="op op2"></div>
+                </div>
+
+                <p class="last">By signing up you agree to our <a href="" class="li">Terms of Service</a> and have read and<br> acknowledge our 
+                    <a href="" class="li">Privacy Policy</a></p>
+            </div>
+            
+        </div>
+    </section>
+    
+</body>
+</html>
+
+
+
+    
+

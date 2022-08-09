@@ -1,0 +1,160 @@
+/* NAVBAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Exo;
+}
+
+
+#header{
+    height: 80px;
+    transition: all 0.5s;
+    z-index: 997;
+    transition: all 0.5s;
+    background: #ffffff;
+    display: flex;
+}
+
+#header .logo{
+    font-size: 28px;
+    margin: 0;
+    padding: 4px 0;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+      
+}
+#header .logo a, #header .logo a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.hero2{
+    height: 180px;
+    transition: all 0.5s;
+    z-index: 997;
+    margin-top: 60px;
+    transition: all 0.5s;
+    display: flex;
+}
+
+.hero2{
+    font-size: 28px;
+    margin: 0;
+    padding: 4px 0;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #85888a;
+}
+
+.team{
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+}
+
+
+/* PROFILE CARD */
+.main{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+   
+}
+
+.profile-card{
+    position: relative;
+    font-family: sans-serif;
+    width: 220px;
+    height: 220px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+    margin: 0 25px;
+     
+    
+}
+
+
+.profile-card .img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .6s;
+    z-index: 99;
+  
+}
+
+.img img{
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+}
+
+.caption{
+    text-align: center;
+    opacity:1;
+    transition: .6s;
+}
+
+.caption h3{
+    font-size: 21px;
+    font-family: sans-serif;
+}
+.caption p{
+    font-size: 15px;
+    color: black;
+    font-family: sans-serif;
+    margin: 2px 0 9px 0;
+}
+.team-title{
+  margin-top: 60px;
+  text-align: center;
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+    padding: 0 0 30px 0;
+    color: black;
+    font-size: 14px;
+}
+   
+  #footer .footer-info {
+    padding: 60px 0 30px 0;
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    text-align: left;
+
+}
+
+#footer .footer-info h4{
+    color: blue;
+}
+
+   
+#footer .copyright {
+    text-align: center;
+    padding-top: 30px;
+}
+#footer .credits {
+    position: relative;
+    justify-content: space-between;
+    font-size: 13px;
+    color: black;
+    display: flex;
+}

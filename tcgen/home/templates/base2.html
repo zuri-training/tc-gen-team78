@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>78TC_GEN</title>
+    <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
+    {% block sl %}
+    <link rel="stylesheet" href="landing.css">
+    {% endblock sl %}
+    {% block style %}
+    {% comment %} 
+    OR THIS IS BECAUSE DJANGO STATIC AINT LOADING ON MY LAPTOP 
+    //you can clear the part below at your end//
+    {% endcomment %}
+    <style>
+    {% include 'styles/b2.css' %}
+    {% block cs %}
+    {% endblock cs %}
+    </style>
+    {% endblock style %}
+</head>
+{% block body %}
+<body id="landing-pg">
+{% endblock body %}
+    <header>
+        <nav>
+            <div class="mobile-menu">
+                <img src="./assets/Logo.svg" alt="logo" class="" width="90px" height="39px">
+                <a href="" class="hamburger" onclick="toggleMenu()">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                </a>
+            
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="{% url 'login' %} "><button class="btn-1">Login</button></a>
+                <a href="{% url 'register' %}"><button class="btn-2">Get Started</button></a>
+            </div>
+           
+        </nav>
+    </header>
+    {% block content %}{% endblock content %}
+    {% block footer %}{% endblock footer %}
+</body>
+</html>
