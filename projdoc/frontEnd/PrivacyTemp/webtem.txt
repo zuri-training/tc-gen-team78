@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1>WEBSITE PRIVACY POLICY</h1>
+      <p>
+        The Internet is an amazing tool. It has the power to change the way we
+        live, and we're starting to see that potential today. With only a few
+        mouse-clicks, you can follow the news, look up facts, buy goods and
+        services, and communicate with others from around the world. It's
+        important to [YOUR COMPANY NAME] to help our customers retain their
+        privacy when they take advantage of all the Internet has to offer. We
+        believe your business is no one else's. Your privacy is important to you
+        and to us. So we'll protect the information you share with us. To
+        protect your privacy. [YOUR COMPANY NAME] follows different principles
+        in accordance with worldwide practices for customer privacy and data
+        protection.
+      </p>
+      <ul>
+        <li>
+          <p>
+            We won't sell or give away your name, mail address, phone number,
+            email address or any other information to anyone.
+          </p>
+        </li>
+        <li>
+          <p>
+            We'll use state-of-the-art security measures to protect your
+            information from unauthorized users.
+          </p>
+        </li>
+      </ul>
+      <br />
+      <h3>NOTICE</h3>
+      <p>
+        We will ask you when we need information that personally identifies you
+        (personal information) or allows us to contact you. Generally, this
+        information is requested when you create a Registration ID on the site
+        or when you download free software, enter a contest, order email
+        newsletters or join a limited-access premium site. We use your Personal
+        Information for four primary purposes:
+      </p>
+      <ul>
+        <li>
+          <p>
+            To make the site easier for you to use by not having to enter
+            information more than once.
+          </p>
+        </li>
+        <li>
+          <p>To help you quickly find software, services or information.</p>
+        </li>
+        <li>
+          <p>To help us create content most relevant to you.</p>
+        </li>
+        <li>
+          <p>
+            To alert you to product upgrades, special offers, updated
+            information and other new services from [YOUR COMPANY NAME].
+          </p>
+        </li>
+      </ul>
+      <br />
+      <h3>CONSENT</h3>
+      <p>
+        If you choose not to register or provide personal information, you can
+        still use most of [YOUR WEBSITE ADDRESS). But you will not be able to
+        access areas that require registration. <br />
+        If you decide to register, you will be able to select the kinds of
+        information you want to receive from us by subscribing to various
+        services, like our electronic newsletters. If you do not want us to
+        communicate with you about other offers regarding [YOUR COMPANY NAME]
+        products, programs, events, or services by email, postal mail, or
+        telephone, you may select the option stating that you do not wish to
+        receive marketing messages from [YOUR COMPANY NAME). <br />
+        [YOUR COMPANY NAME] occasionally allows other companies to offer our
+        registered customers information about their products and services,
+        using postal mail only. If you do not want to receive these offers, you
+        may select the option stating that you do not wish to receive marketing
+        materials from third parties.
+      </p>
+    </main>
+  </body>
+</html>
