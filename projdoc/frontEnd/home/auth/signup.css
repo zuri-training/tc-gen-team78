@@ -207,7 +207,10 @@ form button{
     h1{
         text-align: center;
     }
-    
+
+    .continue-with{
+        
+    }
 
     .signin-text{
         width: 100%;
