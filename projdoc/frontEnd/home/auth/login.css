@@ -301,11 +301,11 @@ form button{
         height: 24px;
     }
     .remember-pwd a, .remember label{
-       display: none;
+        font-size: 14px;
     }
     .forget{
-        font-size: 14px;
-
+        display: flex;
+        
     }
     .continue-with p:first-of-type{
         display: none;
