@@ -301,7 +301,7 @@ form button{
         height: 24px;
     }
     .remember-pwd a, .remember label{
-       display
+       display: no
     }
     .forget{
         font-size: 14px;
