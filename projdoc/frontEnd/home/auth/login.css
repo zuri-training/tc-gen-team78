@@ -300,7 +300,7 @@ form button{
         width: 24px;
         height: 24px;
     }
-    .remember-pwd a, .remember label{
+    .forget a, .remember label{
         font-size: 14px;
     }
     
