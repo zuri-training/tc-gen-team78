@@ -299,6 +299,7 @@ form button{
     .remember-pwd a, .remember label{
         font-size: 14px;
     }
+    
     .continue-with p:first-of-type{
         display: none;
     }
