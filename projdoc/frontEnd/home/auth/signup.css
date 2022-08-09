@@ -226,7 +226,7 @@ form button{
     }
 
     .terms{
-        position: absol;
+        position: absolute;
         padding-top: 56px;
         width: 572px;
         margin: 0 auto;
