@@ -220,6 +220,7 @@ form button{
     .signin-text{
         width: 100%;
     }
+
     .other-options{
         margin-top: 24px;
     }
@@ -299,7 +300,7 @@ form button{
         font-size: 14px;
     }
     .forget{
-        display: flex;
+        dis
     }
     .continue-with p:first-of-type{
         display: none;
