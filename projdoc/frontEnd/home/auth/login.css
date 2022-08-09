@@ -241,7 +241,7 @@ form button{
     }
 }
 
-@media (max-width: 37px){
+@media (max-width: 3px){
     nav{
         padding: 10px;
         flex-direction: column;
