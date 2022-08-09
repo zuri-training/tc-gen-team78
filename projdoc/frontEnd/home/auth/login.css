@@ -222,7 +222,7 @@ form button{
     }
 
     .forget{
-        display: flex;
+        disp
     }
 
     .other-options{
@@ -296,16 +296,16 @@ form button{
     .input-container label{
         font-size: 16px;
     }
-    .forget:where([type='checkbox']){
+    .remember input:where([type='checkbox']){
         width: 24px;
         height: 24px;
     }
-    .forget a, .remember label{
+    .remember-pwd a, .remember label{
         font-size: 14px;
     }
-    
-
-   
+    .forget{
+        display: flex;
+    }
     .continue-with p:first-of-type{
         display: none;
     }
