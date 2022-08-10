@@ -21,7 +21,7 @@ A platform that allows users to generate t&c and privacy policy
 
 #### Project Name ####
 
-78gen
+78tcgen
 
 
 #### Feature Requests ####
