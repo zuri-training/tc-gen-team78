@@ -1,209 +1,837 @@
+<!-- {% extends "base.html" %} -->
 {% load static %}
+<!-- {% block title %}Create Post {% endblock %}
+{% block content %} -->
+<!-- <h2>Here is your template</h2><br>
+
+This is your first template <b>{{ user.first_name }}</b> <br>
+
+The name of my company is <b>{{ q.website_name }}</b> and this is our website <b>{{ q.website_url }}</b> <br>
+
+Our HQ is based in <b>{{ q.country}}</b>, we are a part of the highly successtful {{ q.industry}} in our nation. <br>
+
+{% if q.Privacy %}
+<h2>Privacy Policy</h2>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, praesentium nesciunt, sint obcaecati unde sit dolor animi laboriosam corporis quisquam dolorem iusto nemo, aliquam voluptatum deleniti vitae consequuntur rem cumque!
+{% endif %}
+
+{% if q.Advertisment %}
+<h2>Ad Policy</h2>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, esse enim beatae commodi aliquid officia deserunt eveniet similique laudantium vel quam ratione mollitia dolor facere voluptate qui labore ut! Nulla!
+{% endif %}
+{% if q.gdrp_wording %}
+<h2>gdrp wording</h2>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id ullam rem eveniet sit sed, sequi illo cupiditate? Odio aspernatur eveniet soluta omnis quia velit eius suscipit sit.
+{% endif %} -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page title</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+    <title>{{ q.Your_Website_Name}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
     <link rel="stylesheet" href="{% static '/css/gen.css' %}">
-    <link rel="stylesheet" href="{% static '/css/header.css' %}">
-    <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
-    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
 </head>
-
 <body>
     <header>
         <nav>
             <div class="mobile-menu">
-                <div class="logo-container">
-                    <a href="/"><img src="{% static '/assets/Logo.svg' %}" alt="logo" class=""></a>
-                </div>
+                <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px">
                 <a href="" class="hamburger" onclick="toggleMenu()">
                     <span class="bars"></span>
                     <span class="bars"></span>
                     <span class="bars"></span>
                 </a>
+            
             </div>
-
-            <div class="add-btns">
-                <div class="support-btn">
-                    <a href=""><img src="{% static '/assets/support-icon.svg' %}" alt="support icon">
-                        <span class="">Support</span>
-                    </a>
-                </div>
-                <div class="user-act-btn">
-                    <a href="profile">
-                        <img src="{% static '/assets/profile-circle.svg' %}" alt="profile icon">
-                        <span class="">{{ user.first_name }}</span>
-                    </a>
-                </div>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="#"><button class="btn-1">Logout</button></a>
+               
+           
         </nav>
     </header>
     <main>
         <div class="con">
             <div class="htxt">
-                <h1>Your Terms and Conditions has<br>
-                    been generated!</h1>
-                <p> Your Terms and Conditions is ready to be downloaded! You can preview your<br> Privacy Policy below:
-                </p>
-            </div>
+           <h1>Your Privacy Policy has<br>
+           been generated!</h1> 
+           <p> Your Privacy Policy is ready to be downloaded! You can preview your<br> Privacy Policy below:</p>
+           </div>
             <div class="view">
-                <section style="color:#7c746c; text-align:center">
-                    <div class="iframe" >
-                        <div id="invoice">
+                <!-- <iframe type="text/html" src="{% url 'temp2' 'slug_text' %}"  height="700" > </iframe> -->
 
-                            <h1>{{ user.first_name }} TERMS AND CONDITIONS</h1>
-                            <p>Last updated: 2022-08-06</p>
-                            <p>1. Introduction <br> Welcome to Rapido {{ q.industry}}
-                                Companies ("Company", "we", "our", "us")!</p>
-                            <p>These Terms of Service ("Terms", "Terms of Service") govern your use of our website
-                                located at Rapido.com (together or individually "Service") operated by Rapido Companies.
-                                Our Privacy Policy also governs your use of our Service and explains how we collect,
-                                safeguard and disclose information that results from your use of our web pages. Your
-                                agreement with us includes these Terms and our Privacy Policy ("Agreements"). You
-                                acknowledge that you have read and understood Agreements, and agree to be bound of them.
-                            </p>
-                            <p>If you do not agree with (or cannot comply with) Agreements, then you may not use the
-                                Service, but please let us know by emailing at totobrownie23@gmail.com so we can try to
-                                find a solution. These Terms apply to all visitors, users and others who wish to access
-                                or use Service.</p>
-                            <p>2. Communications By using our Service, you agree to subscribe to newsletters, marketing
-                                or promotional materials and other information we may send. However, you may opt out of
-                                receiving any, or all, of these communications from us by following the</p>
-                            <!--  this is just a sample -->
-                            <p>quo curabitur ferri quam hinc inimicus fugit reprimique cum tamquampretium ea tractatos
-                                risus novum mea expetenda labores pertinax quotpertinacia nihil alienum interesset sonet
-                                similique epicuri graecis hac ullamcorpermattis eros propriae omnesque ancillae quot
-                                nunc an voluptatibus libervocibus eruditi ignota vis porro accusata causae taciti orci
-                                risuspertinacia repudiare meliore neque netus per definiebas magnis principes
-                                definiebaserrem aeque unum affert fermentum constituto oporteat legere oporteat
-                                aliquipsuscipiantur singulis definitiones inani accommodare sententiae ullamcorper
-                                iriure deseruisse vulputatenetus facilisi invidunt urna voluptatibus errem suscipiantur
-                                aenean fermentum puruspetentium vocibus sed libris penatibus tale an expetenda vivendo
-                                utinamfugit ex perpetua odio eam tincidunt aliquet malorum repudiare vitaehabitasse
-                                sonet per natum congue assueverit mei non scripta ornatusefficiantur urna solum
-                                gloriatur blandit tamquam integer feugait conceptam plateaviverra semper invidunt risus
-                                persius oratio splendide dui leo movetlectus cubilia corrumpit eros dictas ullamcorper
-                                maiorum errem ad dicuntdoming tation erroribus habeo integer omittantur augue velit
-                                vituperata magnissanctus at persius mei salutatus ne expetenda alterum nunc saepeaudire
-                                consectetur definiebas convenire quidam nisl debet laoreet sententiae omittanturea
-                                pericula constituam tantas atqui expetendis lobortis venenatis omittam communepulvinar
-                                sale meliore tristique penatibus dolores aliquam gloriatur viverra dapibushabeo pulvinar
-                                autem habemus vehicula agam iudicabit menandri mei mazim
+                <div class="iframe">
+                This is your first template <b>{{ user.first_name }}</b> <br>
 
-                                iudicabit tortor fastidii inceptos dicunt vim corrumpit no discere veniam pellentesque
-                                donec euripidis fuisset ludus feugiat antiopam verterem orci fringilla ipsum cu quaestio
-                                aeque deterruisset conceptam quod suscipit aliquid contentiones scripta feugiat antiopam
-                                class nihil gubergren dignissim his a bibendum salutatus ceteros graeci nihil
-                                deterruisset nunc debet melius te fabellas eloquentiam cum dui erat deseruisse noluisse
-                                omittantur maiestatis laoreet hac tamquam solum platea nunc fermentum evertitur alterum
-                                prompta facilisis maluisset nascetur tractatos mediocritatem porttitor mel ubique
-                                appareat lorem lacus decore option velit necessitatibus similique in has qualisque donec
-                                nostrum labores laoreet adipisci aliquid velit novum varius an condimentum nonumes
-                                iriure vehicula leo dictumst errem ultrices lobortis offendit delectus omittantur turpis
-                                odio errem vero ut maecenas cubilia molestiae reque per inimicus iisque eros sonet
-                                reprehendunt offendit persius nostrum fringilla usu dicit graecis nisi justo mentitum
-                                facilisi voluptatibus facilisis sem veniam dicta habitant recteque simul vidisse vel
-                                prompta accusata habemus malesuada repudiandae atqui lobortis consequat tincidunt
-                                feugiat contentiones sanctus adolescens congue dolor partiendo dicta te harum putent
-                                maluisset corrumpit affert senectus persecuti cursus nonumes propriae elaboraret autem
-                                semper dolores suscipiantur latine quo utroque mauris id periculis ceteros metus
-                                efficiantur constituto aeque graece est sanctus similique recteque dolor facilis
-                                offendit latine conceptam ac discere urbanitas commodo penatibus pri efficitur simul
-                                malorum accumsan similique molestiae est erroribus indoctum decore omnesque alia
-                                splendide adipiscing interdum suscipit his instructior cras menandri expetenda fames
-                                omnesque consectetur persius signiferumque suas cu ante magna causae porta tortor
-                                vestibulum class aliquam class decore ubique litora no natoque indoctum ligula
-                                intellegebathac nulla suscipiantur elementum accommodare convenire dissentiunt agam
-                                splendide convenire habeo metus nulla consetetur causae aeque augue cursus ludus velit
-                                instructior lobortis interpretaris sollicitudin alterum prompta bibendum magna netus
-                                appareat suspendisse constituto augue honestatis turpis inciderint gloriatur constituam
-                                graeci netus perpetua voluptatibus invidunt erat quo postulant rutrum ocurreret
-                                sententiae iriure sententiae periculis hinc enim elementum tempor eam aptent risus
-                                ridiculus expetenda rutrum legere moderatius propriae libris ad eruditi nibh sem orci
-                                viverra luptatum purus ubique convenire posuere sociis dis ex sententiae fugit dicunt
-                                ferri adolescens principes homero risus aliquet natoque velit doming maximus maiestatis
-                                primis vitae reque constituam mollis principes vituperatoribus reprehendunt persequeris
-                                an maluisset labores tritani possim ponderum propriae impetus percipit dolor mentitum
-                                ante quot habitasse tellus conclusionemque ornatus utinam suas numquam erroribus animal
-                                errem nulla orci has penatibus duis graecis sit vituperata legere donec elit menandri
-                                ligula esse morbi gubergren moderatius quo oratio atqui liber partiendo invidunt
-                                ultrices mattis consectetur vulputate scripserit consequat molestiae dicant fastidii
-                                nonumy semper habemus venenatis elementum comprehensam fastidii utamur qui prodesset
-                                melius deseruisse quaerendum vero nascetur petentium vix recteque singulis mel ut
-                                menandri aliquet dicunt adipisci ac assueverit aeque aliquip mel ornatus maluisset
-                                ridiculus metus justo sollicitudin partiendo dicit splendide atomorum eruditi suavitate
-                                taciti sodales veri offendit odio referrentur atqui quidam consetetur laoreet dis
-                                blandit meliore quod habemus noster persequeris utinam vituperatoribus dignissim alia
-                                offendit porta novum porttitor has postea singulis noster accumsan inani vix fermentum
-                                ceteros ullamcorper gubergren affert intellegat simul cum interpretaris conceptam nunc
-                                dis graece mei antiopam ponderum dicam salemassa vivamus animal semper sea verear
-                                elaboraret eam instructior torquent dicant habemus eget agam sale tibique consetetur
-                                nascetur interpretaris pri adipisci detracto metus numquam imperdiet est facilis
-                                fabellas sociis comprehensam ea ignota ut dico habeo sollicitudin similique ad sale
-                                propriae postulant accusata potenti parturient neglegentur suas hendrerit movet
-                                conceptam repudiare risus alienum ridiculus sadipscing et finibus convenire legere
-                                impetus his aliquid efficitur bibendum indoctum eleifend elit platea periculis adhuc
-                                consequat veritus quam persius percipit urna placerat qualisque deseruisse congue
-                                senectus dicat feugiat verterem adipiscing definiebas omittantur principes sit hac
-                                invidunt eripuit natum porro eu ipsum erroribus rutrum mandamus salutatus conceptam
-                                mucius accommodare taciti arcu dicta dolorem vehicula at convallis voluptaria tellus
-                                class veri atqui doctus graecis movet legimus reformidans legere dolore aliquip utroque
-                                option mediocritatem dicta interesset tristique maiestatis option quem evertitur lacus
-                                deterruisset aenean moderatius malesuada labores vero agam quo platonem laoreet meliore
-                                nonumes placerat ne similique eget potenti nobis pertinacia pertinacia enim agam est
-                                tempor suscipiantur adhuc reprehendunt duis a pericula accumsan placerat utinam enim
-                                homero sociosqu epicurei inceptos posse conceptam mattis urna eleifend est ante torquent
-                                augue lectus delectus alia fastidii et discere habitasse solet explicari perpetua mattis
-                                nullam petentium dapibus venenatis tellus dictumst molestiae repudiare equidem omnesque
-                                molestiae vocent molestiae quaeque civibus atomorum nulla molestie nominavi patrioque
-                                vix suscipit partiendo delicata maiestatis etiam vitae periculis tincidunt quot prompta
-                                mi dicam eruditi at has vero intellegat accommodare tempor egestas novum praesent decore
-                                posidonium agam scelerisque delenit risus ea eos adolescens erat dicant fastidii
-                                deserunt percipit porta disputationi
-                            </p>
-                        </div>
+                The name of my company is <b>{{ q.Your_Website_Name }}</b> and this is our website <b>{{ q.Your_Website_Url }}</b> <br>
+
+                Our HQ is based in <b>{{ q.country}}</b>, we are a part of the highly successtful {{ q.industry}} in our nation. <br>
+
+                <h1>Privacy Policy </h1>
+                <p>Last updated: 2022-08-06</p> 
+                {% if q.industry == 'Art' %}
+                <!-- <h2>Privacy Policy</h2> -->
+                <h1 class="main-heading">TERMS AND CONDITION</h1>
+                <div class="introduction">
+                  <h2>INTRODUCTON</h2>
+                  <p class="intro-paragraph">
+                    These Terms and Conditions govern your relationship with <b> “{{ q.Your_Website_Name }}” </b> and apply to all quotations, offers, orders and contracts for
+                    sale of Goods. Please ensure that you read these Terms and Conditions
+                    carefully, and check that the details on any quotation, offer, order or
+                    contract and in these Terms and Conditions are complete and accurate. If
+                    you think that there is a mistake, please contact {{ q.Your_Website_Name }} to
+                    discuss, and please make sure that you ask us to confirm any changes in
+                    writing to avoid any confusion.
+                  </p>
+                  <p>In these Terms and Conditions, unless stated otherwise:</p>
+                  <ul>
+                    <li>Buyer means the purchaser of the Goods from <b>{{ q.Your_Website_Name }}</b>;</li>
+                    <li><b> {{ q.Your_Website_Name }}</b> means the company selling the Goods</li>
+                    <li>
+                      Goods means the items to be sold to the Buyer by <b> {{ q.Your_Website_Name }}</b>,
+                      either all or part of them as set out in the written invoice issued by
+                      <b> {{ q.Your_Website_Name }}</b> pursuant to clause 2.2
+                    </li>
+                    <li>
+                      Terms and Conditions means the terms and conditions set out in this
+                      document.
+                    </li>
+                  </ul>
+                  <p class="intro-paragraph">
+                    The Terms and Conditions constitute the entire understanding of the
+                    parties and supersede all prior discussions, negotiations, agreements
+                    and understandings, whether oral or written. No change or modification
+                    of the Terms and Conditions (including change orders) is valid unlessit
+                    is IN WRITING AND SIGNED BY ALL THE PARTIES. If any part of the Terms
+                    and Conditions is held invalid, unenforceable or void by a court of
+                    competent jurisdiction, the Terms and Conditions are considered
+                    divisible as to such part, and the remainder of the Terms and Conditions
+                    are valid and binding as though such part was not included in the Terms
+                    and Conditions to the fullest extent permitted by law. The Terms and
+                    Conditions are governed by the laws (without regard to the laws that
+                    might be applicable under principles of conflicts of law) as to all
+                    matters, including, but not limited to, matters of validity,
+                    construction, effect and performance and both parties agree to the
+                    exclusive jurisdiction of the court. The Terms and Conditions may be
+                    executed in two or more parts, each of which shall be deemed an original
+                    but all of which together shall be one and the same instrument. Nothing
+                    in these Terms and Conditions affects the statutory rights of any
+                    consumer. If <b> {{ q.Your_Website_Name }}</b> fails, at any time while these Terms and
+                    Conditions are in force, to insist that the Buyer performs any of its
+                    obligations under these Terms and Conditions, or if <b> {{ q.Your_Website_Name }}</b> does
+                    not exercise any of its rights or remedies under these Terms and
+                    Conditions, that will not mean that <b> {{ q.Your_Website_Name }}</b> has waived such
+                    rights or remedies and will not mean that the Buyer does not have to
+                    comply with those obligations. If <b> {{ q.Your_Website_Name }}</b> does waive a default by
+                    the Buyer, that will not mean that it will automatically waive any
+                    subsequent default by the Buyer. No waiver by <b> {{ q.Your_Website_Name }}</b> of any of
+                    these Terms and Conditions shall be effective unless it expressly says
+                    that it is a waiver and it tells the Buyer so in writing. A person who
+                    is not party to these Terms and Conditions shall not have any rights
+                    under or in connection with them under the Contracts (Rights of Third
+                    Parties) Act 1999.
+                  </p>
+                </div>
+                <div class="order">
+                  <h2>ORDER</h2>
+                  <p>
+                    Any offer or acceptance of a quotation made by the Buyer will be deemed
+                    an offer to purchase the Goods governed by these Terms and Conditions.
+                    No offer or acceptance of a quotation will be deemed a binding agreement
+                    of sale until confirmation with a written invoice has been issued by
+                    <b> {{ q.Your_Website_Name }}</b>. Upon confirmation, these Terms and Conditions (as they
+                    may be amended by <b> {{ q.Your_Website_Name }}</b> from time to time) form a binding
+                    agreement between the Buyer and <b> {{ q.Your_Website_Name }}</b>. Any Goods or services
+                    not confirmed by written invoice issued by <b> {{ q.Your_Website_Name }}</b> are deemed
+                    additional work and must be agreed in writing signed by both parties.
+                    These Terms and Conditions are applicable to any additional work or
+                    additional sales to the Buyer by <b> {{ q.Your_Website_Name }}</b>.
+                  </p>
+                </div>
+                <div class="purchase-price">
+                  <h2>PURCHASE PRICE AND PAYMENT METHODS</h2>
+                  <p>
+                    The purchase price shall be the price offered by <b> {{ q.Your_Website_Name }}</b> and
+                    confirmed to the Buyer by written invoice issued by <b> {{ q.Your_Website_Name }}</b>. The
+                    purchase price includes the cost of VAT, sale, use, excise or similar
+                    duty which may be applied. Any packaging, delivery costs, fees, duty or
+                    taxes applied will be billed to and paid by the Buyer as set forth on
+                    the written invoice issued by <b> {{ q.Your_Website_Name }}</b>. All payment shall be made
+                    in agreed currency and the agreed price is due in full at the time the
+                    offered price is accepted and confirmed by invoice, unless agreed
+                    otherwise in writing. The Buyer will have 10 working days from the date
+                    of invoice to make payment in full, unless agreed otherwise. Ownership
+                    (legal title) of the product will not pass to Buyer until the accepted
+                    and confirmed price is paid in full by the Buyer and received by
+                    <b> {{ q.Your_Website_Name }}</b> in cleared funds. Late Fees. Any payment not paid in full
+                    as per the Terms and Conditions will be subject to interest assessed on
+                    funds due at 3 percent per annum over the Royal Bank of Scotland base
+                    rate from time to time
+                  </p>
+                </div>
+                <div class="goods">
+                  <h2>GOODS</h2>
+                  <p>
+                    The Goods to be delivered shall be specifically described in the written
+                    invoice provided by <b> {{ q.Your_Website_Name }}</b>. In the event the specific Good is
+                    not available as of the date the order is confirmed by written invoice,
+                    <b> {{ q.Your_Website_Name }}</b> agrees to source Goods of similar or greater quality. In
+                    the event <b> {{ q.Your_Website_Name }}</b> cannot source Goods acceptable to the Buyer
+                    because the ordered Goods are not available, the Buyer will have 7 days
+                    to provide written notice to cancel the order. <b> {{ q.Your_Website_Name }}</b> will, upon
+                    receipt of such notice, refund moneys paid in full. The Buyer agrees and
+                    acknowledges that all specifications and advertising issued by <b> {{ q.Your_Website_Name }}</b> and any descriptions or illustrations contained in [COMPANY NAME]
+                    marketing materials are provided for the sole purpose of giving an
+                    approximate idea of the Goods described in them. <b> {{ q.Your_Website_Name }}</b> is not
+                    bound by such descriptions which do not form a part of these Terms and
+                    Conditions, nor are they a part of the sales agreement and this is not a
+                    sale by sample.
+                  </p>
+                </div>
+                <div class="product-delivery">
+                  <h2>PRODUCT DELIVERY</h2>
+                  <p>
+                    Unless otherwise agreed by the parties, delivery of the Goods shall be
+                    to the Buyer’s home or business address. The Goods may be delivered
+                    framed or unframed. The frame will encase the product and is separate
+                    from the actual delivery packaging for the Goods. The client
+                    acknowledges that the Goods are unique, rare and of high value and that
+                    the value of the Goods can be reduced by merely handling the Goods.
+                    <b> {{ q.Your_Website_Name }}</b> will make its best effort to deliver the Goods by the
+                    agreed date or within a reasonable time if no dates are stated. All
+                    delivery dates are estimates only and time of delivery is not of the
+                    essence. The Buyer must inspect the Goods upon delivery and advise
+                    <b> {{ q.Your_Website_Name }}</b> of any defects within 10 working days of delivery date or
+                    all complaints as to defects are waived. Risk of loss or damage to the
+                    Goods passes to the Buyer upon delivery. Where the Buyer requests that
+                    the Goods be placed directly in the safe custody of another party on
+                    behalf of the Buyer, delivery shall be deemed to take place on the date
+                    the Goods are transferred into safe custody. Where the Buyer requests at
+                    the time of purchase, that the Goods are stored “In Bond” outside of the
+                    United Kingdom, the Buyer understands that should they wish to import
+                    the Goods into the European Union they are liable for any import taxes /
+                    VAT chargeable by any customs authority for the importation of the Goods
+                    into any member country of the European Union.
+                  </p>
+                </div>
+                <div class="returns">
+                  <h2>RETURNS</h2>
+                  <p>
+                    If the Buyer is contracting as a consumer and has entered into a
+                    contract for the sale of Goods with <b> {{ q.Your_Website_Name }}</b> by distance selling
+                    means (for example, via the telephone, by mail order or online), the
+                    Buyer has a statutory right to cancel for any reason and receive a full
+                    refund. The Buyer will receive a full refund of the price paid for the
+                    Goods in accordance with 508 Gallery refunds policy (set out below). The
+                    Buyer’s statutory right to cancel a contract starts from the date of the
+                    written invoice issued by 508 Gallery pursuant to clause 2.2 (when the
+                    contract between <b> {{ q.Your_Website_Name }}</b> and the Buyer is formed). If the Goods
+                    have been delivered to the Buyer, the Buyer may cancel at any time
+                    within seven working days, starting from the day after the Buyer
+                    receives the Goods. If the Buyer is contracting as a consumer and has
+                    cancelled the contract between it and <b> {{ q.Your_Website_Name }}</b> within the
+                    seven-day cooling-off period (see clause 6.1 above), <b> {{ q.Your_Website_Name }}</b> will
+                    process the refund due to the Buyer as soon as possible and, in any
+                    case, within 30 days of the day on which the Buyer gave <b> {{ q.Your_Website_Name }}</b>
+                    notice of cancellation. In this case, <b> {{ q.Your_Website_Name }}</b> will refund the
+                    price of the Goods in full (except in the case of sealed Goods as
+                    described in clause 6.4), and any applicable delivery charges. However,
+                    the Buyer will be responsible for the cost of returning the item to
+                    <b> {{ q.Your_Website_Name }}</b>. In all other cases not covered by clause 6.1, the Buyer
+                    may return any Goods delivered at the Buyer’s cost within 7 days of
+                    receipt by giving written notification (by registered post, confirmed
+                    fax or confirmed email) of intent to return to <b> {{ q.Your_Website_Name }}</b>. If the
+                    Buyer decides to return the Goods, the Goods must be returned and
+                    received by <b> {{ q.Your_Website_Name }}</b> within 7 days of receipt of confirmed notice
+                    of return from the Buyer. If the Goods are not received within 7 days of
+                    receipt of confirmed notice of return from the Buyer, the sale is deemed
+                    final and no returns of the Goods will be accepted. With the Goods, the
+                    Buyer acknowledges that the Goods are unique, rare and of high value and
+                    that handling of said Goods can reduce the value of the Goods. Once a
+                    sale is deemed final, no returns will be accepted and the Client hereby
+                    accepts and waives any claims he/she may have under English law or
+                    otherwise. The Buyer is responsible for all delivery costs and insurance
+                    costs incurred for returned Goods. Unless otherwise prohibited by law,
+                    full reimbursement of the purchase price of the Goods, less insurance
+                    and delivery costs, shall be the Buyer’s sole remedy if the Goods are
+                    returned for any reason whatsoever.
+                  </p>
+                </div>
+                <div class="warranties">
+                  <h2>WARRANTIES</h2>
+                  <p>
+                    <b> {{ q.Your_Website_Name }}</b> makes no warranties, expressed or implied, except as
+                    specifically stated herein. Such warranties are in lieu of all other
+                    warranties, written or oral, statutory, express or implied, including
+                    without limitation, any warranty of merchantability or fitness for a
+                    particular purpose.
+                  </p>
+                </div>
+                <div class="termination">
+                  <h2>TERMINATION</h2>
+                  <p>
+                    <b> {{ q.Your_Website_Name }}</b> may terminate this agreement if the Buyer fails to make
+                    payment when due or substantially breaches any other obligation of these
+                    Terms and Conditions. <b> {{ q.Your_Website_Name }}</b> may notify the Buyer in writing of
+                    such termination and recover from the Buyer payment for Goods sold or
+                    work completed. The Buyer is liable for any and all costs incurred by
+                    <b> {{ q.Your_Website_Name }}</b> in connection with collection of such unpaid funds. Force
+                    Majeure Provision of Goods supplied to the Buyer covered by the Sales
+                    Agreement is contingent upon the non-occurrence of strikes, accidents,
+                    delays of carriers, delays of delivery, delay of personnel or other
+                    causes unavoidable or beyond the control of <b> {{ q.Your_Website_Name }}</b>. If
+                    performance of the Sales Agreement or any obligation under the Sales
+                    Agreement is prevented, restricted, or interfered with by causes beyond
+                    either party’s reasonable control (“force majeure”), and if the party
+                    unable to carry out its obligations gives the other party prompt written
+                    notice of such event, then the obligations of the party invoking this
+                    provision shall be suspended to the extent necessary by such event. The
+                    term Force Majeure shall include, without limitation, acts of God, fire,
+                    explosion, vandalism, storm or other similar occurrence, orders or acts
+                    of military or civil authority, or by national emergencies,
+                    insurrections, riots, wars, supplier failures, shortages, breach, or
+                    delays. The excused party shall use reasonable efforts under the
+                    circumstances to avoid or remove such causes of non- performance and
+                    shall proceed to perform with reasonable dispatch whenever such causes
+                    are removed or ceased. An act or omission shall be deemed within the
+                    reasonable control of a party if committed, omitted, or caused by such
+                    party, or its employees, officers, agents, or affiliates.
+                  </p>
+                </div>
+                <div class="mediation">
+                  <h2>MEDIATION AND ARBITRATION</h2>
+                  <p>
+                    Any disputes between the parties hereto, whether arising under these
+                    Terms and Conditions or under any written invoices issued by <b> {{ q.Your_Website_Name }}</b> or otherwise, which the parties cannot resolve between themselves
+                    using good faith shall be referred to a court certified mediator in the
+                    County of the principal office of <b> {{ q.Your_Website_Name }}</b>, and any mediation
+                    shall be held in the County of the principal office of <b> {{ q.Your_Website_Name }}</b>.
+                    The Buyer shall bear the cost of said mediation. In the event that said
+                    dispute is not resolved in mediation, the parties shall submit the
+                    dispute to a neutral arbitrator residing in the County of the principal
+                    address of <b> {{ q.Your_Website_Name }}</b>. The arbitration shall be held in the County
+                    of the principal office of <b> {{ q.Your_Website_Name }}</b>. If either party refuses to
+                    comply with a ruling or decision of the arbitrator and a lawsuit is
+                    brought to enforce said ruling or decision, it is agreed that the party
+                    not complying with the ruling or decision of the arbitrator shall pay
+                    all the court costs and reasonable legal fees incurred in enforcing the
+                    ruling or decision of the arbitrator. Any rights of injunctive relief
+                    shall be in addition to and not in derogation or limitation of any other
+                    legal rights
+                  </p>
+                </div>
+                <div class="indemnity">
+                  <h2>INDEMNITY</h2>
+                  <p>
+                    The Buyer hereby agrees to indemnify <b> {{ q.Your_Website_Name }}</b> and undertakes to
+                    keep <b> {{ q.Your_Website_Name }}</b> indemnified against any losses, damages, costs,
+                    liabilities and expenses (including without limitation legal expenses
+                    and any amounts paid by <b> {{ q.Your_Website_Name }}</b> to a third party in settlement of
+                    a claim or dispute on the advice of its legal advisers) incurred or
+                    suffered arising out of any breach by Buyer of any provision of these
+                    Terms and Conditions or arising out of any claim that Buyer has breached
+                    any provision of these Terms and Conditions.
+                  </p>
+                </div>
+                <div class="liability">
+                  <h2>LIABILITY</h2>
+                  <p>
+                    If <b> {{ q.Your_Website_Name }}</b> fails to comply with these Terms and Conditions, it
+                    will be responsible for loss or damage that the Buyer suffers which is a
+                    foreseeable result of <b> {{ q.Your_Website_Name }}'s</b> breach of the Terms and
+                    Conditions or its negligence, but it is not responsible for:
+                  </p>
+                  <ul>
+                    <li>any loss or damage that is not foreseeable;</li>
+                    <li>
+                      any loss which that is not caused by a breach of <b> {{ q.Your_Website_Name }}</b> or its
+                      agents or employees;
+                    </li>
+                    <li>
+                      any business losses, or losses to parties who are not consumers.
+                    </li>
+                  </ul>
+                  <p>
+                    Loss or damage is foreseeable if they were an obvious consequence of
+                    <b> {{ q.Your_Website_Name }}'s</b> breach or if they were contemplated by both parties at
+                    the time the contract is entered into. Nothing in these Terms shall
+                    limit or exclude <b> {{ q.Your_Website_Name }}</b> liability for death or personal injury
+                    resulting from its negligence; defective products under the Consumer
+                    Protection Act 1987; for fraud or fraudulent misrepresentation, breach
+                    of the terms implied by section 12 of the Sale of Goods Act 1979 (title
+                    and quiet possession); breach of the terms implied by sections 13, 14
+                    and 15 of the Sale of Goods Act 1979 (description, satisfactory quality,
+                    fitness for purpose and samples); or 12.2.6 defective products under the
+                    Consumer Protection Act 1987. In any event, the total liability of
+                    <b> {{ q.Your_Website_Name }}</b> in respect of breach of any contract for the sale of
+                    Goods or any representation given in connection with such a contract,
+                    whether in contract, tort (including negligence), statute or otherwise
+                    shall be limited to the purchase price for the Goods.
+                  </p>
+                </div>
+                <div class="communication">
+                  <h2>COMMUNICATION</h2>
+                  <p>
+                    All notices shall be in writing and sent by registered post, facsimile
+                    or email to the address of the recipient stated in any quotation, order
+                    or acknowledgement of order. Notices shall be deemed to be received if
+                    sent by registered post, on the second day following the day of posting
+                    and, if sent by email or facsimile, on day of transmission (if sent
+                    before agreed time)
+                  </p>
+                </div>
+                <div class="general">
+                  <h2>GENERAL</h2>
+                  <p>
+                    Each right or remedy of <b> {{ q.Your_Website_Name }}</b> under the Contract is without
+                    prejudice to any other right or remedy of <b> {{ q.Your_Website_Name }}</b> whether under
+                    the contract or not. No failure or delay by <b> {{ q.Your_Website_Name }}</b> to exercise
+                    any right, power or remedy will operate as a waiver of it, nor will any
+                    partial exercise preclude any further exercise of the same, or of any
+                    other right, power or remedy. The parties do not intend that any term of
+                    these Terms shall be enforceable by virtue of the Contracts (Rights of
+                    Third Parties) Act 1999 by any person that is not a party of it.
+                  </p>
+                </div>
+                <div class="disclaimer">
+                  <h2>DISCLAIMER</h2>
+                  <p>
+                    This legal notice should be read as an extension of any Terms and
+                    Conditions of <b> {{ q.Your_Website_Name }}</b>. <b> {{ q.Your_Website_Name }}</b> is not authorised or
+                    regulated by the FCA (Financial Conduct Authority). Work of art are not
+                    investments of a specified kind within the scope of the Financial
+                    Services and Markets Act 2000 nor are they controlled investments
+                    subject to Section 21 of the Financial Services and Market Act 2000 and
+                    the Financial Promotion Order. Any and all information provided by
+                    <b> {{ q.Your_Website_Name }}</b> relates to the sale of works of art and their value. 508
+                    Gallery does not deal with “options”, futures or any regulated
+                    investments of a specified kind under the Financial Services and Markets
+                    Act 2000. No information provided should be deemed to constitute the
+                    provision of financial investment or other professional advice subject
+                    to regulation under the Financial Services and Market 2000. The
+                    information and services described in any marketing materials or the
+                    website are not intended to be used by or to be available to persons
+                    from outside the United Kingdom. The value of works of art and the
+                    income derived from them may go down as well as up and you may not
+                    receive back all the money which you invest. The services described or
+                    recommended in our marketing materials or on the website may not be
+                    suitable for all people. You should seek your own professional advice as
+                    to the suitability of any such investment or service before you enter
+                    into any transaction. Any information relating to past valuation of Art
+                    is not necessarily a guide to future performance. Fluctuations in the
+                    rate of exchange may have an adverse effect on the value, price or
+                    income of non-sterling denominated Art. 15.7 The information contained
+                    in our marketing materials or the website is not intended to be an offer
+                    to buy or sell securities, and this website should not be regarded as an
+                    offer of solicitation to conduct investment business of any investment
+                    or activity regulated by the FCA.
+                  </p>
+                </div>
+                <div class="data-protection">
+                  <h2>Data Protection</h2>
+                  <p>
+                    <b> {{ q.Your_Website_Name }}</b>will hold any personal information provided to it in
+                    confidence and in accordance with the Data Protection Act 1998 and other
+                    applicable data protection legislation. 508 Gallery will use such
+                    personal information for the administration and servicing of your
+                    purchase and all other related activities; <b> {{ q.Your_Website_Name }}</b> may disclose
+                    your personal information to its agents and service providers and other
+                    members of <b> {{ q.Your_Website_Name }}</b> for this purpose.
+                  </p>
+                </div>
+                <div class="copyright">
+                  <h2>COPYRIGHT AND CONFIDENTIALITY</h2>
+                  <p>
+                    Copyright, trademarks, database rights and all similar rights in this
+                    website and marketing materials are owned by <b> {{ q.Your_Website_Name }}</b>, its
+                    licensors or relevant third party content providers. You may use the
+                    information on this site and reproduce it in hard copy for your personal
+                    reference only. Such information may not otherwise be reproduced,
+                    distributed, stored in a data retrieval system or transmitted in any
+                    form or by any means without the prior written permission of <b> {{ q.Your_Website_Name }}</b>. Nothing in our marketing materials or in this website should be
+                    considered granting any license or right under any trademark of <b> {{ q.Your_Website_Name }}</b> or any third party. Right of First Refusal In the event that you
+                    (“The Client”) desires to sell a piece of Art Work, previously acquired
+                    from one of <b> {{ q.Your_Website_Name }}'s</b> joint venture partners and the client has
+                    received a legitimate offer in writing from an unaffiliated third party
+                    to buy any work of Art previously acquired from “the company” or one of
+                    <b> {{ q.Your_Website_Name }}'s</b> joint venture partners, the client shall first notify
+                    the Company in writing of the proposed sale (the “sale notice”). Each
+                    Sale Notice shall contain all material terms of the proposed Sale,
+                    including, without limitation, a copy of the written offer received, the
+                    name and address of the prospective purchaser, the purchase price and
+                    terms of payment, and the date and place of the proposed sale. (a)
+                    Company’s Right of First Refusal. The Company shall have an option for a
+                    period of ten (10) days from the date the Sale Notice is given to elect
+                    to purchase the work of Art at the same price and subject to the same
+                    material terms and conditions as described in the Sale Notice (or terms
+                    and conditions as similar as reasonably possible). The Company may
+                    exercise such purchase option and, thereby, purchase all (or any portion
+                    of) the Art Work by notifying the client in writing before expiration of
+                    such ten (10) day period as to the Art Work that it wishes to purchase
+                    from the client. (b) If the Company gives the client notice that it
+                    desires to purchase such Art Work, then payment for the Art Work shall
+                    be by cheque or bank transfer, against delivery of the Art Work to be
+                    purchased at a place agreed upon between the parties and at the time of
+                    the scheduled closing therefor, which shall be no later than the later
+                    than thirty (30) days after the date the Sale Notice is given. If the
+                    Company fails to purchase all of the Art Work by exercising the option
+                    granted in this Section (a) within the period provided, the Company
+                    shall forfeit its Right of First refusal as outlined in Sections (a) and
+                    (b).
+                  </p>
+                </div>
+                <div class="artist">
+                  <h2>ARTISTS</h2>
+                  <p>
+                    For so long as any artworks or Goods of the Artists are in the
+                    possession of the <b> {{ q.Your_Website_Name }}</b> (“the Gallery”) and/or listed on the
+                    Gallery’s online platform(s) or the Gallery’s partnership e-commerce
+                    sites, the Gallery has exclusive rights at the Property and/or at any
+                    location determined by the Gallery to hold, display, exhibit, offer for
+                    sale, sell, authorise other to offer for sale, display, exhibit and sell
+                    such artworks. The Artist is not permitted to engage others to perform
+                    services of the same or similar nature to those provided by the Gallery
+                    in respect of any of the artwork, and the Artist shall not be permitted
+                    to display or sell such artworks (whether they be the original artworks
+                    or duplicates, copies or prints) either online, or at any other
+                    gallery/art fair/website or any other company, institution or body.
+                    Images of the artwork where it is displayed may be produced, used and/or
+                    displayed, and the Gallery shall not be liable to pay to the Artist any
+                    royalties, commissions or other sums for such images. For those artworks
+                    commissioned by one or more private individuals, by the government or
+                    businesses, the Gallery will hold the commissioned conversation. The
+                    Artist is not permitted to contact or deal with the commissions for so
+                    long as any artworks or Goods are in the possession of the Gallery. The
+                    Gallery will use reasonable endeavours to sell the artwork and the
+                    Artist agrees to provide to the Gallery, promptly upon request, any
+                    necessary documents or information to assist with the sale. The Artist
+                    agrees and undertakes: a) To pay to the Gallery the agreed commission
+                    with respect to the total sales generated, agreed and/or negotiated in
+                    respect of any artworks b) To pay top the Gallery any other fee agreed
+                    in full without any set off, counterclaim, deduction or withholding
+                    promptly c) To indemnify and keep indemnified the Gallery against all
+                    losses, claims, demands, actions, proceedings, damages, costs, expenses
+                    of other liability in any way arising from these terms and conditions
+                    and in respect of any breach of the Artist’s undertakings or obligations
+                    d) To observe any rules and regulations the Gallery make from time to
+                    time in relation to the Artists artwork. Whilst the Gallery will use
+                    reasonable endeavors to ensure that insurance is in place with respect
+                    to physical loss or damage to the artworks whilst the artwork is in the
+                    possession of the Gallery (subject to limitations and exclusions), the
+                    Gallery is not liable for: a) Damage to or theft or loss of the artworks
+                    or to any property of the Artist or their employees or invitees to the
+                    Gallery premises any losses, claims, demands, actions, proceedings,
+                    damages, costs or expenses or other liability incurred by Artist or the
+                    Artist’s employees, customers or other invitees to the Gallery premises
+                    in the exercise or purported exercise of any of the Artists rights. The
+                    Artist must ensure that they hold and maintain valid insurance for their
+                    artworks for the appropriate level of cover for the duration of the time
+                    for which their artwork is in the possession of the Gallery. Right of
+                    [COMPANY RIGHTS] Overage, You (“The Client”) agree to pay [COMPANY
+                    RIGHTS] (“The Overage”) of any profit achieved from the resale of any
+                    art you purchase through <b> {{ q.Your_Website_Name }}</b>. This overage is to be paid
+                    across to the <b> {{ q.Your_Website_Name }}</b> company bank account or an account of the
+                    company choosing within 5 business days of the resale of the work of art
+                    by the client.
+                  </p>
+                </div>
+                <div class="contacts">
+                  <p>The <b> {{ q.Your_Website_Name }}</b>, <b> {{ q.Address }}</b></p>
+                  <p>TELEPHONE: [COMPANY PHONE NUMBER]</p>
+                  <p>EMAIL: [COMPANY EMAIL]</p>
+                </div>
+               
+                    {% elif q.industry == 'E-Commerce ' %}
+                    <h1 class="main-heading">TERMS AND CONDITION</h1>
+                    <div class="intro">
+                      <h2>INTRODUCTION</h2>
+                      <p>
+                        <b> {{ q.Your_Website_Name }}</b> <b> "{{ q.Your_Website_Url }}"</b> owns and operate this Website. This
+                        document governs your relationship with <b> {{ q.Your_Website_Url }}</b> <b> {{ q.Your_Website_Url }}</b>. Access to and use of this Website and the products and
+                        services available through this Website (collectively, the "Services")
+                        are subject to the following terms, conditions and notices (the "Terms
+                        of Service"). By using the Services, you are agreeing to all of the
+                        Terms of Service, as may be updated by us from time to time. You should
+                        check this page regularly to take notice of any changes we may have made
+                        to the Terms of Service. Access to this Website is permitted on a
+                        temporary basis, and we reserve the right to withdraw or amend the
+                        Services without notice. We will not be liable if for any reason this
+                        Website is unavailable at any time or for any period. From time to time,
+                        we may restrict access to some parts or all of this Website. This
+                        Website may contain links to other websites (the "Linked Sites"), which
+                        are not operated by <b> {{ q.Your_Website_Name }}</b>. <b> {{ q.Your_Website_Name }}</b> has no control over the
+                        Linked Sites and accepts no responsibility for them or for any loss or
+                        damage that may arise from your use of them. Your use of the Linked
+                        Sites will be subject to the terms of use and service contained within
+                        each such site.
+                      </p>
                     </div>
-                </section>
+                    <div class="prohibitions">
+                      <h2>PROHIBITIONS</h2>
+                      <p>
+                        You must not misuse this Website. You will not: commit or encourage a
+                        criminal offense; transmit or distribute a virus, trojan, worm, logic
+                        bomb or any other material which is malicious, technologically harmful,
+                        in breach of confidence or in any way offensive or obscene; hack into
+                        any aspect of the Service; corrupt data; cause annoyance to other users;
+                        infringe upon the rights of any other person's proprietary rights; send
+                        any unsolicited advertising or promotional material, commonly referred
+                        to as "spam"; or attempt to affect the performance or functionality of
+                        any computer facilities of or accessed through this Website. Breaching
+                        this provision would constitute a criminal offense and <b> {{ q.Your_Website_Name }}</b>
+                        will report any such breach to the relevant law enforcement authorities
+                        and disclose your identity to them. We will not be liable for any loss
+                        or damage caused by a distributed denial-of-service attack, viruses or
+                        other technologically harmful material that may infect your computer
+                        equipment, computer programs, data or other proprietary material due to
+                        your use of this Website or to your downloading of any material posted
+                        on it, or on any website linked to it.
+                      </p>
+                    </div>
+                    <div class="intellectual-property">
+                      <h2>INTELLECTUAL PROPERTY, SOFTWARE AND CONTENT</h2>
+                      <p>
+                        The intellectual property rights in all software and content (including
+                        photographic images) made available to you on or through this Website
+                        remains the property of <b> {{ q.Your_Website_Name }}</b> or its licensors and are protected
+                        by copyright laws and treaties around the world. All such rights are
+                        reserved by <b> {{ q.Your_Website_Name }}</b> and its licensors. You may store, print and
+                        display the content supplied solely for your own personal use. You are
+                        not permitted to publish, manipulate, distribute or otherwise reproduce,
+                        in any format, any of the content or copies of the content supplied to
+                        you or which appears on this Website nor may you use any such content in
+                        connection with any business or commercial enterprise.
+                      </p>
+                    </div>
+                    <div class="terms-of-sale">
+                      <h2>TERMS OF SALE</h2>
+                      <p>
+                        Terms of Sale By placing an order you are offering to purchase a product
+                        on and subject to the following terms and conditions. All orders are
+                        subject to availability and confirmation of the order price. Dispatch
+                        times may vary according to availability and subject to any delays
+                        resulting from postal delays or force majeure for which we will not be
+                        responsible. In order to contract with <b> {{ q.Your_Website_Url }}</b> you must be over 18
+                        years of age and possess a valid credit or debit card issued by a bank
+                        acceptable to us. <b> {{ q.Your_Website_Url }}</b> retains the right to refuse any request
+                        made by you. If your order is accepted we will inform you by email and
+                        we will confirm the identity of the party which you have contracted
+                        with. This will usually be <b> {{ q.Your_Website_Url }}</b> or may in some cases be a third
+                        party. Where a contract is made with a third party <b> {{ q.Your_Website_Url }}</b> is not
+                        acting as either agent or principal and the contract is made between
+                        yourself and that third party and will be subject to the terms of sale
+                        which they supply you. When placing an order you undertake that all
+                        details you provide to us are true and accurate, that you are an
+                        authorized user of the credit or debit card used to place your order and
+                        that there are sufficient funds to cover the cost of the goods. The cost
+                        of foreign products and services may fluctuate. All prices advertised
+                        are subject to such changes.
+                      </p>
+                    </div>
+                    <div class="contract">
+                      <h2>OUR CONTRACT</h2>
+                      <p>
+                        When you place an order, you will receive an acknowledgement e-mail
+                        confirming receipt of your order: this email will only be an
+                        acknowledgement and will not constitute acceptance of your order. A
+                        contract between us will not be formed until we send you confirmation by
+                        e-mail that the goods which you ordered have been dispatched to you.
+                        Only those goods listed in the confirmation e-mail sent at the time of
+                        dispatch will be included in the contract formed.
+                      </p>
+                    </div>
+                    <div class="pricing">
+                      <h2>PRICING AND AVAILABILITY</h2>
+                      <p>
+                        Whilst we try and ensure that all details, descriptions and prices which
+                        appear on this Website are accurate, errors may occur. If we discover an
+                        error in the price of any goods which you have ordered we will inform
+                        you of this as soon as possible and give you the option of reconfirming
+                        your order at the correct price or cancelling it. If we are unable to
+                        contact you we will treat the order as cancelled. If you cancel and you
+                        have already paid for the goods, you will receive a full refund.
+                        Delivery costs will be charged in addition; such additional charges are
+                        clearly displayed where applicable and included in the 'Total Cost'.
+                      </p>
+                    </div>
+                    <div class="payment">
+                      <h2>PAYMENT</h2>
+                      <p>
+                        Upon receiving your order we carry out a standard authorization check on
+                        your payment card to ensure there are sufficient funds to fulfil the
+                        transaction. Your card will be debited upon authorisation being
+                        received. The monies received upon the debiting of your card shall be
+                        treated as a deposit against the value of the goods you wish to
+                        purchase. Once the goods have been despatched and you have been sent a
+                        confirmation email the monies paid as a deposit shall be used as
+                        consideration for the value of goods you have purchased as listed in the
+                        confirmation email.
+                      </p>
+                    </div>
+                    <div class="disclaimer">
+                      <h2>DISCLAIMER OF LIABILITY</h2>
+                      <p>
+                        The material displayed on this Website is provided without any
+                        guarantees, conditions or warranties as to its accuracy. Unless
+                        expressly stated to the contrary to the fullest extent permitted by law
+                        <b>{{ q.Your_Website_Url }}</b> and its suppliers, content providers and advertisers
+                        hereby expressly exclude all conditions, warranties and other terms
+                        which might otherwise be implied by statute, common law or the law of
+                        equity and shall not be liable for any damages whatsoever, including but
+                        without limitation to any direct, indirect, special, consequential,
+                        punitive or incidental damages, or damages for loss of use, profits,
+                        data or other intangibles, damage to goodwill or reputation, or the cost
+                        of procurement of substitute goods and services, arising out of or
+                        related to the use, inability to use, performance or failures of this
+                        Website or the Linked Sites and any materials posted thereon,
+                        irrespective of whether such damages were foreseeable or arise in
+                        contract, tort, equity, restitution, by statute, at common law or
+                        otherwise. This does not affect <b>{{ q.Your_Website_Url }}'s</b> liability for death or
+                        personal injury arising from its negligence, fraudulent
+                        misrepresentation, misrepresentation as to a fundamental matter or any
+                        other liability which cannot be excluded or limited under applicable
+                        law.
+                      </p>
+                    </div>
+                    <div class="llinking-to-website">
+                      <h2>LINKING TO THIS WEBSITE</h2>
+                      <p>
+                        You may link to our home page, provided you do so in a way that is fair
+                        and legal and does not damage our reputation or take advantage of it,
+                        but you must not establish a link in such a way as to suggest any form
+                        of association, approval or endorsement on our part where none exists.
+                        You must not establish a link from any website that is not owned by you.
+                        This Website must not be framed on any other site, nor may you create a
+                        link to any part of this Website other than the home page. We reserve
+                        the right to withdraw linking permission without notice. Disclaimer as
+                        to ownership of trade marks, images of personalities and third party
+                        copyright Except where expressly stated to the contrary all persons
+                        (including their names and images), third party trade marks and content,
+                        services and/or locations featured on this Website are in no way
+                        associated, linked or affiliated with{{ q.Your_Website_Url }} and you should not
+                        rely on the existence of such a connection or affiliation. Any trade
+                        marks/names featured on this Website are owned by the respective trade
+                        mark owners. Where a trade mark or brand name is referred to it is used
+                        solely to describe or identify the products and services and is in no
+                        way an assertion that such products or services are endorsed by or
+                        connected to {{ q.Your_Website_Url }}
+                      </p>
+                    </div>
+                    <div class="indemnity">
+                      <h2>INDEMNITY</h2>
+                      <p>
+                        You agree to indemnify, defend and hold harmless {{ q.Your_Website_Url }}, its
+                        directors, officers, employees, consultants, agents, and affiliates,
+                        from any and all third party claims, liability, damages and/or costs
+                        (including, but not limited to, legal fees) arising from your use this
+                        Website or your breach of the Terms of Service
+                      </p>
+                    </div>
+                    <div class="variation">
+                      <h2>VARIATION</h2>
+                      <p>
+                        {{ q.Your_Website_Url }}shall have the right in its absolute discretion at any
+                        time and without notice to amend, remove or vary the Services and/or any
+                        page of this Website.
+                      </p>
+                    </div>
+                    <div class="invalidity">
+                      <h2>INVALIDITY</h2>
+                      <p>
+                        If any part of the Terms of Service is unenforceable (including any
+                        provision in which we exclude our liability to you) the enforceability
+                        of any other part of the Terms of Service will not be affected all other
+                        clauses remaining in full force and effect. So far as possible where any
+                        clause/sub-clause or part of a clause/sub-clause can be severed to
+                        render the remaining part valid, the clause shall be interpreted
+                        accordingly. Alternatively, you agree that the clause shall be rectified
+                        and interpreted in such a way that closely resembles the original
+                        meaning of the clause /sub-clause as is permitted by law.
+                      </p>
+                    </div>
+                    <div class="complaints">
+                      <h2>COMPLAINTS</h2>
+                      <p>
+                        We operate a complaints handling procedure which we will use to try to
+                        resolve disputes when they first arise, please let us know if you have
+                        any complaints or comments.
+                      </p>
+                    </div>
+                    <div class="waiver">
+                      <h2>WAIVER</h2>
+                      <p>
+                        If you breach these conditions and we take no action, we will still be
+                        entitled to use our rights and remedies in any other situation where you
+                        breach these conditions.
+                      </p>
+                    </div>
+                    <div class="entire-agreement">
+                      <h2>ENTIRE AGREEMENT</h2>
+                      <p>
+                        The above Terms of Service constitute the entire agreement of the
+                        parties and supersede any and all preceding and contemporaneous
+                        agreements between you and [Your Online Store URL]. Any waiver of any
+                        provision of the Terms of Service will be effective only if in writing
+                        and signed by a Director of {{ q.Your_Website_Url }}
+                      </p>
+                    </div>
+                  </body>
+                {% endif %}
+<!-- 
+                {% if q.Privacy %}
+                <h2>Privacy Policy</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, praesentium nesciunt, sint obcaecati unde sit dolor animi laboriosam corporis quisquam dolorem iusto nemo, aliquam voluptatum deleniti vitae consequuntur rem cumque!
+                {% endif %}
+
+                {% if q.Advertisment %}
+                <h2>Ad Policy</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, esse enim beatae commodi aliquid officia deserunt eveniet similique laudantium vel quam ratione mollitia dolor facere voluptate qui labore ut! Nulla!
+                {% endif %}
+                {% if q.gdrp_wording %}
+                <h2>gdrp wording</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id ullam rem eveniet sit sed, sequi illo cupiditate? Odio aspernatur eveniet soluta omnis quia velit eius suscipit sit.
+                {% endif %}
+            </div> -->
             </div>
         </div>
-
+        
         <div class="txt">
             <h2></h2>
         </div>
-
-
+        
+        
         <div class="b">
-            <div class="btnn">
-                <div class="b">
-                    <!--  <div class="b1"> -->
-                    <button class="butt" id="download"><i class="fa-solid fa-cloud-arrow-down"
-                            style="width:100px;"></i><br>
-                        Download</button>
-                </div>
-                <div class="b1">
-                    <a href="#"><button class="butt"><i
-                                class="fa-regular fa-arrow-up-from-bracket"></i><br>Export</button></a>
-                </div>
-                <div class="b1">
-                    <a href="#"><button class="butt"><i class="fa-regular fa-share-nodes"></i><br>Share</button></a>
-                </div>
-                <!--  </div> -->
+        <div class="btnn">
+           <div class="b">
+            <!--  <div class="b1"> -->
+                <a href="#"><button class="butt"><i class="fa-solid fa-cloud-arrow-down" style="width:100px;"></i><br>
+                Download</button></a>
             </div>
+            <div class="b1">
+                <a href="#"><button class="butt"><i class="fa-regular fa-arrow-up-from-bracket"></i><br>Export</button></a>
+            </div>
+            <div class="b1">
+                <a href="#"><button class="butt"><i class="fa-regular fa-share-nodes"></i><br>Share</button></a>
+            </div>
+            <div class="b1">
+                <a href="{% url 'delete_template' q.slug %}"><button class="butt"><i class="fa-regular fa-share-nodes"></i><br>Delete</button></a>
+            </div>
+          <!--  </div> --> 
         </div>
-    </main>
+        </div>
+    <!-- </main>
     <footer>
         <div class="disclaimer-questions">
             <div class="footerlinks">
-                <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a>
-                </p>
+                <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p>
                 <ul>
                     <li><a href="">Privacy Policy</a></li>
                     <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
@@ -215,11 +843,12 @@
             <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
             <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
         </div>
-    </footer>
-    <script src="{% static '/js/dashboard.js' %}"></script>
-    <script src="{% static '/js/pdf.js' %}"></script>
-
-
+    </footer> -->
+   
 </body>
-
 </html>
+
+
+
+
+<!-- {% endblock %} -->

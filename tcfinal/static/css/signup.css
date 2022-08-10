@@ -1,4 +1,3 @@
-/*changed all the codes here*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 *{
@@ -58,12 +57,22 @@ nav a{
 .navlink a:nth-of-type(odd){
     line-height: 24px;
     margin-right: 24px;
+    font-family: Montserrat;
+    color: #333333;
 }
 
 .navlink a button{
     color: #721121;
     padding: 12px 24px;   
     background-color: transparent;
+    font-family: Montserrat;
+    font-size: 20px;
+    line-height: 32px;
+    
+}
+
+.menu-button{
+    display: none;
 }
 
 /* Main */
@@ -78,9 +87,15 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     align-items: center;
 }
 
-.signin-illustration, .signin-text{
+.signup-illustration, .signup-text{
     height: auto;
     width: 588px;
+    /* top: 120px;
+    left: 136; */
+}
+
+.signup-illustration{
+    margin-right: 24px;
 }
 
 .input-container{
@@ -95,8 +110,8 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
 
 ::placeholder{
     color: #aaa;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .input-container input, ::placeholder{
@@ -110,6 +125,7 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     outline: none;
 }
 
+
 .input-container i{
     position: absolute;
     color: #808080;
@@ -117,28 +133,6 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
     right: 18px;
 }
 
-.remember-pwd{
-    justify-content: space-between;  
-    font-size: 1rem; 
-    margin-bottom: 32px;
-}
-
-.remember-pwd a{
-    color: #ff1212;
-    text-decoration: none;
-}
-
-.remember input:where([type='checkbox']){
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    border: 2px solid #333;
-}
-
-.remember label{
-    color: #000;
-    margin-left: 8px;
-}
 
 form button{
     width: 100%;
@@ -158,14 +152,18 @@ form button{
     width: 100%;
 }
 
-.continue-with p{
+.continue-with p:first-of-type{
     text-align: center;
     padding:0 8px;
 }
 
+.continue-with p:last-of-type{
+    display: none;
+}
+
 .terms{
     text-align: center;
-    padding-top: 160px;
+    padding-top: 50px;
 }
 
 .terms a{
@@ -189,23 +187,43 @@ form button{
 .other-options a i{
     color: #721121;
 }
+/* new addition  */
+.mobile-other-options{
+    display:none;
+}
 
+/* worked on the responsiveness*/
 
 @media (max-width: 835px){
     nav{
         padding: 32px;
     }
 
-    .signin-illustration{
+    .signup-illustration{
         display: none;
     }
 
     h1{
-        text-align: center;
+        text-align:left;
+       
     }
 
-    .signin-text{
-        width: 100%;
+    .continue-with{
+        font-size: 16px;
+        text-align: center;
+        line-height: 24px;
+        right: 20px;
+    }
+
+    button {
+        padding: 16px 32px;
+        gap: 16px;
+        border-radius: 20px;
+
+    }
+
+    .signup-text{
+     width: 100%;
     }
 
     .other-options{
@@ -222,17 +240,103 @@ form button{
     }
 
     .terms{
+        position: absolute;
         padding-top: 56px;
-        width: 68.8%;
+        width: 572px;
         margin: 0 auto;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: montserrat;
+
     }
 }
 
-@media (max-width: 360px){
+@media (max-width: 375px){
     nav{
         padding: 10px;
+        flex-direction: column;
+    }
+    .navlink{
+        width: 90%;
+        margin: 0 auto;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navlink a button{
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-top: 1rem;
+    }
+    .navlink a:nth-of-type(odd){
+        font-size: 16px;
+    }
+    .mobile-nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .mobile-nav .menu-button{
+        display: flex;
+    }
+    .remember{
+        justify-content: space-between;
     }
     .other-options{
-        display: block;
+        display: none;
+    }
+    .mobile-other-options{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 24px;
+    }
+    .mobile-other-options a{
+        padding: 16px 32px;
+        color: #721121;
+        text-decoration: none;
+        border-radius: 16px;
+        border: 2px solid #721121;
+        margin:0 0 8px;
+        font-size: 16px;
+        width: 328px;
+    }
+    .mobile-other-options a i{
+        color: #721121;
+        padding-right: 14px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    .input-container{
+        margin-bottom: 24px;
+    }
+    .input-container input, ::placeholder{
+        padding: 16px;
+    }
+    .input-container label{
+        font-size: 16px;
+    }
+    .remember input:where([type='checkbox']){
+        width: 24px;
+        height: 24px;
+    }
+    .remember-pwd a, .remember label{
+        font-size: 14px;
+    }
+    .continue-with p:first-of-type{
+        display: none;
+    }
+    .continue-with p:last-of-type{
+        display: flex;
+    }
+    .line{
+        margin: 0 auto;
+    }
+    .terms {
+        font-size: 12px !important;
+        width: 90%;
+      
     }
 }

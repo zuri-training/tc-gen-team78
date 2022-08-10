@@ -1,5 +1,94 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body bgcolor="blue">
+    <form action="login" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username"> <br>
+        <input type="password" name="password1" placeholder="password"> <br>
+        <input type="submit" value="Login">
+
+    </form>
+
+    <div>
+         {% for message in messages %}
+        <h3> {{message}}</h3>
+        {% endfor %}
+    </div>
+  
+</body>
+</html> -->
 {% load static %}
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+    <title>Signin</title>
+</head>
+<body>
+    <div class="nav">
+        <p class="logo">LOGO</p>
+
+        <div class="navlinks">
+            <a href="register" class="dont">Don't have an account?</a>
+
+            <a href="register" class="sign">Sign up</a>
+        </div>
+    </div>
+
+    <section class="sec">
+        <div class="div1"></div>
+
+        <div class="div2">
+            <p class="welcome">Welcome back!</p>
+
+            <div class="form">
+                <form action="login" method="POST">
+                    {% csrf_token %}
+                    <label for="username" class="label1">Username</label> <br>
+                    <input type="text" name="username" id="username" placeholder="Example@gamil.com"> <br>
+
+                    <label for="password" class="label2">Password</label> <br>
+                    <input type="password" name="password1" id="password" placeholder="Enter Password">
+
+                    <button class="btnsign">Sign in</button>
+                </form>
+            </div>
+            
+           
+
+            <div class="secondpart">
+                <p class="or">Or continue with</p>
+
+                
+
+
+                <div class="ops">
+                    <div class="op op1"></div>
+                    <div class="op"></div>
+                    <div class="op op2"></div>
+                </div>
+
+                <p class="last">By signing up you agree to our <a href="" class="li">Terms of Service</a> and have read and<br> acknowledge our 
+                    <a href="" class="li">Privacy Policy</a></p>
+            </div>
+            
+        </div>
+    </section>
+</body>
+</html> -->
+
+<!--changed the codes to align with figma design and added image-->
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -62,5 +151,96 @@
             <p class="terms">By signing up ,you agree to our <a href="#"> Terms of Service</a> and have read and acknowledge our <a href="#">Privacy Policy</a></p>
         </div>
     </main>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+    <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+           <!-- new additions -->
+        <div class="mobile-nav">
+           <a href="/"> <img src="{% static '/images/Logo.svg' %}" alt="logo"></a>
+            <a href="" onclick="openMenu()" class="menu-button"><img src="{% static '/images/menu.png' %}" alt="menu button"></a>
+        </div>
+        <div class="navlink">
+            <a href="register">Don't have an account?</a>
+            <a href="register"><button>Sign up</button></a>
+        </div>
+    </nav>
+    <main>
+        <div class="signin-illustration">
+            <img src="{% static '/images/signin.png' %}" alt="illustration">
+        </div>
+        <div class="signin-text">
+            <form action="login" method="POST">
+                {% csrf_token %}
+                <h1>Welcome back!</h1>
+                <div>
+                    {% for message in messages %}
+                   <h3 style="text-align:center; color:#721121;"> {{message}}</h3>
+                   {% endfor %}
+               </div>
+               <div class="input-container">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username"  placeholder="JohnDoe23" required>
+            </div>
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="password" name="password1" id="password" placeholder="Enter Password" required>
+                <i class="fa-regular fa-eye-slash"></i>
+            </div>
+                <div class="remember-pwd">
+                    <div class="remember">
+                        <input type="checkbox" name="remember-me" id="remember-me" value="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#">Forgot password?</a>
+                
+                </div>
+                <<button>Sign In</button>
+            </form>
+                <!-- new additions -->
+            <div class="continue-with">
+                <span class="line"></span>
+                <p>or continue with</p>
+                <p>or</p>
+                <span class="line"></span>
+            </div>
+            <div class="other-options">
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-apple"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <p class="terms">By signing up ,you agree to our <a href="#"> Terms of Service</a> and have read and acknowledge our <a href="#">Privacy Policy</a></p>
+        </div>
+    </main>
+    <script>
+       let menu = document.querySelector('.menu-button');
+        function openMenu (){
+            let navLink = document.querySelector('.navlink');
+
+            if (navLink.style.flexDirection !== 'column' && navLink.style.display === 'flex'){
+                navLink.style.display = 'none';
+                console.log(true)
+            }else{
+                navLink.style.flexDirection === 'column';
+                navLink.style.display = 'flex';
+                console.log(false)
+            }
+        };
+
+        menu.addEventListener('click', (e) =>{
+            e.preventDefault();
+        });
+    </script>
 </body>
 </html>

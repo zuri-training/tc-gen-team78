@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi</h1>
+    <div class="container d-flex justify-content-center mt-5" style="width: 25%;">
+        <div class="col mt-5">
+            <form action="" method="post">
+                {% csrf_token %}
+                <table class="table">
+                    {{form.as_table}}
+                </table>
+                <div class="container d-flex justify-content-center" style="width: 10%;">
+                    <input type="submit" class="btn btn-primary btn-lg" value="Submit" style="margin-right: 30px; margin-top: 30px;">
+                </div>    
+            </form> 
+    
+        </div>
+    </div>
+</body>
+</html>
