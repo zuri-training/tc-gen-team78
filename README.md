@@ -1,13 +1,16 @@
 
-# Terms and conditions generator (team 78 )
+# Terms and conditions generator (team 78)
 terms &amp; condition and privacy policy generator website
 
-#### Figma link: ####
+#### Figma link : ####
 
 https://www.figma.com/file/WyPtWwHOKm6KygXVwTNlFC/Untitled
 
 #### Database schema link : ####
 https://drive.google.com/file/d/14_jTfib2HMaBypBrAHfZqHCMTTYOvs5G/view?usp=drivesdk
+
+#### Live app link: ####
+http://tcgen.herokuapp.com
 
 # Projects Overview
 
