@@ -3,7 +3,7 @@
 terms &amp; condition and privacy policy generator website
 
 #### Figma link : ####
-[Figma board]
+[ Figma board ]
 (https://www.figma.com/file/WyPtWwHOKm6KygXVwTNlFC/Untitled)
 
 #### Database schema link : ####
