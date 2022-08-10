@@ -1,0 +1,340 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="stylesheet" href="{% static '/css/landing.css' %}">
+    <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="landing-pg">
+    <header>
+        <nav>
+            <div class="mobile-menu">
+                <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px">
+                <a href="" class="hamburger" onclick="toggleMenu()">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                </a>
+
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Products</a></li>
+                <li><a href="/account/team">Our team</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="nav-btns">
+                {% if user.is_authenticated %}
+                <a href="/account/logout"><button class="btn-1">Logout</button></a>
+                {% else %}
+                <a href="/account/login"><button class="btn-1">Login</button></a>
+                <a href="/account/register"><button class="btn-2">Get Started</button></a>
+                {% endif %}
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>No more <br>legal hassles</h1>
+                <p>78TC_GEN is an easy-to-use tool dedicated to establishing and maintaining your brand's Terms and
+                    Conditions and Privacy Policy in a centralized location. <br>
+                    Ideally the best for all businesses and personal brands.
+                    Stressless, Smooth, Free and Easy to understand!</p>
+                <a href="/account/userlogged"><button>Get Started</button></a>
+            </div>
+            <div class="hero-img">
+                <img src="{% static '/assets/hero-image.svg' %}" alt="hero-page image">
+            </div>
+        </section>
+        <section class="justification">
+            <div class="just-text">
+                <h2>Why you need Terms and conditions and Privacy Policies documentation</h2>
+                <p>All websites interact with and collect data about their visitors in one way or another. This is even
+                    more applicable in the case of an e-commerce store. E-commerce sites typically collect personal data
+                    like names, email address, IP addresses, session activity and payment details, to name a few. For
+                    this reason, a privacy policy is vital as it protects website owners and customers alike, while also
+                    ensuring that your website complies with legal obligations.</p>
+            </div>
+        </section>
+        <section class="our-services">
+            <div class="services-container">
+                <h2>Our Services</h2>
+                <p class="desc">The easiest ways to create your own terms and conditions, or privacy policy for your
+                    website or app.</p>
+                <div class="template-container">
+                    <div class="template-card">
+                        <img src="{% static '/assets/terms-and-condition 1.svg' %}" alt="terms-and-condition icon">
+                        <h4>Terms & Conditions <br> Generator</h4>
+                        <p>The easy to use generator will help you craft professional legal working in minutes.</p>
+                    </div>
+                    <div class="template-card">
+                        <img src="{% static '/assets/shield (1) 1.svg' %}" alt="shield icon">
+                        <h4>Privacy Policy <br> Generator</h4>
+                        <p>The easy to use generator will help you craft professional legal working in minutes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="how-it-works">
+                <h2>How it works?</h2>
+                <p class="subheading">The easiest ways to create your own terms and conditions, or privacy policy for
+                    your website or app.</p>
+                <div class="frame-container">
+                    <div class="frame">
+                        <img src="{% static '/assets/small-tick.svg' %}" alt="tick">
+                        <p>Choose the type of business you are generating the t&c or privacy policy for</p>
+                    </div>
+                    <div class="frame">
+                        <img src="{% static '/assets/small-tick.svg' %}" alt="tick image">
+                        <p>Give us your website details</p>
+                    </div>
+                    <div class="frame">
+                        <img src="{% static '/assets/small-tick.svg' %}" alt="tick image">
+                        <p>Tell us the information you collect from your users</p>
+                    </div>
+                    <div class="frame">
+                        <img src="{% static '/assets/small-tick.svg' %}" alt="tick image">
+                        <p>Generate your T&C</p>
+                    </div>
+                    <div class="frame">
+                        <img src="{% static '/assets/small-tick.svg' %}" alt="tick image">
+                        <p>Preview before download</p>
+                    </div>
+                </div>
+            </div>
+            <a href="/account/register"><button>Start Generating</button></a>
+        </section>
+        <section class="about-us">
+
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="{% static '/assets/about-us-illustration.svg' %}" alt="about-us illustration">
+                </div>
+                <div class="about-txt">
+                    <h2>ABOUT US</h2>
+                    <p>78TC_GEN is a website that creates Terms and Conditions and Privacy Policies for all kinds of
+                        businesses and individual purposes.
+                        We make production of Terms and Conditions simple and accessible to businesses and individuals.
+                        <br><br> With the use of our services we enable millions of users around the globe equip
+                        themselves with practical and success-driven Terms and Condition and Privacy Policy that will
+                        aid their customers in understanding the dos and don’ts of their enterprises. <br> <br>With
+                        78TC_GEN, Terms and Conditions and Privacy Policies can easily be downloaded, exported and
+                        shared without any struggle or hassles.</p>
+                    <a href="/account/register"><button>Start Generating</button></a>
+                </div>
+            </div>
+
+        </section>
+        <section class="importance">
+            <div class="importance-container">
+
+                <div class="about-txt">
+                    <h2>Why is privacy <br> policy important?</h2>
+                    <p>Privacy Policies saves a lot of stress and headache. Imagine having to pay fines for not having a
+                        Privacy Policy. That is how important having a privacy policy is.
+                        <br><br>If you have a website, app, ecommerce store or Saas app, chances are you need a Privacy
+                        Policy. Get caught without one and you risk some huge fines. But where do you start? If you're
+                        not a lawyer, it can feel like you're lost in some legal jargon and technical nonsense. That's
+                        where we come in. Try out our free and easy to use Privacy Policies with zero percent stress.
+                    </p>
+                </div>
+                <div class="importance-img">
+                    <img src="{% static '/assets/questions.svg' %}" alt="illustration">
+                </div>
+            </div>
+
+        </section>
+        <section class="unique">
+            <h2>What makes us unique?</h2>
+            <div class="unique-container">
+                <div class="unique-card a">
+                    <img src="{% static '/assets/lightning-icon.svg' %}" class="unique-img">
+                    <h4>Easy to use</h4>
+                    <p>We make the generation of of T& C easy by converting details inputted by our users to build a
+                        suiting T&C or Privacy Policy template for diffrent business types.</p>
+                </div>
+                <div class="unique-card b">
+                    <img src="{% static '/assets/cycle.svg' %}" alt="icon" class="unique-img">
+                    <h4>Constant Updates</h4>
+                    <p>We review all policies periodically and contact our users when a revision is necessary. Our
+                        system offers regular upgrades and features that retain user commitment.</p>
+                </div>
+                <div class="unique-card c">
+                    <img src="{% static '/assets/customization.svg' %}" alt="" class="unique-img">
+                    <h4>Manual and easy customization</h4>
+                    <p>Your policies may be manually modified and customized. You can also download your policies in the
+                        following formats.PDF,DOCX,TXT, and HTML.</p>
+                </div>
+                <div class="unique-card d">
+                    <img src="{% static '/assets/inteerface 1.svg' %}" alt="" class="unique-img">
+                    <h4>Easy and understandable interface</h4>
+                    <p>Our user Friendly interface makes its simple for users to interact with our website,which makes
+                        websiten navigation easier and suitable for their needs.</p>
+                </div>
+            </div>
+            <a href="/account/register"><button>Start Generating</button></a>
+        </section>
+        <section class="core-ft">
+            <h2>SOME CORE FEATURES</h2>
+            <div class="feature-con">
+                <div class="ft-txt">
+                    <h3>PRIVACY POLICY WITH GLOBAL COVERAGE</h3>
+                    <p>
+                        We have made an investment to make our automatically generated policies simple to read while
+                        also guranteeing that they uphold the high standard you would pay thousands for elsewhere,
+                        making it possible to customize an extensive policy to suit your website no matter where you are
+                        in the Globe.
+                        We are not just the best because we offer T and C templates we are the best because we offer
+                        quality terms and condition service to our user giving room for global coverage.
+                    </p>
+                </div>
+                <div class="ft-img">
+                    <img src="{% static '/assets/core-features-illustration.svg' %}" alt="illustration" class="">
+                </div>
+            </div>
+
+            <div class="feature-con">
+                <div class="ft-img">
+                    <img src="{% static '/assets/all-app-illustration.svg' %}" alt="illustration" class="">
+                </div>
+                <div class="ft-txt">
+                    <h3>CUSTOM MADE T&Cs FOR ALL APPLICATIONS</h3>
+                    <p>
+                        78TC_Gen offers T& C(s) made for all application be it Mobile,Desktop or Tablet is what . We
+                        have different T&C(s) for every of our users, making each of our generated T&C unique and
+                        Dynamic. Meaning, there is no limitation to what you can get as regards generating terms and
+                        condition for your business.
+                    </p>
+                </div>
+            </div>
+            <div class="feature-con">
+                <div class="ft-txt">
+                    <h3>DOWNLOAD YOUR PRIVACY POLICIES, T & Cs WITH EASE</h3>
+                    <p>With our download features you have the liberty to download your legal documents to your
+                        preferred location without stress. All plans have being made to make sure you have a seemless
+                        experience while downloading your legal documents.</p>
+                </div>
+                <div class="ft-img">
+                    <img src="{% static '/assets/download-pp-tc.svg' %}" alt="illustration" class="">
+                </div>
+            </div>
+        </section>
+        <section class="samples">
+            <div class="tpl-samples">
+                <h3>SAMPLES OF OUR UNIQUE SERVICE</h3>
+                <div class="tpl-wrapper">
+                    <div class="tpl t-1">
+                        <img src="{% static '/assets/pp-sample.png' %}" alt="Generated privacy policy sample" class="">
+                    </div>
+                    <div class="tpl t-2">
+                        <img src="{% static '/assets/tc-sample.png' %}" alt="Generated T&C sample " class="">
+                    </div>
+                </div>
+            </div>
+            <a href="/account/register"><button>Generate yours <i style="color: #fff;"
+                        class="fa-solid fa-arrow-right"></i></button></a>
+        </section>
+        <!--- <section class="reviews">
+            <h2>REVIEWS FROM OUR CLIENTS</h2>
+            <div class="review-wrapper">
+                <div class="review-card">
+                    <img src="./assets/dave-highton.png" alt="client's image" class="client-img">
+                    <h3>Dave Highton</h3>
+                    <h5>Business Man</h5>
+                    <p>Generating T & C for my business was a difficult thing for me, but when I came across your website you guys made it easy. Good Job!
+                    </p>
+                    <div class="stars">
+                        <img src="./assets/review-stars.svg" alt="review-stars">
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="./assets/mary-jacob.png" alt="client's image" class="client-img">
+                    <h3>Mary Jacob</h3>
+                    <h5>Automobile Dealer</h5>
+                    <p>Honestly, I had been contemplating on how to generate T& C, but you guys made stress-free it to generate T&C for my business. Great Job!
+                    </p>
+                    <div class="stars">
+                        <img src="./assets/review-stars.svg" alt="review-stars">
+                    </div>
+                </div>
+                <div class="review-card">
+                    <img src="./assets/jenny-wilson.png" alt="client's image" class="client-img">
+                    <h3>Jenny Wilson</h3>
+                    <h5>Fashion Designer</h5>
+                    <p>Using your website to generate T&C is one of the best things that has ever to me and my business. Good Job!
+                    </p>
+                    <div class="stars">
+                        <img src="./assets/perfect-stars.svg" alt="review-stars">
+                    </div>
+                </div>
+            </div>
+        </section>--->
+    </main>
+    <footer>
+        <div class="footer-main">
+            <div class="footer-logo">
+                <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
+            </div>
+            <div class="footer-links">
+                <div class="footer-just">
+                    <h6>Why 78TC GEN?</h6>
+                    <ul>
+                        <li><a href='#'>Resources</a></li>
+                        <li><a href='#'>Blog</a></li>
+                        <li><a href='#'>Help center</a></li>
+                        <li><a href='#'>Academy</a></li>
+                        <li><a href='#'>Glossary</a></li>
+                        <li><a href='#'>Plugins</a></li>
+                        <li><a href='#'>API docs</a></li>
+                        <li><a href='#'>Status</a></li>
+                        <li><a href='#'>Find an Expert</a></li>
+                        <li><a href='#'>Product Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-prd-sev">
+                    <h6>Products & Services</h6>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Enterprise offer</a></li>
+                        <li><a href="#">Service Lab</a></li>
+                        <li><a href="#">Partner with us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-who">
+                    <h6>Who we are</h6>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Our carbon footprint</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                    <div class="footer-socials">
+                        <a href=""><i class=""></i></a>
+                        <a href=""><i class=""></i></a>
+                        <a href=""><i class=""></i></a>
+                        <a href=""><i class=""></i></a>
+                        <a href=""><i class=""></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-minor">
+            <p><a href="">Cookies Settings,</a><a href=""> Anti-Spam, </a><a href="">Privacy Policy, </a><a href="">User
+                    agreement</a><a href=""> Legal Notice and Responsible Disclosure</a></p>
+            <p>(C) <span class="year"></span> *****. All rights reserved</p>
+        </div>
+
+    </footer>
+    <script src="{% static '/JS/landing.js' %}"></script>
+</body>
+
+</html>

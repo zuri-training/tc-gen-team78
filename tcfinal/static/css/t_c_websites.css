@@ -1,0 +1,33 @@
+.container {
+    padding-block: 2rem;
+    padding-inline: 10rem;
+    width: calc(100% - 15rem);
+    margin: 0 auto;
+    border: 1rem solid orange;
+}
+
+.terms {
+    padding-inline-start: 3rem;
+}
+
+.pg-header{
+    padding-block-start: 4rem;
+}
+h1 {
+    text-align: center;
+
+}
+
+.span_emp {
+
+    color: navy;
+}
+p,li {
+    text-align: justify;
+}
+
+.btn {
+    width: 8rem;
+    height: 2rem;
+    padding: .2rem;
+}  
