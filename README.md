@@ -3,14 +3,16 @@
 terms &amp; condition and privacy policy generator website
 
 #### Figma link : ####
-
-https://www.figma.com/file/WyPtWwHOKm6KygXVwTNlFC/Untitled
+[Figma board]
+(https://www.figma.com/file/WyPtWwHOKm6KygXVwTNlFC/Untitled)
 
 #### Database schema link : ####
-https://drive.google.com/file/d/14_jTfib2HMaBypBrAHfZqHCMTTYOvs5G/view?usp=drivesdk
+[Link to Database schema]
+(https://drive.google.com/file/d/14_jTfib2HMaBypBrAHfZqHCMTTYOvs5G/view?usp=drivesdk)
 
 #### Live app link: ####
-http://tcgen.herokuapp.com
+[78tcgen app]
+(http://tcgen.herokuapp.com)
 
 # Projects Overview
 
