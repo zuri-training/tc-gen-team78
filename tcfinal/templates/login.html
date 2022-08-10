@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+    <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <a href="/"><img src="{% static '/images/Logo.svg' %}" alt="logo"></a>
+        <div class="navlink">
+            <a href="register">Don't have an account?</a>
+            <a href="register"><button>Sign up</button></a>
+        </div>
+    </nav>
+    <main>
+        <div class="signin-illustration">
+            <img src="{% static '/images/Man logging into his account on phone.png' %}" alt="illustration">
+        </div>
+        <div class="signin-text">
+            <form action="login" method="POST">
+                {% csrf_token %}
+                <h1>Welcome back!</h1>
+                <div>
+                    {% for message in messages %}
+                   <h3 style="text-align:center; color:#721121;"> {{message}}</h3>
+                   {% endfor %}
+               </div>
+                <div class="input-container">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username"  placeholder="JohnDoe23" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" name="password1" id="password" placeholder="Enter Password" required>
+                    <i class="fa-regular fa-eye-slash"></i>
+                </div>
+                <div class="remember-pwd">
+                    <div class="remember">
+                        <input type="checkbox" name="remember-me" id="remember-me" value="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#">Forgot your password?</a>
+                </div>
+                <button>Sign In</button>
+            </form>
+           
+            <div class="continue-with">
+                <span class="line"></span>
+                <p>or continue with</p>
+                <span class="line"></span>
+            </div>
+            <div class="other-options">
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-apple"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <p class="terms">By signing up ,you agree to our <a href="#"> Terms of Service</a> and have read and acknowledge our <a href="#">Privacy Policy</a></p>
+        </div>
+    </main>
+</body>
+</html>
