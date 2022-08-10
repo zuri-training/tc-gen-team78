@@ -17,6 +17,8 @@ from django.db.models.query_utils import Q
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
+from django.urls import reverse_lazy
+from django.views.generic import UpdateView, DetailView
 
 from .forms import PostForm
 
@@ -24,6 +26,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth.decorators import login_required
 
+# Create your views here.
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -36,7 +39,7 @@ def login(request):
             auth.login(request, user)
             return redirect("userlogged")
         else:
-            messages.error(request, 'invalid login credentials')
+            messages.error(request, 'Invalid login credentials')
             return redirect('login')
     else:
         return render(request, 'login.html')
@@ -77,12 +80,9 @@ def userlogged(request):
     
     return render(request, "user-dashboard.html")
 
-
-def team(request):
+def teamdetails(request):
     
-    return render(request, "team.html")
-
-
+    return render(request, "team_page.html")
 
 @login_required(login_url="login")
 def new(request):
@@ -101,8 +101,7 @@ def new(request):
                 return redirect("/account/template")
         else:
             form = PostForm()
-            
-        return render(request, "posts/new.html", {"form": form})
+        return render(request, "tcform.html", {"form": form})
     else:
         return redirect('first')
 
@@ -111,50 +110,9 @@ def template(request):
     
     context = {
         'users': User.objects.all(),
-        'posts': Post.objects.all()
+        'posts': Post.objects.all(),
     }
-
-    # users = User.objects.all()
-    
-
-    # return render(request, "posts/template.html")
     return render(request, "posts/template.html", context)
-
-@login_required(login_url="login")
-def tcgenerated(request):
-    
-    context = {
-        'users': User.objects.all(),
-        'posts': Post.objects.all()
-    }
-
-    # users = User.objects.all()
-    
-
-    # return render(request, "posts/template.html")
-    return render(request, "posts/tcgenerated.html", context)
-
-@login_required(login_url="login")
-def temp(request, slug_text):
-    
-    q = Post.objects.filter(slug = slug_text)
-    if q.exists():
-        q = q.first()
-    else:
-        return HttpResponse("Page not found error")
-
-    users = User.objects.all()
-    
-    # context = {
-    #     'users': User.objects.all(),
-    #     # 'posts': Post.objects.get(id=  pk_test)
-    # }
-
-    # users = User.objects.all()
-    
-
-    # return render(request, "posts/template.html")
-    return render(request, "posts/temp.html", {'q':q, 'users':users})
 
 @login_required(login_url="login")
 def templated(request, slug_text):
@@ -165,22 +123,41 @@ def templated(request, slug_text):
         return HttpResponse("Page not found error")
 
     users = User.objects.all()
-    
-    # context = {
-    #     'users': User.objects.all(),
-    #     # 'posts': Post.objects.get(id=  pk_test)
-    # }
-
-    # users = User.objects.all()
-    
-
-    # return render(request, "posts/template.html")
     return render(request, "posts/templated.html", {'q':q, 'users':users})
 
 
-# class PostDetailView(DetailView):
-#     model = Post
-#     template_name = 'post_detail.html'
+def delete_template(request, slug_text):
+    post = Post.objects.filter(slug = slug_text)
+    post.delete()
+    return render(request, "posts/template.html")
+
+def temp2(request, slug_text):
+    q = Post.objects.filter(slug = slug_text)
+    users = User.objects.all()
+    return render(request, "temp2.html", {'q':q})
+
+def profile(request):
+    return render(request, "profile.html")
+
+def faq(request):
+    return render(request, "faq.html")
+
+def draft(request):
+    
+    context = {
+        'users': User.objects.all(),
+        'posts': Post.objects.all(),
+    }
+    return render(request, "draft.html", context)
+
+class PostUpdateView(UpdateView):
+    model = Post
+    template_name = 'blog/post_form.html'
+
+    fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording']
+    success_url = reverse_lazy('draft')
+   
+
 
 def password_reset_request(request):
     if request.method =='POST':
@@ -215,8 +192,6 @@ def password_reset_request(request):
     
     return render(request, 'password_reset/password_reset_form.html', context)
 
-def profile(request):
-    return render(request, "profile.html")
 
 
 
