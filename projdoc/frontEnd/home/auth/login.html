@@ -1,4 +1,3 @@
-<!--changed the codes to align with figma design and added image-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,11 @@
 </head>
 <body>
     <nav>
-        <img src="./images/Logo.svg" alt="logo">
+           <!-- new additions -->
+        <div class="mobile-nav">
+            <img src="./images/Logo.svg" alt="logo">
+            <a href="" onclick="openMenu()" class="menu-button"><img src="./images/menu.png" alt="menu button"></a>
+        </div>
         <div class="navlink">
             <a href="#">Don't have an account?</a>
             <a href="#"><button>Sign up</button></a>
@@ -38,13 +41,16 @@
                         <input type="checkbox" name="remember-me" id="remember-me" value="remember-me">
                         <label for="remember-me">Remember me</label>
                     </div>
-                    <a href="#">Forgot your password?</a>
+                    <a href="#">Forgot password?</a>
+                
                 </div>
                 <a href="#"><button>Sign In</button></a>
             </form>
+                <!-- new additions -->
             <div class="continue-with">
                 <span class="line"></span>
                 <p>or continue with</p>
+                <p>or</p>
                 <span class="line"></span>
             </div>
             <div class="other-options">
@@ -55,5 +61,24 @@
             <p class="terms">By signing up ,you agree to our <a href="#"> Terms of Service</a> and have read and acknowledge our <a href="#">Privacy Policy</a></p>
         </div>
     </main>
+    <script>
+       let menu = document.querySelector('.menu-button');
+        function openMenu (){
+            let navLink = document.querySelector('.navlink');
+
+            if (navLink.style.flexDirection !== 'column' && navLink.style.display === 'flex'){
+                navLink.style.display = 'none';
+                console.log(true)
+            }else{
+                navLink.style.flexDirection === 'column';
+                navLink.style.display = 'flex';
+                console.log(false)
+            }
+        };
+
+        menu.addEventListener('click', (e) =>{
+            e.preventDefault();
+        });
+    </script>
 </body>
 </html>

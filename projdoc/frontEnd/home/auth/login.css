@@ -66,6 +66,10 @@ nav a{
     background-color: transparent;
 }
 
+.mobile-nav .menu-button{
+    display: none;
+}
+
 /* Main */
 
 main{
@@ -81,6 +85,10 @@ main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a
 .signin-illustration, .signin-text{
     height: auto;
     width: 588px;
+}
+
+.signin-illustration{
+    margin-right: 24px;
 }
 
 .input-container{
@@ -150,7 +158,7 @@ form button{
 }
 
 .line{
-    width: 37.3%;
+    width: 33%;
     height: 2px;
     background-color: #d9d9d9;
 }
@@ -159,9 +167,13 @@ form button{
     width: 100%;
 }
 
-.continue-with p{
+.continue-with p:first-of-type{
     text-align: center;
     padding:0 8px;
+}
+
+.continue-with p:last-of-type{
+    display: none;
 }
 
 .terms{
@@ -190,7 +202,7 @@ form button{
 .other-options a i{
     color: #721121;
 }
-
+/* worked on the responsiveness*/
 
 @media (max-width: 835px){
     nav{
@@ -229,11 +241,76 @@ form button{
     }
 }
 
-@media (max-width: 360px){
+@media (max-width: 375px){
     nav{
         padding: 10px;
+        flex-direction: column;
+    }
+    .navlink{
+        width: 90%;
+        margin: 0 auto;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navlink a button{
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-top: 1rem;
+    }
+    .navlink a:nth-of-type(odd){
+        font-size: 16px;
+    }
+    .mobile-nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .mobile-nav .menu-button{
+        display: flex;
+    }
+    .remember{
+        justify-content: space-between;
     }
     .other-options{
-        display: block;
+        width: 200px;
+    }
+    h1{
+        font-size: 35px;
+        width: 328px;
+        line-height: 56px;
+        font-weight: 700
+    }
+    .input-container{
+        margin-bottom: 24px;
+    }
+    .input-container input, ::placeholder{
+        padding: 16px;
+    }
+    .input-container label{
+        font-size: 16px;
+    }
+    .remember input:where([type='checkbox']){
+        width: 24px;
+        height: 24px;
+    }
+    .remember-pwd a, .remember label{
+        font-size: 14px;
+    }
+    .continue-with p:first-of-type{
+        display: none;
+    }
+    .continue-with p:last-of-type{
+        display: flex;
+    }
+    .line{
+        margin: 0 auto;
+    }
+    .terms {
+        font-size: 12px !important;
+        width: 90%;
+      
+    
     }
 }

@@ -1,0 +1,85 @@
+<body>
+  <h1> HOSPITAL PRIVACY POLICY</h1>
+  <h2>WHAT INFORMATION DO WE COLLECT?</h2>
+  <p>
+    We collect information from you when you register on our site or subscribe
+    to our newsletter. When ordering or registering on our site, as appropriate,
+    you may be asked to enter your: name or e-mail address. You may, however,
+    visit our site anonymously.
+  </p>
+  <br />
+  <h2>WHAT DO WE USE YOUR INFORMATION FOR?</h2>
+  <p>
+    Any of the information we collect from you may be used in one of the
+    following ways:
+  </p>
+  <ul>
+    <li>
+      To personalize your experience (your information helps us to better
+      respond to your individual needs)
+    </li>
+    <li>
+      To improve our website (we continually strive to improve our website
+      offerings based on the information and feedback we receive from you)
+    </li>
+    <li>
+      To improve customer service (your information helps us to more effectively
+      respond to your customer service requests and support needs)
+    </li>
+    <li>
+      To send periodic emails The email address you provide may be used to send
+      you information, respond to inquiries, and/or other requests or questions.
+    </li>
+  </ul>
+  <br />
+  <h2>HOW DO WE PROTECT YOUR INFORMATION?</h2>
+  <p>
+    We implement a variety of security measures to maintain the safety of your
+    personal information when you enter, submit, or access your personal
+    information.
+  </p>
+  <br />
+  <h2>DO WE USE COOKIES</h2>
+  <p>This website does not use cookies.</p>
+  <p>
+    Yes we do. The information that is collected through cookies at this site is
+    handled in the same manner as other information collected here. You can
+    configure your web browser to refuse cookies or to notify you when a web
+    site attempts to send you a cookie. You can also check your hard drive for
+    cookie files and delete them from your computer.
+  </p>
+  <br />
+  <h2>DO WE DISCLOSE ANY INFORMATIONTO OUTSIDE PARTIES?</h2>
+  <p>
+    We do not sell, trade, or otherwise transfer to outside parties your
+    personally identifiable information. This does not include trusted third
+    parties who assist us in operating our website, conducting our business, or
+    servicing you, so long as those parties agree to keep this information
+    confidential. We may also release your information when we believe release
+    is appropriate to comply with the law, enforce our site policies, or protect
+    ours or others rights, property, or safety. However, non-personally
+    identifiable visitor information may be provided to other parties for
+    marketing, advertising, or other uses.
+  </p>
+  <br />
+  <h2>THIRD PARTY LINKS</h2>
+  <p>
+    Occasionally, at our discretion, we may include or offer third party
+    products or services on our website. These third party sites have separate
+    and independent privacy policies. We therefore have no responsibility or
+    liability for the content and activities of these linked sites. Nonetheless,
+    we seek to protect the integrity of our site and welcome any feedback about
+    these sites.
+  </p>
+  <br />
+  <h2>ONLINE PRIVACY POLICY ONLY</h2>
+  <p>
+    This online privacy policy applies only to information collected through our
+    website and not to information collected offline (if any).
+  </p>
+  <br />
+  <p>Hospital Name: [COMPANY NAME]</p>
+  <p>Email: [COMPANY EMAIL]</p>
+  <p>Address: [COMPANY ADDRESS]</p>
+  <p>Telephone: [COMPANY PHONE]</p>
+</body>

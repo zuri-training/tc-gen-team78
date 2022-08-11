@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>T & C Policies Generator</title>
+        <title>Privacy Policies Generator</title>
         <meta name = "viewport" content = "width = device-width, initial-scale=1.0">
         <link href = "https://fonts.googleapis.com/css?family=Raleway" rel = "stylesheet">
-        <link href = "./css/t_c_create.css" rel = "stylesheet">
+        <link href =  './css/t_c_create.css' rel='stylesheet'>
     </head>
 
 <body>
@@ -20,24 +20,30 @@
             </nav>
         </header>
         <main class = 'container'>
-             <h1>Terms and Conditions Generator</h1>
+             <h1>Privacy Policy Generator</h1>
             <section class = 'p-ind'>
-                <span class="step">1
+                <div class = 'aaa'>
+                    <span class="step">1</span>
                     <small class = 'prog-title'>Business Information</small>
-                     </span>
-                        <span class="step">2
-                            <small class = 'prog-title'>Business Practices</small></span>
-                                <span class="step">3
-                                     <small class = 'prog-title'>Additional Practices</small>
-                                        </span>
-                                     <span class="step">4
-                                <small class = 'prog-title'>Preview Policy</small>
-                             </span>
-                        <span class="step">5
-                    <small class = 'prog-title'>Generate Policy</small>
-                </span> 
+                </div>
+                <div class = 'aaa'>
+                    <span class="step">2</span>
+                    <small class = 'prog-title'>Business Practices</small>
+                </div>
+                <div class = 'aaa'>
+                    <span class="step">3</span>
+                    <small class = 'prog-title'>Additional Practices</small>
+                </div>
+                <div class = 'aaa'> 
+                    <span class="step">4</span>
+                    <small class = 'prog-title'>Preview Policy</small>
+                </div>
+                <div class = 'aaa'>
+                    <span class="step">5</span>
+                    <small class = 'prog-title'>Generate Policy</small> 
+            </div>
             </section>
-        <form id="tcgenForm" name = 'TCGENFORM' action="." method = "POST">
+        <form id="pgenForm" name ='PGENFORM' action="." method = "POST">
                 <!-- One "tab" for each step in the form: -->      
                 <section class="tab">
                     <h2 class = 'quiz'>Help us know your business</h2>
@@ -107,90 +113,127 @@
 
         <!-- Business Practices Sections begins here -->
 
-            <section class="tab"> 
-                  <h3 class = 'quiz'>
-                     Can users create accounts?
-                  </h3><br>
-                        <section class = 'items-radio'>   
-                            <input class = 'usr_acct' type = "radio" name = "usr_acct" id="usr_acct_yes" value="Yes" checked/>
-                                <label for = "usr_accts_yes">Yes,users can create accounts</label>
-                                    </section>
-                                     <section class = 'items-radio'>
-                                <input type="radio" name="usr_acct" id="usr_acct_no" value="No"/>
-                            <label for = "usr_accts_no">No</label>
-                        </section>  
-                    <h3 class = 'quiz'>
-                        Can users create and/or upload content (i,e text,images etc)?
-                    </h3><br>
-                        <section class = 'items-radio'>
-                            <input class = "usr_uploads" type="radio" name="usr_uploads" id="usr_uploads_yes" value="Yes" checked/>
-                                <label for = "usr_uploads_yes">Yes,users can create and/or content</label>
-                                    </section>    
-                                    <section class = 'items-radio'>
-                                <input class = "usr_uploads" type="radio" name="usr_uploads" id="usr_uploads_no" value="No"/>
-                            <label for = "usr_uploads_no">No</label>
-                        </section>       
-                    <h3 class = 'quiz'>
-                        Can users buy goods (products,items)?
-                    </h3><br/>
-                        <section class = 'items-radio'>
-                            <input class = "usr_buy" type="radio" name="usr_buy" id="usr_buy_yes" value="Yes" checked/>
-                                <label for = "usr_buy_yes">Yes,users can buy goods,items or services (one-time payment only)</label>
-                                    </section>    
-                                    <section class = 'items-radio'>
-                                <input class = "usr_buy" type="radio" name="usr-buy" id="usr_buy_no" value="No"/>
-                            <label for = "usr_buy_no">No</label>
-                        </section>      
+             <section class="tab"> 
+                        <p>
+                        <h3 class = 'quiz'>What personal information do you collect from your users?</h3>
+                            <small>Click all that apply(skip if none apply to you</small> </p><br>
+                            <section class = 'items-radio'>
+                                <input class =  "usrnames" type="checkbox" name="usrnnames" id="usrnames">
+                                    <label for = "ursnames">First name and Last name</label>
+                                        </section>    
+                                        <section class = 'items-radio'>
+                                    <input class = "usr_email" type="checkbox" name="urs_email"  name="usr_emai" id="usr_email">
+                                <label for = "usr_email">Email address</label> 
+                            </section>
+                            <section class = 'items-radio'>
+                                <input class =  "usr_phone" type="checkbox" name="usr_phone" name="usr_phone" id="usr_phone">
+                                    <label for = "usr_phone">Phone number</label>
+                                        </section>    
+                                        <section class = 'items-radio'>
+                                    <input class = "usr_address" type="checkbox" name="usr_address" id="usr_address" >
+                                <label for = "usr_address">Address,state,province,zip/postal code,city</label> 
+                            </section>
+
+                            <section class = 'items-radio'>
+                                <input class =  "usr_social" type="checkbox" name="usr_social" name="usr_social" id="usr_social">
+                                    <label for = "usr_phone">Social media profile information(i.e from connection with facebook,sign in with twitter)</label>
+                                        </section>
+                            <p>
+                            <section class ='items'>
+                                <label for = "others">Others (fill if applicable)</label>
+                                <input class = "inputs p-text" type = "textarea" name = "others" id = "others" placeholder = "Other Providers"/> 
+                            </section>
+                             </p><br/>
                         <h3 class = 'quiz'>
-                         Do you offer subscription plans?
+                         Do you use tracking and/or analytics tools,such as Google Analytics?
                          </h3><br />
                         <section class = 'items-radio'>
-                            <input class = "usr_sub_plan" type="radio" name="usr_sub_plan" id="usr_sub_plan_yes" value="Yes" checked/>
-                                <label for = "usr_sub_plan_yes">Yes,we offer subscription plans</label>
+                            <input class = "tracking" type="radio" name="tracking" id="tracking_yes" value="Yes" checked/>
+                                <label for = "tracking_yes">Yes,we use Google Analytics or other related tools</label>
                                     </section>    
                                     <section class = 'items-radio'>
-                                <input class = "usr_sub_plan" type="radio" name="usr_sub_plan" id="usr_sub_plan_no" value="No"/>
-                            <label for = "usr_accts_no">No</label>
+                                <input class = "tracking" type="radio" name="tracking" id="tracking_no" value="No"/>
+                            <label for = "tracking_no">No</label>
                         </section>    
+
                         <h3 class = 'quiz'>
-                        Do you want to make it clear that your own content & trademarks are your exclusive property?
+                        Do you send emails to users?
                         </h3><br/>
                         <section class = 'items-radio'>
-                            <input class = "trademarks" type="radio" name="trademarks" id="trademarks_yes" value" value="Yes" checked/>
-                                <label for = "trademarks_yes">Yes,our content (logo,visual designs,trademarks etc) is/are our exclusive property</label><br>
+                            <input class = "send-emails" type="radio" name="send_emails" id="send_emails_yes" value" value="Yes" checked/>
+                                <label for = "send_emails_yes">Yes,we send emails to users or users can opt-in to receive emails from us</label><br>
                                     </section>    
                                     <section class = 'items-radio'>
-                                <input class = "trademarks" type="radio" name="trademarks" id="trademarks_no" value="No"/>
-                            <label for = "trademarks_no">No</label>
+                                <input class = "send_emails" type="radio" name="send_emails" id="send_emails_no" value="No"/>
+                            <label for = "sens_emails_no">No</label>
                             </section>
+
+                            <h3 class = 'quiz'>
+                                Do you show ads?
+                                </h3><br/>
+                                <section class = 'items-radio'>
+                                    <input class = "ads" type="radio" name="ads" id="ads_yes" value="Yes" checked/>
+                                        <label for = "ads_yes">Yes,we show ads</label>
+                                            </section>    
+                                            <section class = 'items-radio'>
+                                        <input class = "ads" type="radio" name="ads" id="ads_no" value="No"/>
+                                    <label for = "ads_no">No</label>
+                                </section>        
+
                         <h3 class = 'quiz'>
-                        If users provide you feedback & suggestions,do you want to use their feedback without compensation or credit given?
+                        Can users pay for products or services?
                         </h3><br/>
                         <section class = 'items-radio'>
-                            <input class = "feedback" type="radio" name="feedback" id="feedback_yes" value="Yes" checked/>
-                                <label for = "feedback_yes">Yes,we may implement any feedback or suggestions we receive</label>
+                            <input class = "payment" type="radio" name="payment" id="payment_yes" value="Yes" checked/>
+                                <label for = "payment_yes">Yes,users can pay for products/services</label>
                                     </section>    
                                     <section class = 'items-radio'>
-                                <input class = "feedback" type="radio" name="feedback" id="feedback_no" value="No"/>
-                            <label for = "feedback_no">No</label>
+                                <input class = "payment" type="radio" name="payment" id="payment_no" value="No"/>
+                            <label for = "payment_no">No,we do not sell anything or allow users to pay for producst/services</label>
                         </section>
+
                         <h3 class = 'quiz'>
-                        Do you plan to offer promotions,contest,sweepstakes?
+                        Do you use remarketing services for marketing & advertising purpose?
                         </h3><br/>
                         <section class = 'items-radio'>
-                            <input class =  "promo" type="radio" name="promo" id="promo_yes" value="Yes" checked/>
-                                <label for = "promo_yes">Yes,we offer promotions,contests,sweepstakes</label>
+                            <input class =  "marketing" type="radio" name="marketing" value" id="marketing_yes" value="Yes" checked/>
+                                <label for = "marketing_yes">Yes,we use remarketing services to advertise our business</label>
                                     </section>    
                                     <section class = 'items-radio'>
-                                <input class = "promo" type="radio" name="promo" id="promo_no" value="No"/>
-                            <label for = "promo_no">No</label> 
+                                <input class = "marketing" type= 'radio'id="marketing_no" value="No"/>
+                            <label for = "marketing_no">No</label> 
                         </section>
             </section> <!-- Business practices ends here -->
 
             <!--  Additioal Practices section starts here -->
 
             <section class="tab">
-                <h3 class = 'quiz'>How can users contact you for any questions regarding your terms and conditions? </h3>
+                <p><h3 class = 'quiz'>Select if you use any of the following providers</h3>
+                <small>Click all that apply(skip if none apply to you</small> </p><br>
+                <section class = 'items-radio'>
+                    <input class =  "3party" type="checkbox" name="3party" id="captcha" value="reCaptcha"/>
+                        <label for = "captcha">Invisible reCAPTCHA</label>
+                            </section>    
+                            <section class = 'items-radio'>
+                        <input class = "3party" type="checkbox" name="3party"  name="3party" id="gplaces" value="Good Places"/>
+                    <label for = "gplaces">Good Places</label> 
+                </section>
+                <section class = 'items-radio'>
+                    <input class =  "3party" type="checkbox" name="3party" name="3party" id="" id="mflow" value="MouseFlow" />
+                        <label for = "mflow">MouseFlow</label>
+                            </section>    
+                            <section class = 'items-radio'>
+                        <input class = "3party" type="checkbox" name="3party" id="fdesk" value="FreshDesk"/>
+                    <label for = "fdesk">FreshDesk</label> 
+                </section>
+                <p>
+                <section class ='items'>
+                    <label for = "p_others">Others (fill if applicable)</label>
+                    <input class = "inputs p-text" type = "textarea" name = "p_others" id = "p_others" placeholder = "Other Providers"/> 
+                </section>
+                 </p><br/>
+                <p><h3 class = 'quiz'>How can users contact you for any questions regarding your privacy policy? </h3>
+                <small>Fill all that apply</small></p><br/>
                 <section class = 'items'>
                     <label for = 'email'>By email</label>
                         <input class = 'inputs email' type = 'email' name = 'email' id = 'email' placeholder = 'info@example.com' autocomplete = 'off'>
@@ -208,8 +251,8 @@
                     <input class = 'inputs t_c_date' type = 'date'  name = 't_c_date' id = 't_c_date' placeholder = 'T_C_Date' autocomplete = 'off'>
                 </section>
             </section>
-            <section class="tab"><h2 class = 'preview-title'>Preview of your T & C policy</h2>
-                <section class = 'preview' contenteditable = 'false'>   
+            <section class="tab"><h2 class = 'preview-title'>Preview of your Privacy policy</h2>
+                <section class = 'p_preview' contenteditable = 'false'>   
                     <!--
                         t_c preview would appear here
                     -->  
@@ -244,7 +287,7 @@
     </footer>
 
 
-    <script src ='JS/main.js'></script>
+    <script src ='./JS/main.js'></script>
 
     </body>
 </html>

@@ -1,0 +1,53 @@
+<body>
+  <main>
+    <h1>Ecommerce Privacy Policy Template</h1>
+    <p>
+      Our Privacy Policy was last updated on 08-08-2022. <br />
+      This Privacy Policy describes Our policies and procedures on the
+      collection, use and disclosure of Your information when you use the
+      Service and tells You about Your privacy rights and how the law protects
+      You. <br /> We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information
+      in accordance with this Privacy Policy. <br />
+      <h3>Interpretation and Definitions</h3> <br />
+      Interpretation <br /> The words of which the initial letter is capitalized have meanings defined under the following
+      conditions.
+    </p>
+    <p>
+      The following definitions shall have the same meaning regardless of
+      whether they appear in singular or in plural. <br /> Definitions <br /> For the purposes
+      of this Privacy Policy:
+    </p> <br />
+    <ul>
+      <li>
+        <p>
+          "Account" means a unique account created for You to access our Service
+          or parts of our Service. "Company" (referred to as either "the
+          Company", "We", "Us" or "Our" in this Agreement) refers to [COMPANY
+          INFORMATION]
+        </p>
+      </li>
+      <li>
+        <p>"Country" refers to [COMPANY_COUNTRY].</p>
+      </li>
+      <li>
+        <p>
+          "Cookies" are small files that are placed on Your computer, mobile
+          device or any other device by a website, containing the details of
+          Your browsing history on that website among its many uses.
+        </p>
+      </li>
+      <li>
+        <p>
+          "Device" means any device that can access the Service such as a
+          computer, a cell phone or a digital tablet.
+        </p>
+      </li>
+      <li>
+        <p>
+          "Personal Data" is any information that relates to an identified or
+          identifiable individual.
+        </p>
+      </li>
+    </ul>
+  </main>
+</body>
