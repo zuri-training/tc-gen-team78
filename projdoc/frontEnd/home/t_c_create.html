@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>T & C Policies Generator</title>
+        <meta name = "viewport" content = "width = device-width, initial-scale=1.0">
+        <link href = "https://fonts.googleapis.com/css?family=Raleway" rel = "stylesheet">
+        <link href = "./css/t_c_create.css" rel = "stylesheet">
+    </head>
+
+<body>
+        <header class = 'pg-header'>
+            <article class = 'Logo'>
+                <a href = 'index.html'><img src = './assets/Logo.svg' alt='' ></a>
+            </article>
+            <nav class = 'navbar'>
+                <img src = './assets/support-icon.svg' alt='' >
+                <a href="#">Support</a>
+                <img src="./assets/profile-circle.svg">
+                <a href="#">User Account</a>
+            </nav>
+        </header>
+        <main class = 'container'>
+             <h1>Terms and Conditions Generator</h1>
+            <section class = 'p-ind'>
+                <span class="step">1
+                    <small class = 'prog-title'>Business Information</small>
+                     </span>
+                        <span class="step">2
+                            <small class = 'prog-title'>Business Practices</small></span>
+                                <span class="step">3
+                                     <small class = 'prog-title'>Additional Practices</small>
+                                        </span>
+                                     <span class="step">4
+                                <small class = 'prog-title'>Preview Policy</small>
+                             </span>
+                        <span class="step">5
+                    <small class = 'prog-title'>Generate Policy</small>
+                </span> 
+            </section>
+        <form id="tcgenForm" name = 'TCGENFORM' action="." method = "POST">
+                <!-- One "tab" for each step in the form: -->      
+                <section class="tab">
+                    <h2 class = 'quiz'>Help us know your business</h2>
+                    <!--<small class = 'sh'>Click on all that apply</small>-->
+                    <section class = 'form_items'>    
+                        <section class = 'items'>
+                            <label for = 'industry_name'>Industry</label>
+                            <select class = 'industry_name' name = 'industry_name'  id = 'industry_name' autocomplete = 'off'>
+                                <option>Fashion</option> 
+                                <option>Tourism</option>
+                                <option>Finance</option>
+                                <option>Service</option>
+                                <option>Technology</option>
+                            </select>
+                        </section>
+                        <section class = 'items'>
+                            <label for = 'url'>Your Website Url</label>
+                            <input class = 'inputs url' type = 'url' name = 'url' id = 'url' placeholder = 'www.example.com' autocomplete = 'off'>
+                        </section>
+                        <section class = 'items'>
+                            <label for = 'url_name'>Your Website Name</label>
+                            <input class = 'inputs url_name' type = 'text' name = 'url_name' id = 'url_name' placeholder = 'example' autocomplete = 'off'>
+                        </section>
+
+                        <section class = 'items'>
+                            <label for = 'app_name'>Your App Name</label>
+                            <input class = 'inputs app_name' type = 'text' name = 'app_name' id = 'app_name' placeholder = 'example' autocomplete = 'off'>
+                        </section>
+
+                        <section class = 'items'>
+                            <label for = 'country_name'>Country</label>
+                            <select class = 'country_name' name = 'country_name' id = 'country_name' autocomplete = 'off'>
+                                <option>Kenya</option> 
+                                <option>Nigeria</option>
+                                <option>Rwanda</option>
+                                <option>Uganda</option>
+                                <option>Cameroon</option>
+                                <option>Zambia</option>
+                                <option>South Africa</option>
+                            </select>
+                        </section>
+                        <section class = 'items'>
+                            <label for = 'state'>State</label>
+                            <select class = 'state' name = 'state' id = 'state' placeholder = 'Kano' autocomplete = 'off'>
+                                <option>Kano</option> 
+                                <option>Delta</option>
+                                <option>Kaduna</option>
+                                <option>Nairobi</option>
+                            </select>
+                        </section> 
+        
+                        <h3 class = 'quiz'>
+                            Are you a Business or an Individual?
+                        </h3><br />
+                        <section class = 'items-radio'>
+                          <section class = 'items-radio'>
+                            <input class = 'b_type' type="radio" name="b_type"  class = "b_type" id="business" value ='Business' checked/> 
+                                <label for = "website"> <span></span>Business</label>
+                                     </section>    
+                                         <section class = 'items-radio'>
+                                    <input class = 'b_type' type = 'radio'  name= 'b_type' class = 'b_type' id = 'individual'  value = 'Individual'/>
+                                <label for = "b_type"><span></span>Individual</label>
+                         </section>
+                        </section>
+                    </section>
+                </section>
+
+        <!-- Business Practices Sections begins here -->
+
+            <section class="tab"> 
+                  <h3 class = 'quiz'>
+                     Can users create accounts?
+                  </h3><br>
+                        <section class = 'items-radio'>   
+                            <input class = 'usr_acct' type = "radio" name = "usr_acct" id="usr_acct_yes" value="Yes" checked/>
+                                <label for = "usr_accts_yes">Yes,users can create accounts</label>
+                                    </section>
+                                     <section class = 'items-radio'>
+                                <input type="radio" name="usr_acct" id="usr_acct_no" value="No"/>
+                            <label for = "usr_accts_no">No</label>
+                        </section>  
+                    <h3 class = 'quiz'>
+                        Can users create and/or upload content (i,e text,images etc)?
+                    </h3><br>
+                        <section class = 'items-radio'>
+                            <input class = "usr_uploads" type="radio" name="usr_uploads" id="usr_uploads_yes" value="Yes" checked/>
+                                <label for = "usr_uploads_yes">Yes,users can create and/or content</label>
+                                    </section>    
+                                    <section class = 'items-radio'>
+                                <input class = "usr_uploads" type="radio" name="usr_uploads" id="usr_uploads_no" value="No"/>
+                            <label for = "usr_uploads_no">No</label>
+                        </section>       
+                    <h3 class = 'quiz'>
+                        Can users buy goods (products,items)?
+                    </h3><br/>
+                        <section class = 'items-radio'>
+                            <input class = "usr_buy" type="radio" name="usr_buy" id="usr_buy_yes" value="Yes" checked/>
+                                <label for = "usr_buy_yes">Yes,users can buy goods,items or services (one-time payment only)</label>
+                                    </section>    
+                                    <section class = 'items-radio'>
+                                <input class = "usr_buy" type="radio" name="usr-buy" id="usr_buy_no" value="No"/>
+                            <label for = "usr_buy_no">No</label>
+                        </section>      
+                        <h3 class = 'quiz'>
+                         Do you offer subscription plans?
+                         </h3><br />
+                        <section class = 'items-radio'>
+                            <input class = "usr_sub_plan" type="radio" name="usr_sub_plan" id="usr_sub_plan_yes" value="Yes" checked/>
+                                <label for = "usr_sub_plan_yes">Yes,we offer subscription plans</label>
+                                    </section>    
+                                    <section class = 'items-radio'>
+                                <input class = "usr_sub_plan" type="radio" name="usr_sub_plan" id="usr_sub_plan_no" value="No"/>
+                            <label for = "usr_accts_no">No</label>
+                        </section>    
+                        <h3 class = 'quiz'>
+                        Do you want to make it clear that your own content & trademarks are your exclusive property?
+                        </h3><br/>
+                        <section class = 'items-radio'>
+                            <input class = "trademarks" type="radio" name="trademarks" id="trademarks_yes" value" value="Yes" checked/>
+                                <label for = "trademarks_yes">Yes,our content (logo,visual designs,trademarks etc) is/are our exclusive property</label><br>
+                                    </section>    
+                                    <section class = 'items-radio'>
+                                <input class = "trademarks" type="radio" name="trademarks" id="trademarks_no" value="No"/>
+                            <label for = "trademarks_no">No</label>
+                            </section>
+                        <h3 class = 'quiz'>
+                        If users provide you feedback & suggestions,do you want to use their feedback without compensation or credit given?
+                        </h3><br/>
+                        <section class = 'items-radio'>
+                            <input class = "feedback" type="radio" name="feedback" id="feedback_yes" value="Yes" checked/>
+                                <label for = "feedback_yes">Yes,we may implement any feedback or suggestions we receive</label>
+                                    </section>    
+                                    <section class = 'items-radio'>
+                                <input class = "feedback" type="radio" name="feedback" id="feedback_no" value="No"/>
+                            <label for = "feedback_no">No</label>
+                        </section>
+                        <h3 class = 'quiz'>
+                        Do you plan to offer promotions,contest,sweepstakes?
+                        </h3><br/>
+                        <section class = 'items-radio'>
+                            <input class =  "promo" type="radio" name="promo" id="promo_yes" value="Yes" checked/>
+                                <label for = "promo_yes">Yes,we offer promotions,contests,sweepstakes</label>
+                                    </section>    
+                                    <section class = 'items-radio'>
+                                <input class = "promo" type="radio" name="promo" id="promo_no" value="No"/>
+                            <label for = "promo_no">No</label> 
+                        </section>
+            </section> <!-- Business practices ends here -->
+
+            <!--  Additioal Practices section starts here -->
+
+            <section class="tab">
+                <h3 class = 'quiz'>How can users contact you for any questions regarding your terms and conditions? </h3>
+                <section class = 'items'>
+                    <label for = 'email'>By email</label>
+                        <input class = 'inputs email' type = 'email' name = 'email' id = 'email' placeholder = 'info@example.com' autocomplete = 'off'>
+                            </section>
+                                <section class = 'items'>
+                            <label for = 'website'>By visiting a page on our website (enter page link)</label>
+                        <input class = 'inputs website' type = 'url_name' name = 'website' id = 'website' placeholder = 'https://www.example.com/contact/' autocomplete = 'off'>
+                </section>
+                <section class = 'items'>
+                    <label for = 'phone'>By phone number</label>
+                        <input class = 'inputs phone' type = 'tel'  name = 'phone' id = 'phone' placeholder = '+254-000-000-000' autocomplete = 'off'>
+                            </section>
+                                <section class = 'items'>
+                            <label for = 't_c_date'>T_C_Date</label>
+                    <input class = 'inputs t_c_date' type = 'date'  name = 't_c_date' id = 't_c_date' placeholder = 'T_C_Date' autocomplete = 'off'>
+                </section>
+            </section>
+            <section class="tab"><h2 class = 'preview-title'>Preview of your T & C policy</h2>
+                <section class = 'preview' contenteditable = 'false'>   
+                    <!--
+                        t_c preview would appear here
+                    -->  
+                </section>
+                </section>
+            <section style="overflow:auto;">
+                <section class = 'nav-btns' style = 'float:right;'>
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)"> Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </section>
+        </section>
+    </form>
+    </main>
+
+    <!-- Footer -->
+    
+    <footer class ='footer'>
+        <section class="disclaimer">
+            <section class="footerlinks">
+                <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p>
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href=""><span class="span_ft">.</span>Terms of Use</a></li>
+                </ul>
+            </section>
+            <p>Questions? Email us at support@78tcgen.com</p>
+        </section>
+        <section class="ft-logo">
+            <p>78TC Gen &copy; <span id='year'>2022</span>. All rights reserved.</p>
+            <img src="./assets/Logo_white.svg" alt="logo">
+        </section>
+    </footer>
+
+
+    <script src ='JS/main.js'></script>
+
+    </body>
+</html>

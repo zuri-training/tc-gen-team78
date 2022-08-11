@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+:root{
+    accent-color: #721121;
+}
+
+button{
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #721121;
+    border-radius: 20px;  
+}
+
+button, .input-container label{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+    margin-bottom: 48px;
+}
+
+p{
+    line-height: 24px;
+    font-size: 1rem;
+}
+
+body{
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    padding: 24px 120px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+nav a{
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.navlink a:nth-of-type(odd){
+    line-height: 24px;
+    margin-right: 24px;
+    font-family: Montserrat;
+    color: #333333;
+}
+
+.navlink a button{
+    color: #721121;
+    padding: 12px 24px;   
+    background-color: transparent;
+    font-family: Montserrat;
+    font-size: 20px;
+    line-height: 32px;
+    
+}
+
+.menu-button{
+    display: none;
+}
+
+/* Main */
+
+main{
+    padding: 48px 120px 56px;
+    justify-content: space-evenly;
+}
+
+main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a{
+    display: flex;
+    align-items: center;
+}
+
+.signup-illustration, .signup-text{
+    height: auto;
+    width: 588px;
+    /* top: 120px;
+    left: 136; */
+}
+
+.signup-illustration{
+    margin-right: 24px;
+}
+
+.input-container{
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container label{
+    padding-bottom: 8px;
+}
+
+::placeholder{
+    color: #aaa;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.input-container input, ::placeholder{
+    padding: 20px 16px;
+}
+
+.input-container input{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+
+.input-container i{
+    position: absolute;
+    color: #808080;
+    bottom: 18px;
+    right: 18px;
+}
+
+
+form button{
+    width: 100%;
+    padding: 12px 32px;
+    background-color: #721121;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.line{
+    width: 37.3%;
+    height: 2px;
+    background-color: #d9d9d9;
+}
+
+.continue-with{
+    width: 100%;
+}
+
+.continue-with p:first-of-type{
+    text-align: center;
+    padding:0 8px;
+}
+
+.continue-with p:last-of-type{
+    display: none;
+}
+
+.terms{
+    text-align: center;
+    padding-top: 50px;
+}
+
+.terms a{
+    color: #721121;
+}
+
+.other-options{
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 40px auto 0;
+}
+
+.other-options a{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(114, 17, 33, 0.32);
+    justify-content: center;
+}
+
+.other-options a i{
+    color: #721121;
+}
+/* new addition  */
+.mobile-other-options{
+    display:none;
+}
+
+/* worked on the responsiveness*/
+
+@media (max-width: 835px){
+    nav{
+        padding: 32px;
+    }
+
+    .signup-illustration{
+        display: none;
+    }
+
+    h1{
+        text-align:left;
+       
+    }
+
+    .continue-with{
+        font-size: 16px;
+        text-align: center;
+        line-height: 24px;
+        right: 20px;
+    }
+
+    button {
+        padding: 16px 32px;
+        gap: 16px;
+        border-radius: 20px;
+
+    }
+
+    .signup-text{
+     width: 100%;
+    }
+
+    .other-options{
+        margin-top: 24px;
+    }
+
+    main{
+        padding-right:32px ;
+        padding-left: 32px;
+    }
+
+    .line{
+        width: 40.2%;
+    }
+
+    .terms{
+        position: absolute;
+        padding-top: 56px;
+        width: 572px;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: montserrat;
+
+    }
+}
+
+@media (max-width: 375px){
+    nav{
+        padding: 10px;
+        flex-direction: column;
+    }
+    .navlink{
+        width: 90%;
+        margin: 0 auto;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navlink a button{
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-top: 1rem;
+    }
+    .navlink a:nth-of-type(odd){
+        font-size: 16px;
+    }
+    .mobile-nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .mobile-nav .menu-button{
+        display: flex;
+    }
+    .remember{
+        justify-content: space-between;
+    }
+    .other-options{
+        display: none;
+    }
+    .mobile-other-options{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 24px;
+    }
+    .mobile-other-options a{
+        padding: 16px 32px;
+        color: #721121;
+        text-decoration: none;
+        border-radius: 16px;
+        border: 2px solid #721121;
+        margin:0 0 8px;
+        font-size: 16px;
+        width: 328px;
+    }
+    .mobile-other-options a i{
+        color: #721121;
+        padding-right: 14px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    .input-container{
+        margin-bottom: 24px;
+    }
+    .input-container input, ::placeholder{
+        padding: 16px;
+    }
+    .input-container label{
+        font-size: 16px;
+    }
+    .remember input:where([type='checkbox']){
+        width: 24px;
+        height: 24px;
+    }
+    .remember-pwd a, .remember label{
+        font-size: 14px;
+    }
+    .continue-with p:first-of-type{
+        display: none;
+    }
+    .continue-with p:last-of-type{
+        display: flex;
+    }
+    .line{
+        margin: 0 auto;
+    }
+    .terms {
+        font-size: 12px !important;
+        width: 90%;
+      
+    }
+}

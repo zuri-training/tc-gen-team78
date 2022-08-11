@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team page</title>
+    <link rel="stylesheet" href="team_page.css">
+
+    <!--GOOGLE FONT-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;0,600;0,800;0,900;1,100;1,200;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <!--TEAM PAGE-->
+    <!--NAVBAR-->
+    <header>
+      <nav>
+        <div class="mobile-menu">
+            <img src="./images/Logo.png" alt="logo" class="" width="90px" height="39px">
+            <a href="" class="hamburger" onclick="toggleMenu()">
+              <img src="./images/menu.svg" alt="menu" width="32px" height="32px" class="menu-btn">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Our team</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <div class="nav-btns">
+            <a href="#"><button class="login">Login</button></a>
+            <a href="#"><button class="getstarted">Get Started</button></a>
+        </div>
+       
+    </nav>
+<script>
+    // Mobile reponsiveness
+let menu = document.querySelector('.hamburger');
+
+function toggleMenu() {
+let navLinks = document.querySelector('.nav-links');
+let navBtns = document.querySelector('.nav-btns');
+
+if (((navLinks.style.display === 'flex') && (navBtns.style.display === 'flex')) && (navLinks.style.flexDirection !== 'column')){
+    
+    navLinks.style.display = 'none';
+    navBtns.style.display = 'none';
+    
+    console.log(true);
+}else{
+    navLinks.style.display = 'flex';
+    navBtns.style.display = 'flex';
+    //addBtns.style.display = 'flex';
+    console.log(false);
+}
+}
+
+menu.addEventListener('click', (e) => {
+e.preventDefault();
+// toggleMenu();
+});
+
+</script>
+    </header>
+<br><br><br><br><br><br><br><br><br>
+ 
+     <!--PROFILE CARD-->
+    <main>
+      <h1>Team 78 Members</h1>
+      <br><br>
+        <h3>DESIGNERS</h3>
+      <div>
+        <div class="main">
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/IMG_1132.JPG">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Okereke Chinasa Charity</h5>
+                    <p>Product Designer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/IMG_1136.JPG">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Nwankwo Emmanuel</h5>
+                    <p>Product Designer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/IMG_1133.JPG">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Daniel Alalade</h5>
+                    <p>Product Designer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/IMG_1134.JPG">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Azumurana Efeturi Regina</h5>
+                    <p>Product Designer</p>
+                  </div>
+            </div>
+        </div>
+    
+        <div class="main">
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/IMG_1142.JPG">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Paul Patrick Tom</h5>
+                    <p>Product Designer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/IMG_1137.JPG">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Adigun Samuel Oladipupo</h5>
+                    <p>Product Designer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/IMG_1140.jpg">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Coker Divine Victor</h5>
+                    <p>Product Designer</p>
+                  </div>
+            </div>
+        </div>
+    
+        <div class="main">
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/IMG_1139.JPG">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Mogbo Dada</h5>
+                    <p>Product Designer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+              <div class="img">
+                  <img src="images/IMG_1135.JPG">
+                </div>
+                <div class="caption">
+                  <br>
+                  <h5>Osawaru Osamade Pearl</h5>
+                  <p>Product Designer</p>
+                </div>
+          </div>
+          <div class="profile-card">
+              <div class="img">
+                  <img src="images/IMG_1138.JPG">
+                </div>
+                <div class="caption">
+                  <br>
+                  <h5>Falaye Oluwatimileyin</h5>
+                  <p>Product Designer</p>
+                </div>
+          </div>
+          <div class="profile-card">
+              <div class="img">
+                  <img src="images/IMG_1141.JPG">
+                </div>
+                <div class="caption">
+                  <br>
+                  <h5>Hauwau Albashir</h5>
+                  <p>Product Designer</p>
+                </div>
+              </div>
+    </div>
+    
+    <div>
+      <div class="main">
+        <div class="profile-card">
+            <div class="img">
+                <img src="images/IMG_1144.JPG">
+              </div>
+              <div class="caption">
+                <br>
+                <h5>Olaniran Abdulrasheed</h5>
+                <p>Product Designer</p>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+      <h3>DEVELOPERS</h3>
+    <div>
+        <div class="main">
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/99bb3c8b-6b38-49f8-bfad-310ae99750f3.jpg">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Miracle Ezirim</h5>
+                    <p>Full Stack Developer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/IMG_1149.PNG">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Hilary Orefo</h5>
+                    <p>Full Stack Developer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/photo_2022-08-08_20-35-23.jpg">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Oluwatudimu Oluwatobi</h5>
+                    <p>Full Stack Developer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/602785af-86b9-46b1-b442-48fb337e7754.jpg">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Blessing Essien</h5>
+                    <p>Full Stack Developer</p>
+                  </div>
+            </div>
+        </div>
+    
+        <div class="main">
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/kemi.jpg">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Oluwakemi Owolabi</h5>
+                    <p>Full Stack Developer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="./images/d1da7d3b-c4cc-4f54-ab52-94fff5cce05e.jpg">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Oluwadamisi Enioluwafe</h5>
+                    <p>Full Stack Developer</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/photo_2022-08-08_23-44-21.jpg">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Nemwel </h5>
+                    <p>Full Stack Developer</p>
+                  </div>
+
+                  
+            </div>
+        </div>
+
+        <div class="main">
+          <div class="profile-card">
+            <div class="img">
+                <img src="images/610a9a27-87a2-4773-9681-6e02722feda0.jpg">
+              </div>
+              <div class="caption">
+                <br>
+                <h5>Faruq Olokunola</h5>
+                <p>Full Stack Developer</p>
+              </div>
+              </div>
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/Ellipse 60 (12).png">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Favour Onyenobi</h5>
+                    <p>Full Stack Developer</p>
+                  </div>
+            </div>
+        </div>
+    </div>
+     
+    <br><br>
+  <div>
+    <h3>TEAM LEADS AND SUPERVISOR</h3>
+  </div>
+    <div>
+        <div class="main">
+            <div class="profile-card">
+                <div class="img">
+                    <img src="images/Ellipse 60 (12).png">
+                  </div>
+                  <div class="caption">
+                    <br>
+                    <h5>Favour Onyenobi</h5>
+                    <p>Developers Team Lead</p>
+                  </div>
+            </div>
+            <div class="profile-card">
+                <div class="img">
+                  <img src="images/IMG_1144.JPG">
+                </div>
+                <div class="caption">
+                  <br>
+                  <h5>Olaniran Abdulrasheed</h5>
+                  <p>Product Designers Team Lead</p>
+                  </div>
+            </div>
+        </div>
+
+        <div class="main">
+          <div class="profile-card">
+              <div class="img">
+                  <img src="images/photo_2022-08-08_20-43-36.jpg">
+                </div>
+                <div class="caption">
+                  <br>
+                  <h5>Victoria Enebeli</h5>
+                  <p>Supervisor</p>
+                </div>
+          </div>
+      </div>
+    </div>
+    </main> 
+
+    
+    <!--FOOTER-->
+
+     
+
+<footer id="footer" class="footer">
+  <div class="footer-info">
+    <div class="disclaimer">
+      <p>Disclaimer: Please note that legal information, 
+        including legal templates and legal policies, is not 
+        legal advice. <br> Information and services provided on the
+         site are for informational and self-help purposes 
+         only and <br> are not to be a substitute for professional
+          legal advice. <a href="">Read the full disclaimer</a>  
+        </p>
+        <br><br>
+          <div class="policy">
+            <ul>
+              <li><a href="">Our Privacy Policy</a></li>
+              <li><a href=" ">Terms of Use</a></li>
+            </ul>
+          </div>
+          <br> 
+          <div class="tcgen">
+            <p>78TC Gen © 2012-2022. All rights reserved.</p>
+          </div>
+    </div>
+
+  
+      <div class="questions">
+        <p>Questions? Email us at support@78tcgen.com
+        </p>
+        <br>
+          <div class="logo">
+            <img src="images/Logo (1).png" alt="logo">
+          </div>
+      </div>
+    </div> 
+
+     
+     </div>
+    </div>
+   
+</footer>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/form-business.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
+    <title>T&C gen  business information</title>
+</head>
+<body id="tc-business-info">
+    <nav>
+        <div class="mobile-menu">
+            <div class="logo-container">
+                <img src="./assets/Logo.svg" alt="logo" class="">
+            </div>
+            <a href="" class="hamburger" onclick="toggleMenu()">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </a>
+        </div>
+        
+        <div class="add-btns">
+            <div class="support-btn">
+                <a href=""><img src="./assets/support-icon.svg" alt="support icon">
+                <span class="">Support</span>
+                </a>
+            </div>
+            <div class="user-act-btn">
+                <a href="">
+                <img src="./assets/profile-circle.svg" alt="profile icon">
+                <span class="">User Account</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="headings">
+            <h1>Terms and Conditions Generator</h1>
+            <div class="steps">
+                <a href="#">
+                    <small>1</small>
+                    <p>Business Information</p>
+                </a>
+                <div class="grey-bar"></div>
+                <a href="#">
+                    <small class="greyed-out">2</small>
+                    <p>Business/Website Practices</p>
+                </a>
+            </div>
+        </section>
+        <form action="">
+            <h4>Help us know your business</h4>
+            <div class="input-wrapper">
+                <label for="industry">Industry</label>
+                <select name="" id="industry" >
+                    <option value="fashion">Fashion</option>
+                    <option value="tech">Technology</option>
+                    <option value="agriclture">Agriculture</option>
+                </select>
+            </div>
+            <div class="input-wrapper">
+                <label for="website-url">Your Website Url</label>
+                <input type="url" id="website-url" placeholder="https://www.example.com">
+            </div>
+            <div class="input-wrapper">
+                <label for="website-name">Your Website Name</label>
+                <input type="text" id="website-name" placeholder="Example">
+            </div>
+            <div class="input-wrapper">
+                <label for="app-name">Your App's Name</label>
+                <input type="text" id="app-name" placeholder="Example">
+            </div>
+            <div class="input-wrapper">
+                <label for="country">Country</label>
+                <select name="" id="country">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="input-wrapper">
+                <label for="state">State</label>
+                <select name="" id="state">
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="input-wrapper">
+                <label for="">Are you a business or an individual?</label>
+                <div class="radio-btn-grp">
+                    <div class="radio-btn">
+                        <input type="radio" id="business" name="bus-ind">
+                        <label for="business">Business</label>
+                    </div>
+                    <div class="radio-btn btn-ind">
+                        <input type="radio" id="individual" name="bus-ind">
+                        <label for="individual">Individual</label>
+                    </div>
+                </div>
+            </div>
+            <div class="button-grp">
+                <a href=""><button type="submit" class="continue-later">Save and Continue Later</button></a>
+                <a href="./tc-form-business-web-practices.html"><button class="next-button">Next <i class="fa-solid fa-arrow-right"></i></button></a>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div class="ft-logo">
+            <p>Questions? Email us at support@78tcgen.com</p>
+            <img src="./assets/Logo_white.svg" alt="logo">
+        </div>
+        <div class="disclaimer-questions">
+            <div class="footerlinks">
+                <p>Disclaimer: Please note that legal information, including legal templates and legal policies, is not legal advice.
+                    Information and services provided on the site are for informational and self-help purposes only and
+                    are not to be a substitute for professional legal advice. <a href="#"> Read the full disclaimer.</a></p>
+            </div>
+            <div class="footer-txt">
+               
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
+                </ul>
+                <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+            </div> 
+        </div>
+    </footer>
+    <script src="./JS/dashboard.js"></script>
+</body>
+</html>

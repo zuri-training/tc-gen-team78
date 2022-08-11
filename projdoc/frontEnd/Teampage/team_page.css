@@ -1,0 +1,354 @@
+ /* TEAM PAGE */
+
+
+/* NAVBAR */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;0,600;0,800;0,900;1,100;1,200;1,400&display=swap" rel="stylesheet');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+body ::after{
+    content:'';
+    position:  absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+
+}
+ 
+button{
+    cursor: pointer;    
+}
+
+header{
+    height: 80px;
+    transition: all 0.5s;
+    z-index: 997;
+    transition: all 0.5s;
+    background: #ffffff;
+    padding: 0px;
+    
+}
+header nav{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    position: relative;
+    justify-content: space-between;
+    padding:0 119.5px;
+}
+
+header img{
+    width: 64px;
+    height: 64px;
+}
+
+nav ul {
+    list-style: none;
+    justify-content: space-between;
+    align-items: flex-end;
+    display: flex;
+    width: 50%;
+}
+
+.nav-links li{
+    list-style-type: none;
+    
+}
+.nav-links {
+    margin-left: 10%;
+}
+.nav-links a{
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: #212121;
+    
+}
+.nav-links:last-child{
+    padding-right: 40px;
+}
+
+.nav-btns{
+    display: flex;
+    margin-left: 20%;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.nav-btns a .login{
+    background: #fff;
+    color: #721121;
+    border: 2px solid  #721121;
+    padding: 4px 1.5rem;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.nav-btns a .getstarted{
+    border: 2px solid  #721121;
+    border-radius:10px;
+    padding: 4px 1.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    background: #721121;
+    color: #fff;
+}
+
+
+.hamburger{
+    display: none;
+}
+
+@media (max-width:769px) {
+    header{
+        padding-top: 1rem;
+}
+
+header nav{
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+}
+
+.nav-btns{
+        flex-direction: column;
+        width: fit-content;
+        margin-left: 0%;
+        align-items: flex-start;
+        padding: 0;
+        display: none;
+}
+
+.nav-btns a button{
+        margin-bottom: 1rem;
+        padding: 2px 10px;
+        line-height: normal;
+}
+
+.hamburger{
+        width: 35px;
+        height: 35px;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+}
+
+.hamburger .bars{
+        width: inherit;
+        height: 3px;
+        background-color: #212121;
+        border-radius: 5px;
+}
+
+.hamburger .bars:last-child{
+        align-self: flex-end;
+}
+
+.hamburger .bars:nth-child(odd){
+        width: 65%;
+}
+
+
+.mobile-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: inherit;
+        
+}
+.nav-links {
+        margin-left: 0%;
+}
+   
+nav ul{
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        align-items: flex-start;
+        /* visibility: hidden; */
+}
+
+nav ul{
+        margin-bottom: .6rem;
+}
+}
+
+
+h1{
+    text-align: center;
+    font-style:normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+    font-family: Montserrat;
+    position: relative;
+    color: #721121;
+}
+
+h3{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+}
+
+h5{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 32px;
+    text-align: center;
+}
+
+
+hr {
+    border:none;
+    border-top:2px solid;
+    margin:1em auto; 
+    width:80%;
+    color: rgb(196, 191, 191);
+}
+
+
+  
+
+ 
+/* PROFILE CARD */
+.main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+
+.profile-card{
+    position: relative;
+    font-family: Montserrat;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    transition: .6s;
+    margin: 0 25px;
+    flex-direction: column;
+    padding: 10px;
+    background-color: gray;
+}
+
+
+
+.profile-card .img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .6s;
+    z-index: 99;
+    
+  
+}
+
+
+
+.img img{
+    width: 100%;
+    border-radius: 50%;
+    transition: .6s;
+    height: 200px;
+    object-fit: cover;
+}
+
+.caption{
+    text-align: center;
+    opacity:1;
+    transition: .6s;
+}
+
+.caption h3{
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.caption p{
+    font-size: 11px;
+    color: black;
+    font-family: sans-serif;
+    margin: 2px 0 9px 0;
+}
+
+/*MOBILE RESPONSIVENESS*/
+
+@media screen and (max-width: 900px) {
+    .profile-card{
+        margin-bottom: 100px;
+    }
+    .main{
+        height: auto;
+    }
+ }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+    padding: 0 0 10px 0;
+    color: white;
+    font-size: 11px;
+    background: #721121;
+}
+   
+#footer .footer-info {
+    padding: 60px 0 30px 0;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+#footer .footer-info .disclaimer a{
+    color: #ffffff;
+}
+
+#footer .footer-info ul{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+#footer .footer-info ul a{
+    color: white;
+    display: block;
+    overflow: hidden;
+    padding-right: 10px;
+    padding-left: 0px;
+}
+
+#footer .footer-info li{
+    display: inline-block;
+}
+
+
+#footer .questions .logo{
+    float: right;
+}
+
+

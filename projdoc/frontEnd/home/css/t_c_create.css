@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+  }
+  :root {
+    --hcolors: #721121;
+    --white: #fff;
+    --bg-color: #d5a06a;
+    --font-family: 'Montserrat', sans-serif;
+  }  
+  body {
+    color: #000;
+    background-color: var(--white);
+  }
+  
+.pg-header {
+    padding-block-start: 1rem;
+    padding-inline: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    padding-inline: 2rem;
+}
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  color: green;
+  transition: .4s;
+}
+ 
+p{
+  text-justify: auto;
+}
+
+/* Main Page Content */
+
+.container {
+  width: calc(100% -10rem);
+  margin: 0 auto;
+  padding-block: 2rem;
+  padding-inline: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+  #tcgenForm,
+  #pgenForm {
+    background-color: var(--white);
+    margin: 0 auto; 
+    /* font-family: Raleway; */
+    font-family: var(--font-family);
+    padding-block-start: 1rem;
+    width: 100%;
+    min-width: 18.75rem;
+  }
+  
+  .inputs {
+    background: lightgray;
+    width: 100%;
+    padding: .5rem;
+    font-size: 1em;
+    border-radius: .5rem;
+    font-family: var(--font-family);
+  }
+  h1 {
+  
+      color: var(--hcolors);
+  }
+  h2 {
+    color: var(--hcolors); 
+    text-align: left;  
+  }
+
+  h3 {
+    text-align: left;
+  }
+
+  select {
+    width: 100%;
+    padding: .8rem;
+    border-radius: .5rem;
+    background: lightgray;
+  }
+
+  .forms-items {
+    display: flex;
+  }
+ 
+  .items-radio {  
+    text-align: left;
+    padding-block-end: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  } 
+ 
+  .items {
+    padding-block: .5rem;
+   }
+
+   /* Policy preview textarea */
+
+    .preview,
+    .p_preview {
+    background: darkgray;
+    border-block-start: 1rem solid var(--hcolors);
+    border-radius: 1rem;
+    margin: 0.01rem;
+    padding: 2em;
+    max-height: 20em;
+    resize: both;
+    overflow: auto;
+   }
+   
+  /* Mark input boxes that gets an error on validation: */
+
+  input.invalid {
+    background-color: #ffdddd;
+  }
+  
+  /* Hide all steps by default: */
+
+  .tab {
+    display: none;
+  }
+  
+  button {
+    background-color: var(--hcolors);
+    color: var(--white);
+    width: 8em;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    border-radius: .4rem;
+    font-family: var(--font-family);
+    /* font-family: Raleway; */
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  #prevBtn {
+    /*background-color: #bbbbbb; */
+    background-color: var(--bg-color);
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+
+  .step {
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    margin: 0 62px;
+    /* background-color: #bbbbbb; */
+    background: var(--hcolors);
+    color: var(--white);
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  .prog-title{
+
+    color: #000;
+  }
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+
+  .step.finish {
+    background-color: var(--hcolors);
+  }
+  .nav-btns {
+    padding-block-start: 1rem;
+  }
+
+  /* Show Progress indicator position */
+
+  .p-ind{
+    display: flex;
+    text-align: center;
+    padding-block: 1rem 2rem;
+    padding-inline: 0rem;
+  }
+  
+  .aaa {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  } 
+
+  .span_emp {
+
+    color: navy;
+}
+
+.p-text {
+  width: 100%;
+  height: 8em;
+  resize: none;
+}
+.preview-title {
+  text-align: center;
+}
+.preview_list {
+  padding-inline-start: 2rem;
+}
+li {
+  list-style-type:lower-roman;
+  list-style-position: inside;
+}
+
+.footer {
+    font-size: small;
+    padding-inline: 9rem;
+    padding-block-start: 2rem;
+    background: var(--hcolors); 
+    color: var(--white);
+}
+.disclaimer {
+  display: flex;
+  gap: 8.75rem;
+}
+.footer ul>li,
+.footer a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--white);
+  list-style: none;
+  padding-inline-end: 0rem;
+
+}
+.span_ft {
+  color: var(--white);
+  padding: .2em;
+  border-radius: 50%;
+}
+ a:hover {
+    color: var(--hcolors);
+    transition: .2s;
+    
+}
+.ft-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* Mobile View */
+
+@media (max-width: 768px){
+ 
+  .pg-header {
+    padding-block-start: 1rem;
+    padding-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+  .container {
+    width:100%;
+    margin: 0 auto;
+    padding-block: 2rem;
+    padding-inline: 2rem;
+  }
+ .prog-title {
+  display: none;
+ }
+ .step {
+  margin: 0 1rem;
+ }
+ h1 {
+  font-size: large;
+  text-align: center;
+ }
+ .footer {
+  padding-inline: 1rem;
+ }
+ .disclaimer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+ 
+.ft-logo{
+  display: flex;
+  flex-direction: column;
+}
+}

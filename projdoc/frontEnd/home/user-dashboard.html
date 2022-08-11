@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
+
+    <title>Dashboard</title>
+</head>
+<body id="dshbrd-pg">
+    <nav>
+        <div class="mobile-menu">
+            <div class="logo-container">
+                <a href="./index.html"><img src="./assets/Logo.svg" alt="logo" class=""></a>
+            </div>
+            <a href="" class="hamburger" onclick="toggleMenu()">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </a>
+        </div>
+        
+        <div class="add-btns">
+            <div class="support-btn">
+                <a href=""><img src="./assets/support-icon.svg" alt="support icon">
+                <span class="">Support</span>
+                </a>
+            </div>
+            <div class="user-act-btn">
+                <a href="">
+                <img src="./assets/profile-circle.svg" alt="profile icon">
+                <span class="">User Account</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <h1>Welcome, <span>{user}</span>!</h1>
+        <p class="tagline">It's a good day to be free of legal hassles</p>
+        <section class="preview-section">
+            <div class="preview-card">
+                <img src="./assets/terms-and-conditions-icon.svg" alt="terms & conditions icon" class="">
+                <h4>Terms & Conditions Generator</h4>
+                <div class="wrap-bottom">
+                    <div class="desc-btn">
+                        <p>An easy-to-use and powerful generator that creates terms and conditions automatically based on user inputs.</p>
+                     
+                       <!-- Nemwel changes begins here -->
+                       <!-- <a href="./tc-form-business-info.html" class="start-btn">Generate
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a> -->
+                        
+                        <a href="./t_c_create.html" class="start-btn">Generate</a>
+                        
+                        <!-- Nemwel changes ends here -->
+                    </div>
+                </div>
+            </div>
+            <div class="preview-card">
+                <img src="./assets/shield-tick.svg" alt="privacy policy icon" class="">
+                <h4>Privacy Policy  Generator</h4>
+                <div class="wrap-bottom">
+                    <div class="desc-btn">
+                       <p>Our software analyzes your data and generates privacy policies using information provided by you.</p>
+
+                     <!-- Nemwel Onsando changes begins here -->
+                     <!--   <a href="./pp-form-business-info.html" class="start-btn">Generate
+
+
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a> -->
+                        <a href="./p_create.html" class="start-btn">Generate</a> 
+                        
+                        <!-- Nemwel Changes Ends here -->
+                    </div>
+                </div>
+            </div>
+            <div class="preview-card">
+                <img src="./assets/writing.svg" alt="drafts icon" class="">
+                <h4>Drafts</h4>
+                <div class="wrap-bottom">
+                    <div class="desc-btn">
+                       <p>All your progress are saved here. Pick up where you left off.</p>
+                        <a href="" class="start-btn">Resume
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-card">
+                <img src="./assets/verify.svg" alt="completed icon" class="">
+                <h4>Completed</h4>
+                <div class="wrap-bottom">
+                    <div class="desc-btn">
+                        <p>Need to revisit an old document? Find all your completed documents here.</p>
+                        <a href="" class="start-btn">View
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="ft-logo">
+            <p>Questions? Email us at support@78tcgen.com</p>
+            <img src="./assets/Logo_white.svg" alt="logo">
+        </div>
+        <div class="disclaimer-questions">
+            <div class="footerlinks">
+                <p>Disclaimer: Please note that legal information, including legal templates and legal policies, is not legal advice.
+                    Information and services provided on the site are for informational and self-help purposes only and
+                    are not to be a substitute for professional legal advice. <a href="#"> Read the full disclaimer.</a></p>
+            </div>
+            <div class="footer-txt">
+               
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
+                </ul>
+                <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+            </div> 
+        </div>
+    </footer>
+    <script src="./JS/dashboard.js"></script>
+</body>
+</html>
