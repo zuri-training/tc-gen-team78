@@ -1,7 +1,7 @@
 {% load static %}
 
 <!--changed the codes to align with figma design and added image-->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -80,5 +80,110 @@
             <p class="terms">By signing up ,you agree to our <a href="#"> Terms of Service</a> and have read and acknowledge our <a href="#">Privacy Policy</a></p>
         </div>
     </main>
+</body>
+</html> -->
+
+<!--changed the codes to align with figma design and added image-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="{% static '/css/signup.css' %}">
+    <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="mobile-nav">
+            <a href="/"><img src="{% static '/images/Logo.svg' %}" alt="logo"></a>
+            <a href="" onclick="openMenu()" class="menu-button"><img src="{% static '/images/menu.png' %}" alt="menu button"></a>
+        </div>
+        <div class="navlink">
+            <a href="/account/login">Already have an account?</a>
+            <a href="/account/login"><button>Log In</button></a>
+        </div>
+    </nav>
+    <main>
+        <div class="signup-illustration">
+            <img src="{% static '/images/sign up.png' %}" alt="illustration">
+        </div>
+        <div class="signup-text">
+            <form action="register" method="POST">
+                {% csrf_token %}
+                <h1>Create your free account</h1>
+                <div>
+                    {% for message in messages %}
+                   <h3 style="text-align:center; color:#721121;"> {{message}}</h3>
+                   {% endfor %}
+               </div>
+               <div class="input-container">
+                <label for="name" class="label3">First Name</label> <br>
+                <input type="text" id="name" name="first_name" placeholder="Your First Name" required> 
+            </div>
+            <div class="input-container">
+                <label for="name" class="label3">Last Name</label> <br>
+                <input type="text" id="name" name="last_name" placeholder="Your Last Name" required> 
+            </div>
+            <div class="input-container">
+                <label for="username" class="label3">Username</label> <br>
+                <input type="text" id="username" name="username" placeholder="Your Username" required> 
+            </div>
+            <div class="input-container">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email"  placeholder="Example@email.com" required>
+            </div>
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="password" name="password1" id="password" placeholder="Enter Password" required>
+                <i class="fa-regular fa-eye-slash"></i>
+            </div>
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="password" name="password2" id="password" placeholder="Enter Password" required>
+                <i class="fa-regular fa-eye-slash"></i>
+            </div>
+                <a href="#"><button>Get Started for Free</button></a>
+            </form>
+            <div class="continue-with">
+                <span class="line"></span>
+                <p>or continue with</p>
+                <p>or</p>
+                <span class="line"></span>
+            </div>
+            <div class="other-options">
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-apple"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <!-- new addition -->
+            <div class="mobile-other-options">
+                <a href="#"><i class="fa-brands fa-google"></i>Continue with Google</a>
+                <a href="#"><i class="fa-brands fa-apple"></i>Continue with Apple ID</a>
+                <a href="#"><i class="fa-brands fa-facebook"></i>Continue with Facebook</a>
+            </div>
+            <p class="terms">By signing up ,you agree to our <a href="#"> Terms of Service</a> and have read and acknowledge our <a href="#">Privacy Policy</a></p>
+        </div>
+    </main>
+    <script>
+        let menu = document.querySelector('.menu-button');
+         function openMenu (){
+             let navLink = document.querySelector('.navlink');
+ 
+             if (navLink.style.flexDirection !== 'column' && navLink.style.display === 'flex'){
+                 navLink.style.display = 'none';
+                 console.log(true)
+             }else{
+                 navLink.style.flexDirection === 'column';
+                 navLink.style.display = 'flex';
+                 console.log(false)
+             }
+         };
+ 
+         menu.addEventListener('click', (e) =>{
+             e.preventDefault();
+         });
+     </script>
 </body>
 </html>

@@ -1,9 +1,10 @@
  /* TEAM PAGE */
- .root {
-    --ff-primary: 'Montserrat' sans-serif;
-}
+
 
 /* NAVBAR */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;0,600;0,800;0,900;1,100;1,200;1,400&display=swap" rel="stylesheet');
+
 * {
     margin: 0;
     padding: 0;
@@ -23,84 +24,217 @@ body ::after{
     opacity: 0.1;
 
 }
+ 
+button{
+    cursor: pointer;    
+}
 
-#header{
+header{
     height: 80px;
     transition: all 0.5s;
     z-index: 997;
     transition: all 0.5s;
     background: #ffffff;
     padding: 0px;
-}
-
-#header .hero{
-    display: flex;
-    justify-content: space-around;
-    position: relative;
-    align-items: center;
-    width: auto;
-}
-
-#header .hero .navbar ol{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-#header .hero .navbar ol a{
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    padding: 14px 16px;
-    font-weight: 400;
-    font-size: 16px;
-    font-style: normal;
-    line-height: 24px;
-    color: #4C0B16;
-}
-
-
-#header .hero .navbar ol li{
-    float:left;
-}
-
-#header .hero .navbar1 h5{
-    list-style-type: none;
-    margin: 0;
-    padding:5px 21px;
-    overflow: hidden;
-    border: 2px solid #D5A06A;
-    border-radius: 25px;
-}
-
-#header .hero .navbar1 h5 a{
-    display: block;
-    text-align: center;
-    text-decoration: none;
-
-}
-
-#header .hero .navbar1 h5 a{
-    float: left;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 32px;
-    color: #D5A06A;
-    font-size: 20px;
-}
-
-  
-#header .logo{
-    margin: 0;
-    padding: 4px 0;
     
-      
 }
- 
+header nav{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    position: relative;
+    justify-content: space-between;
+    padding:0 119.5px;
+}
 
- 
+header img{
+    width: 64px;
+    height: 64px;
+}
+
+.links-btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    justify-content: space-between;
+    align-items: flex-end;
+    display: flex;
+    width: 100%;
+}
+
+.nav-links li{
+    list-style-type: none;
+    margin-right: 48px;
+    
+}
+
+.nav-links { 
+    margin-left: -8%;
+}
+
+.nav-links a{
+    text-decoration: none;
+    font-size: 1rem;
+    line-height: 24px;
+    color: #333;
+    
+}
+.nav-links:last-child{
+    padding-right: 40px;
+}
+
+.nav-btns{
+    /* display: flex;
+    margin-left: 20%;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%; */
+    display: flex;
+    align-items: center;
+}
+
+.nav-btns a .login{
+    background: #fff;
+    color: #721121;
+    border: 2px solid  #721121;
+    padding: 4px 1.5rem;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.nav-btns a .getstarted{
+    border: 2px solid  #721121;
+    border-radius:10px;
+    padding: 4px 1.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    background: #721121;
+    color: #fff;
+}
+
+.nav-btns .login:hover{
+    background-color: rgba(138, 57, 70, 0.1);
+    border: 2px solid #b98890;
+}
+
+.nav-btns .login:focus{
+    background-color: rgba(138, 57, 70, 0.2);
+}
+
+.nav-btns .login:active{
+    color: #4c0b16;
+    border: 2px solid #4c0b16;
+}
+
+.nav-btns .getstarted:hover, .hero-text a button:hover, .our-services button:hover, .about-us button:hover, .unique button:hover, .samples button:hover{
+    background-color: #8a3946;
+    box-shadow: 0px 4px 8px rgba(114, 17, 33, 0.32);
+}
+
+.nav-btns .getstarted:focus, .hero-text a button:focus, .our-services button:focus, .about-us button:focus, .unique button:focus, .samples button:focus{
+    border: 2px solid #ffc07f;
+}
+
+.nav-btns .getstarted:active, .hero-text a button:active, .our-services button:active, .about-us button:active, .unique button:active, .samples button:active{
+    background-color: #4c0b16;
+}
+
+.nav-links a:hover{
+    color: #a1606b;
+}
+
+.nav-links a:focus{
+    color: #721121;
+    border: 2px solid #e3cfd3;
+    border-radius: 16px;
+    padding: 8px 16px;
+}
+
+.nav-links a:active{
+    color: #4c0b16;
+}
+
+.hamburger{
+    display: none;
+}
+
+@media (max-width:769px) {
+    header{
+        padding-top: 1rem;
+}
+
+header nav{
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+}
+
+.nav-btns{
+        flex-direction: column;
+        width: fit-content;
+        margin-left: 0%;
+        align-items: flex-start;
+        padding: 0;
+        display: none;
+}
+
+.nav-btns a button{
+        margin-bottom: 1rem;
+        padding: 2px 10px;
+        line-height: normal;
+}
+
+.hamburger{
+        width: 35px;
+        height: 35px;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+}
+
+.hamburger .bars{
+        width: inherit;
+        height: 3px;
+        background-color: #212121;
+        border-radius: 5px;
+}
+
+.hamburger .bars:last-child{
+        align-self: flex-end;
+}
+
+.hamburger .bars:nth-child(odd){
+        width: 65%;
+}
+
+
+.mobile-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: inherit;
+        
+}
+
+   
+nav ul{
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        align-items: flex-start;
+        /* visibility: hidden; */
+}
+
+nav ul{
+        margin-bottom: .6rem;
+}
+}
 
 
 h1{
@@ -127,7 +261,7 @@ h5{
     font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 32px;
     text-align: center;
 }
@@ -140,18 +274,20 @@ hr {
     width:80%;
     color: rgb(196, 191, 191);
 }
+
+
   
 
  
 /* PROFILE CARD */
 .main{
   width: 100%;
-  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
   flex-wrap: wrap;
+  margin-bottom: 100px;
 }
 
 
@@ -164,9 +300,10 @@ hr {
     transition: .6s;
     margin: 0 25px;
     flex-direction: column;
-    
-    
+    padding: 10px;
+    background-color: gray;
 }
+
 
 
 .profile-card .img{
@@ -175,13 +312,18 @@ hr {
     height: 100%;
     transition: .6s;
     z-index: 99;
+    
   
 }
+
+
 
 .img img{
     width: 100%;
     border-radius: 50%;
     transition: .6s;
+    height: 200px;
+    object-fit: cover;
 }
 
 .caption{
@@ -201,9 +343,16 @@ hr {
     margin: 2px 0 9px 0;
 }
 
+/*MOBILE RESPONSIVENESS*/
 
-
- 
+@media screen and (max-width: 900px) {
+    .profile-card{
+        margin-bottom: 100px;
+    }
+    .main{
+        height: auto;
+    }
+ }
 
 /*--------------------------------------------------------------
 # Footer

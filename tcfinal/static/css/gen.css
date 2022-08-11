@@ -63,7 +63,7 @@ nav ul {
 
 .nav-links li{
     list-style-type: none;
-
+    
 }
 
 .nav-links a{
@@ -71,7 +71,7 @@ nav ul {
     font-size: 14px;
     line-height: 24px;
     color: #212121;
-
+    
 }
 
 .nav-links:last-child{
@@ -108,7 +108,7 @@ nav ul {
 /* main */
 .con {
     text-align: center;
-
+    
 }
 
 .con h1 {
@@ -131,9 +131,7 @@ nav ul {
     padding: 3rem;
     padding-left: 3.2rem;
     margin-bottom: 5%;
-    align-items: center;
     margin: auto;
-    
 }
 
 .txt {
@@ -239,7 +237,7 @@ footer li{
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-
+       
     }
 
     .nav-btns{
@@ -288,7 +286,7 @@ footer li{
         align-items: center;
         width: inherit;
     }
-
+    
     nav ul{
         flex-direction: column;
         width: 100%;
@@ -305,13 +303,13 @@ footer li{
         margin-top: 10%;
         font-size: 25px;
     }
-
+    
     .con p {
         margin-top: 4%;
         margin-bottom: 7%;
         font-size: 11px;
     }
-    .eembedd {
+    .iframe {
         width: 90%;
         background-color: #ffc07f;
         border-radius: 1rem;
@@ -324,7 +322,7 @@ footer li{
     }
     .btnn {
         width: 90%;
-
+        
     }
     .b1, .butt {
         height: 55px;

@@ -1,0 +1,107 @@
+footer{
+    height: auto;
+    background-color: #721121;
+    padding: 24px 120px 32px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+footer img{
+    width: 88px;
+    height: 88px;
+    align-self: flex-end;
+}
+
+footer .disclaimer-questions, .ft-logo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.footerlinks{
+    margin-bottom: 2rem
+}
+
+footer ul{
+    display: flex;
+    list-style-position: inside;
+    list-style: none;
+    padding-bottom: 1rem;
+}
+
+footer li a:last-of-type{
+    position: relative;
+}
+
+.circle-divider{
+    background-color: #d9d9d9;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    left: -10px;
+}
+
+footer p, footer a{
+    font-size: 12px;
+    color: #fff;
+}
+
+footer li{
+    margin-right: 20px;
+}
+
+footer .disclaimer-questions{
+    /* align-items: flex-end; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+
+
+/* For tablets */
+@media (max-width:991px){
+
+    footer{
+        padding-left: 32px;
+        padding-right: 32px;
+        text-align: center;
+    }
+    .footerlinks{
+        width: 75%;
+    }
+    footer .disclaimer-questions{
+        text-align: left;
+    }
+    
+}
+
+/* For mobile */
+@media (max-width: 481px) {
+    footer{
+        padding:24px 40px 32px;
+        flex-direction: column;
+    }
+     .ft-logo{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+    footer .disclaimer-questions{
+        width:90%;
+    }
+    .footer-txt{
+        align-items: center;
+        margin: 0 auto;
+    }
+    .footerlinks {
+        width: 100%;
+        
+    }
+}

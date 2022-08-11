@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static '/css/a.css' %}">
+<link rel="stylesheet" href="{% static '/css/footerindex.css' %}">
+<!-- THIS PART IS IMPORTANT {bootstrap cdn}-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- It Ends here -->
+</head>
+<body>
+ <header>
+        <nav>
+            <div class="mobile-menu">
+               <a href="/"> <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px"></a>
+                <a href="" class="hamburger" onclick="toggleMenu()">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                </a>
+            
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="nav-btns">
+                <a href="#"><button class="btn-1">Logout</button></a>
+               
+           
+        </nav>
+    </header>
+
+
+<h1 class="mt-5 mb-5">Frequently Asked Questions</h1>
+
+<div class="container">
+
+<div class="container mb-4">
+<button class="accordion"><h2>What is the difference between Terms & Conditions and Privacy Policy?</h2></button>
+<div class="panel mt-1">
+  <p>The difference between a privacy policy and terms and conditions is that a privacy policy protects your user's rights, while terms and conditions protect your website's rights. Privacy policies outline how you interact with user data, and terms and conditions outline the rules for using your site.</p>
+</div>
+</div>
+
+
+<div class="container mb-4">
+<button class="accordion"><h2>What is the difference between Terms & Conditions and Terms of Use?</h2></button>
+<div class="panel">
+  <p>Terms of Use on a website are terms which apply to every visitor. Terms and Conditions apply to particular users of the website, usually when the user is required to pay for a product and/or service. </p>
+</div>
+</div>
+
+<div class="container mb-4">
+<button class="accordion"><h2>  Does 78TC GEN provide CPA, GDPR and LGPD for free? </h2></button>
+<div class="panel">
+  <p>No, we are focused in providing free services to our users and offering this would deter our mission, in no account should we consider this in the nearest future, it will be update to all our users.</p>
+</div>
+</div>
+
+<div class="container mb-4">
+<button class="accordion"><h2>Does timely update occur to the T&C and Privacy Policy I generate from here?</h2></button>
+<div class="panel">
+  <p>You get update to what you generated from us in relation to changes in the terms and conditions and Privacy Policy changes, we will send you a follow-up mail.</p>
+</div>
+</div>
+
+<div class="container mb-4">
+<button class="accordion"><h2>How can i get in touch with the owner of this website?</h2></button>
+<div class="panel">
+  <p>You can go to our contact us page, there your find tools to ease your meeting with the owner and maximum hospitality would be provided.</p>
+</div>
+</div>
+
+
+</div>
+<footer>
+    <div class="ft-logo">
+        <p>Questions? Email us at support@78tcgen.com</p>
+        <img src="{% static '/assets/Logo_white.svg' %}"  alt="logo">
+    </div>
+    <div class="disclaimer-questions">
+        <div class="footerlinks">
+            <p>Disclaimer: Please note that legal information, including legal templates and legal policies, is not legal advice.
+                Information and services provided on the site are for informational and self-help purposes only and
+                are not to be a substitute for professional legal advice. <a href="#"> Read the full disclaimer.</a></p>
+        </div>
+        <div class="footer-txt">
+           
+            <ul>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
+            </ul>
+            <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+        </div> 
+    </div>
+</footer>
+   
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+      panel.style.borderTop="0px solid black";
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.borderTop="1px solid black";
+    } 
+  });
+}
+
+ // Mobile reponsiveness
+let menu = document.querySelector('.hamburger');
+
+function toggleMenu() {
+    let navLinks = document.querySelector('.nav-links');
+    let navBtns = document.querySelector('.nav-btns');
+
+    if (((navLinks.style.display === 'flex') && (navBtns.style.display === 'flex')) && (navLinks.style.flexDirection !== 'column')){
+        
+        navLinks.style.display = 'none';
+        navBtns.style.display = 'none';
+        
+        console.log(true);
+    }else{
+        navLinks.style.display = 'flex';
+        navBtns.style.display = 'flex';
+        //addBtns.style.display = 'flex';
+        console.log(false);
+    }
+}
+
+menu.addEventListener('click', (e) => {
+    e.preventDefault();
+    // toggleMenu();
+});
+
+</script>
+
+</body>
+</html>
