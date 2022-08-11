@@ -142,6 +142,9 @@ def profile(request):
 def faq(request):
     return render(request, "faq.html")
 
+def contact(request):
+    return render(request, "contact.html")
+
 def draft(request):
     
     context = {
@@ -152,7 +155,7 @@ def draft(request):
 
 class PostUpdateView(UpdateView):
     model = Post
-    template_name = 'blog/post_form.html'
+    template_name = 'blog/pp-form-business-info.html'
 
     fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording']
     success_url = reverse_lazy('draft')

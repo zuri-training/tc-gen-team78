@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- <link rel="stylesheet" href="{%static './css/contact-us.css'%}"> -->
+    <link rel="stylesheet" href="{% static '/css/contact-us.css' %}">
+    <!-- <link rel="stylesheet" href="{%static './css/footer.css'%}"> -->
+    <link rel="stylesheet" href="{% static '/css/footerindex.css' %}">
+    <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-js">
+            <div class="mobile-menu">
+                <a href="/"><img src="{% static '/assets/Logo.svg' %}" alt="logo" class="nav-logo"></a>
+                <a href="" class="hamburger" onclick="toggleMenu()">
+                    <img src="{% static '/assets/menu.svg' %}" alt="menu" width="32px" height="32px" class="menu-btn">
+                </a>
+            
+            </div>
+            <div class="links-btns">
+                <ul class="nav-links">
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#" class="active-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-btns">
+                    {% if user.is_authenticated %}
+                    <a href="logout"><button class="btn-1">Logout</button></a>
+                    {% else %}
+                    <a href="#"><button class="btn-1">Login</button></a>
+                    <a href="#"><button class="btn-2">Get Started</button></a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contact-img">
+            <img src="{% static '/assets/contact-illustration.svg' %}" alt="illustration">
+        </div>
+        <div class="contact-text">
+            <div class="headings">
+                <h1>Contact Us</h1>
+                <p>We would love to hear from you</p>
+            </div>
+            <div class="contact-address">
+                <h5>Address</h5>
+                <p>2715 Ash Dr. San Jose, South Dakota 83475</p>
+                <div class="office-hrs">
+                    <h6>Office Hours</h6>
+                    <p>8:00am - 7pm (GMT) | Mondays - Saturdays  </p>
+                    <p>12:00pm - 4pm (GMT) | Sundays </p>
+                </div>
+            </div>
+            <div class="contact-email">
+                <h5>Email</h5>
+                <p>General inquiries - info@78tcgen.com</p>
+                <p>Support and assistance - helpdesk@78tcgen.com</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="ft-logo">
+            <p>Questions? Email us at support@78tcgen.com</p>
+            <!-- <img href="./assets/{{Logo_white.svg}}"  alt="logo"> -->
+            <img src="{% static '/assets/Logo_white.svg' %}"  alt="logo">
+        </div>
+        <div class="disclaimer-questions">
+            <div class="footerlinks">
+                <p>Disclaimer: Please note that legal information, including legal templates and legal policies, is not legal advice.
+                    Information and services provided on the site are for informational and self-help purposes only and
+                    are not to be a substitute for professional legal advice. <a href="#"> Read the full disclaimer.</a></p>
+            </div>
+            <div class="footer-txt">
+                
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
+                </ul>
+                <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+            </div> 
+        </div>
+    </footer>
+    <script>
+        // Mobile reponsiveness
+        let menu = document.querySelector('.hamburger');
+        let menuClose = document.querySelector('.menu-btn');
+
+        function toggleMenu() {
+            let navLinks = document.querySelector('.nav-links');
+            let navBtns = document.querySelector('.nav-btns');
+            let header = document.querySelector(".header");
+            let navbar = document.querySelector('.nav-js');
+
+            if (((navLinks.style.display === 'flex') && (navBtns.style.display === 'flex')) && (navLinks.style.flexDirection !== 'column')){
+                menuClose.src = './assets/menu.svg';
+                navLinks.style.display = 'none';
+                navBtns.style.display = 'none';
+                navbar.style.height = 'auto';
+                navbar.style.backgroundColor = '#fff';
+                
+                console.log(true);
+            }else{
+                navLinks.style.display = 'flex';
+                navBtns.style.display = 'flex';
+                // addBtns.style.display = 'flex';
+                menuClose.src = './assets/close-circle.svg';
+                navbar.style.height = '100vh';
+                navbar.style.backgroundColor = '#721121';
+                navbar.style.color = '#fff';
+                header.style.paddingTop = '0px';
+                console.log(false);
+            }
+        }
+
+        menu.addEventListener('click', (e) => {
+            e.preventDefault();
+            // toggleMenu();
+        });
+
+
+        
+        // Footer
+        let year = document.getElementById('year');
+        let yyyy = new Date();
+        year.textContent = yyyy.getFullYear();
+    </script>
+</body>
+</html>
