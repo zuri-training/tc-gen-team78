@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+nav{
+    background-color: transparent;
+    padding: 4px 120px;
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    color: #292828;
+}
+
+.logo{
+    width: 64px;
+    height: 64px;
+}
+
+.add-btns{
+    display: flex;
+    align-items: center;
+    /* width: 24%; */
+}
+
+.add-btns a{
+    width: 32px;
+    
+    height: 32px;
+}
+
+.add-btns i{
+   color: #721121;
+    /* width: 32px;
+    height: 32px; */
+}
+
+.user-act-btn{
+    margin-left: 64px;
+}
+
+.add-btns span{
+    padding-left: 20px;
+}
+
+main {
+    display: flex;
+    padding-top: 5rem;
+    margin-bottom: 10rem;
+}
+
+.imgsec {
+    width: 50%;
+    /*display: flex;
+    justify-content: center;
+    flex-direction: column; */
+    text-align: center;
+}
+img {
+    border-radius: 50%;
+    width: 50%;
+    height: 15rem;
+}
+.img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+.formsec {
+    width: 50%;
+    padding: 1.5rem;
+    padding-top: 0;
+}
+.formsec h1 {
+    text-align: center;
+    margin-bottom: 5%;
+    color: #292828;
+}
+p {
+    color: #292828;
+}
+
+label {
+    font-size: 1.5rem;
+    color: #292828;
+    
+}
+input {
+    margin-top: 1rem;
+    width: 90%;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    height: 2.5rem;
+    outline: none;
+    color: #721121;
+    border: 2px solid #292828;
+    padding-inline: 1rem ;
+}
+
+input:focus {
+    background: #FFFFF4D5;
+    border: 2px solid #721121;
+}
+
+::placeholder {
+    color: #721121;
+}
+.submit {
+   width: 50%;
+   margin-bottom: 1.5rem;
+   background: #721121;
+   border: none;
+   color: white;
+   font-weight: 800;
+}
+
+.lsec {
+    border-top: 1px solid #292828;
+    padding-top: 1.5rem;
+    display: flex;
+    gap: 7%;
+}
+
+button {
+    width: 5rem;
+    height: 3rem;
+    color: #721121;
+    background: transparent;
+    font-weight: 800;
+    border-radius: 0.7rem;
+    border: 1px solid #721121;
+}
+
+.btn {
+    width: 7rem;
+}
+
+
+/* footer */
+.fa {
+    height: 20px;
+    width: 55px;
+    color: #721121;
+}
+footer{
+    height: auto;
+    background-color: #721121;
+    padding: 24px 120px 32px;
+    color: #fff;
+}
+
+footer .disclaimer-questions, .ft-logo{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer ul{
+    display: flex;
+    list-style-position: inside;
+    list-style: none;
+}
+
+footer li a:last-of-type{
+    position: relative;
+}
+
+.circle-divider{
+    background-color: #d9d9d9;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    left: -10px;
+}
+
+footer p, footer a{
+    font-size: 12px;
+    color: #fff;
+}
+
+footer li{
+    margin-right: 20px;
+}
+
+.ft-logo{
+    align-items: flex-end;
+}
+
+
+/* For mobile */
+@media (max-width: 480px) {
+    footer{
+        padding:24px 40px 32px;
+    }
+    footer .disclaimer-questions, .ft-logo{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media (max-width:769px){
+    main {
+        flex-direction: column;
+        
+    }
+    .logo-container {
+        margin-right: 3rem;
+    }
+   nav{
+        padding:4px 20px;
+    }
+    .imgsec {
+        width: 100%;
+    }
+    .img {
+        height: 1rem;
+        width: 1rem;
+        
+    }
+    
+    img {
+        
+        width: 50%;
+        height: 10rem;
+    }
+    
+    .formsec {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        width: 100%;
+        /*text-align: center;*/
+    }
+    
+    .formsec h1 {
+        margin-bottom: 2rem;
+    }
+    
+    input {
+        width: 100%;
+    }
+    
+    footer{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
