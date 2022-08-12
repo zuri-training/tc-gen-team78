@@ -9,18 +9,13 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import Post
 from django.views.generic.detail import DetailView
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
-from django.contrib.auth.forms import PasswordResetForm
+from django.contrib.auth.forms import PasswordChangeForm
 from django.template.loader import render_to_string
-from django.db.models.query_utils import Q
-from django.contrib.auth.tokens import default_token_generator
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
 from django.urls import reverse_lazy
-from django.views.generic import UpdateView, DetailView
+from django.views.generic import UpdateView
+from django.contrib.auth.views import PasswordChangeView
 
-from .forms import PostForm
+from .forms import PostForm, PasswordChangingForm
 
 from django.http import HttpResponse
 from django.template import loader
@@ -157,43 +152,21 @@ class PostUpdateView(UpdateView):
     model = Post
     template_name = 'blog/pp-form-business-info.html'
 
-    fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording']
+    fields = ['website_name', 'company_address', 'website_url', 'country', 'policy_effective_date', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording', 'term', 'poli']
     success_url = reverse_lazy('draft')
    
 
 
-def password_reset_request(request):
-    if request.method =='POST':
-        password_form = PasswordResetForm(request.POST)
-        if password_form.is_valid():
-            data = password_form.cleaned_data.get['email']
-            user_email = User.objects.filter(Q(email=data))
-            if user_email.exists():
-                for user in user_email:
-                    subject = 'Password Request'
-                    email_template_name = 'password_reset/password_reset_subject.txt'
-                    parameters = {
-                        'email' : user.email,
-                        'domain': '127.0.0.1:8080',
-                        'site_name': '78tcgen',
-                        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                        'token': default_token_generator.make_token(user),
-                        'protocol': 'http',
-                    }
-                    email = render_to_string(email_template_name, parameters)
-                    try:
-                        send_mail(subject, email, '', [user.email], fail_silently=False)
-                    except:
-                        return HttpResponse('invalid Header')
-                    return redirect('password_reset_done')
-    else:
-        password_form = PasswordResetForm()
-    context = {
-        'password_form': password_form,
+class PasswordsChangeView(PasswordChangeView):
+    form_class = PasswordChangingForm
+    success_url: reverse_lazy('password_change_done')
 
-    }
-    
-    return render(request, 'password_reset/password_reset_form.html', context)
+def password_change_done(request):
+    return render(request, 'password_reset/password_change_done.html', {})
+
+
+def profile(request):
+    return render(request, "profile.html")
 
 
 

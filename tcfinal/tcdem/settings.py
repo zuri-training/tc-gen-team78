@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'tcdem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tcproject',
+        'NAME': 'newtc',
         'USER': 'postgres',
         'PASSWORD': '332288552',
         'HOST': 'localhost'
@@ -137,3 +137,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+LOGIN_URL = 'login'

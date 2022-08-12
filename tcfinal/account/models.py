@@ -8,6 +8,7 @@ from django.utils import timezone
 from django.db.models.signals import pre_save
 from tcdem.utils import unique_slug_generator
 from datetime import date
+from django.utils.timezone import now
 
 
 # Create your models here.

@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .import views
-from .views import PostUpdateView
+from .views import PostUpdateView, PasswordsChangeView
 
 urlpatterns = [
     path('login', views.login, name='login'),
@@ -18,5 +18,7 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('faq', views.faq, name='faq'),
     path('templated/<slug:slug>/update/', PostUpdateView.as_view(), name='update'),
+    path('password/', PasswordsChangeView.as_view(template_name='password_reset/change-password.html')),
+    path('password_change_done', views.password_change_done, name='password_change_done'),
 
 ]
