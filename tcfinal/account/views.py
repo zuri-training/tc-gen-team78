@@ -1,18 +1,16 @@
 
-from base64 import urlsafe_b64decode
-import email
-from inspect import Parameter
-from multiprocessing import context
+from fileinput import filename
 from django import forms
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import Post
 from django.views.generic.detail import DetailView
-from django.contrib.auth.forms import PasswordChangeForm
-from django.template.loader import render_to_string
+from .forms import PostForm
+from django.views import generic
 from django.urls import reverse_lazy
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DetailView
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.views import PasswordChangeView
 
 from .forms import PostForm, PasswordChangingForm
@@ -21,7 +19,6 @@ from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -96,7 +93,7 @@ def new(request):
                 return redirect("/account/template")
         else:
             form = PostForm()
-        return render(request, "tcform.html", {"form": form})
+        return render(request, "posts/new.html", {"form": form})
     else:
         return redirect('first')
 
@@ -131,7 +128,6 @@ def template(request):
     }
     return render(request, "posts/template.html", context)
 
-@login_required(login_url="login")
 def templated(request, slug_text):
     q = Post.objects.filter(slug = slug_text)
     if q.exists():
@@ -174,10 +170,16 @@ class PostUpdateView(UpdateView):
     model = Post
     template_name = 'blog/pp-form-business-info.html'
 
-    fields = ['website_name', 'company_address', 'website_url', 'country', 'policy_effective_date', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording', 'term', 'poli']
+    fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording']
     success_url = reverse_lazy('draft')
-   
 
+class UserUpdateView(UpdateView):
+    form_class = UserChangeForm
+    model = User
+    template_name = 'draft.html'
+
+    fields = ['first_name', 'last_name', 'username', 'email']
+    success_url = reverse_lazy('userlogged')
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangingForm
@@ -186,14 +188,7 @@ class PasswordsChangeView(PasswordChangeView):
 def password_change_done(request):
     return render(request, 'password_reset/password_change_done.html', {})
 
-
-def profile(request):
-    return render(request, "profile.html")
-
-
-
-
-
+   
 
 
 

@@ -13,6 +13,7 @@ urlpatterns = [
     path('newtc', views.newtc, name='newtc'),
     path('template', views.template, name='template'),
     path('draft', views.draft, name='draft'),
+    path('contact', views.contact, name='contact'),
     path('templated/<slug:slug_text>/', views.templated, name='templated'),
     path('delete_template/<slug:slug_text>/', views.delete_template, name='delete_template'),
     path('temp2/<slug:slug_text>/', views.temp2, name='temp2'),
