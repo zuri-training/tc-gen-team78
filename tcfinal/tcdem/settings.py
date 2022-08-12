@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'generate',
-    'account'
+    'account',
+    'clear_cache'
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'tcdem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'newtc',
+        'NAME': 'tcnew',
         'USER': 'postgres',
         'PASSWORD': '332288552',
         'HOST': 'localhost'
