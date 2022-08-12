@@ -101,6 +101,28 @@ def new(request):
         return redirect('first')
 
 @login_required(login_url="login")
+def newtc(request):
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            form = PostForm(request.POST)
+            # name = request.POST['name']
+            # country = request.POST['country']
+            # duration = request.POST['duration']
+            # industry = request.POST['industry']
+            if form.is_valid():
+                print('I work')
+                instance = form.save(commit=False)
+                instance.user = request.user
+                instance.save()
+                return redirect("/account/template")
+        else:
+            form = PostForm()
+            
+        return render(request, "posts/newtc.html", {"form": form})
+    else:
+        return redirect('first')
+
+@login_required(login_url="login")
 def template(request):
     
     context = {
