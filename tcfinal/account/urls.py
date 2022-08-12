@@ -10,6 +10,7 @@ urlpatterns = [
     path('userlogged', views.userlogged, name="userlogged"),
     path('teamdetails', views.teamdetails, name="teamdetails"),
     path('new', views.new, name='new'),
+    path('newtc', views.newtc, name='newtc'),
     path('template', views.template, name='template'),
     path('draft', views.draft, name='draft'),
     path('templated/<slug:slug_text>/', views.templated, name='templated'),
