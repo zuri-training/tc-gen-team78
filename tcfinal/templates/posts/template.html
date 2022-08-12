@@ -145,7 +145,10 @@
         </tr>
         {% for post in user.publications.all%}
         <tr>
-        <td ><a class="active" href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></td>
+        <td >{% if post.poli and post.term == False %} 'Privacy for,'
+            {% else %} T&C for, 
+            {% endif %}
+            <a class="active" href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></td>
             
         </tr>
         {% endfor %}
