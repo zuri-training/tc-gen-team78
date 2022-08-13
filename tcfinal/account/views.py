@@ -144,6 +144,7 @@ def pptemplate(request):
     }
     return render(request, "posts/pp_template.html", context)
 
+@login_required(login_url="login")
 def templated(request, slug_text):
     q = Post.objects.filter(slug = slug_text)
     if q.exists():
