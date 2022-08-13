@@ -154,6 +154,16 @@ def templated(request, slug_text):
     users = User.objects.all()
     return render(request, "posts/templated.html", {'q':q, 'users':users})
 
+def templatedshare(request, slug_text):
+    q = Post.objects.filter(slug = slug_text)
+    if q.exists():
+        q = q.first()
+    else:
+        return HttpResponse("Page not found error")
+
+    users = User.objects.all()
+    return render(request, "posts/templatedshare.html", {'q':q, 'users':users})
+
 
 def delete_template(request, slug_text):
     post = Post.objects.filter(slug = slug_text)
