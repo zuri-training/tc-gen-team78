@@ -8,7 +8,9 @@ from django.utils import timezone
 from django.db.models.signals import pre_save
 from tcdem.utils import unique_slug_generator
 from datetime import date
-from django.utils.timezone import now
+
+
+# Create your models here.
 
 
 # Create your models here.
@@ -21,18 +23,20 @@ class Profile(models.Model):
 
 class Post(models.Model):
     # current_user = models.ForeignKey(User(), null=True, on_delete=models.CASCADE)
-    website_name = models.CharField(max_length=100, null=True)
+    Your_Website_Name = models.CharField(max_length=100, null=True)
     slug = models.SlugField(max_length=250, null=True, blank=True)
-    website_url = models.URLField(max_length=100, null=True, blank=True)
-    company_address = models.CharField(max_length=200, null=True, blank=True)
+    Your_Website_Url = models.CharField(max_length=100, null=True)
     country = models.CharField(max_length=100)
-    policy_effective_date = models.CharField(max_length=100, null=True, blank=True)
-    INDUSTRY_CHOICES = [('Generic', 'Generic'), ('Finance', 'Finance'), ('Tech', 'Tech'), ('Entertainment', 'Entertainment'), ('E-commerce', 'E-Commerce'),]
-    industry = models.CharField(max_length=13, choices=INDUSTRY_CHOICES, default='Generic')
-    #TCCHOICE = [('Terms-Condition', 'Terms-Condition'), ('Privacy-Policy', 'Privacy-Policy')]
+    Policy_Effective_Date = models.DateField(auto_now_add=False, default=date.today)
+    Address = models.CharField(max_length=100, null=True)
+    Phone = models.CharField(max_length=14, null=True)
+    Email = models.CharField(max_length=100, null=True)
+    INDUSTRY_CHOICES = [('Generic', 'Generic'), ('Finance', 'Finance'), ('Tech', 'Tech'), ('Entertainment', 'Entertainment'), ('Art', 'Art'), ('E-Commerce', 'E-Commerce')]
+    industry = models.CharField(max_length=13, choices=INDUSTRY_CHOICES)
+    Privacy = models.BooleanField(default=False)
+    updated = models.DateTimeField(auto_now=True)
     poli = models.BooleanField(default=False)
     term = models.BooleanField(default=False)
-    Privacy = models.BooleanField(default=False) 
     Advertisment= models.BooleanField(default=False)
     gdrp_wording = models.BooleanField(default=False)
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='publications')
@@ -40,7 +44,7 @@ class Post(models.Model):
     # user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
  
     def __str__(self):
-        return f"{self.website_name}"
+        return f"{self.Your_Website_Name}"
 
 def slug_generator(sender, instance, *args, **kwargs):
     if not instance.slug:

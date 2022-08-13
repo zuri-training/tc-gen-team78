@@ -40,14 +40,16 @@
         <h1>Draft Documents</h1>
         <p class="p">Pick up where you left off. Continue generating your legal documents with previously saved data</p>
         <div class="sec">
-            <a href="tcdraft">Terms and Conditions</a>
+            <a href="draft">All Drafts</a>
             <a href="ppdraft" style="text-align:center">Privacy policies</a>
         </div>
+
+     
         {% for post in user.publications.all%}
+        {% if post.term %}
         <div class="m" style="margin-bottom:100px">
-        
-        <div class="d1">
             
+        <div class="d1">
             <div class="img">
                <img src="{% static '/assets/blur.png' %}" > 
             </div>
@@ -55,16 +57,18 @@
                 <p>Last saved: {{ post.updated }}</p>
             </div>
             
-            <h1 class="h1">{{ post.website_name }}</h1>  <br>
-            
+            <h1 class="h1">{{ post.Your_Website_Name }}</h1>  <br>
+
             <div class="a">
               <a href="/account/templated/{{ post.slug }}/update" ><button class="btnu">Update</button></a> 
             </div> 
             
         </div>  
-            
+        
        </div>
+       {% endif %}
        {% endfor %}
+       
          <!-- <div class="m" style="margin-bottom:100px">
         <div class="d1">
             <div class="img">

@@ -9,19 +9,19 @@ class PostForm(ModelForm):
         model = Post
         # fields = '__all__'
         # fields = ['name', 'country', 'industry', 'duration', 'Privacy', 'Advertisment']
-        fields = ['website_name', 'company_address', 'website_url', 'country', 'policy_effective_date', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording', 'term', 'poli']
+        fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'Phone', 'Email', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording', 'term', 'poli']
         widgets = {
-            'website_name': forms.TextInput(attrs={'class': 'input-wrapper'}),
-            'company_address': forms.TextInput(attrs={'class': 'input-wrapper'}),
-            'website_url': forms.TextInput(attrs={'class': 'input-wrapper'}),
+            'Your_Website_Name': forms.TextInput(attrs={'class': 'input-wrapper'}),
+            'Address': forms.TextInput(attrs={'class': 'input-wrapper'}),
+            'Phone': forms.TextInput(attrs={'class': 'input-wrapper'}),
+            'Email': forms.TextInput(attrs={'class': 'input-wrapper'}),
+            'Your_Website_Url': forms.TextInput(attrs={'class': 'input-wrapper'}),
             'country': forms.TextInput(attrs={'class': 'input-wrapper'}),
-            'policy_effective_date': forms.TextInput(attrs={'class': 'input-wrapper'}),
+            'Policy_Effective_Date': forms.TextInput(attrs={'class': 'input-wrapper'}),
             'industry': forms.Select(attrs={'class': 'input-wrapper'}),
-            #'tcc': forms.Select(attrs={'class': 'input-wrapper'}),
-            #'pcc': forms.Select(attrs={'class': 'input-wrapper'}),
             'Privacy': forms.NullBooleanSelect(attrs={'class': 'input-wrapper'}),
-            'gdrp_wording': forms.NullBooleanSelect(attrs={'class': 'input-wrapper'}),
             'Advertisment': forms.NullBooleanSelect(attrs={'class': 'input-wrapper'}),
+            'gdrp_wording': forms.NullBooleanSelect(attrs={'class': 'input-wrapper'}),
             'term': forms.NullBooleanSelect(attrs={'class': 'input-wrapper'}),
             'poli': forms.NullBooleanSelect(attrs={'class': 'input-wrapper'}),
          }
