@@ -1,8 +1,9 @@
-from django import forms
-from django.forms import ModelForm, widgets
+from django.forms import ModelForm, Textarea
 from .models import Post
+from django import forms
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.models import User
+
 
 class PostForm(ModelForm):
     class Meta:
