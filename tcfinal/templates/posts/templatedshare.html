@@ -4,18 +4,13 @@
 <!-- {% block title %}Create Post {% endblock %}
 {% block content %} -->
 <!-- <h2>Here is your template</h2><br>
-
 This is your first template <b>{{ user.first_name }}</b> <br>
-
 The name of my company is <b>{{ q.website_name }}</b> and this is our website <b>{{ q.website_url }}</b> <br>
-
 Our HQ is based in <b>{{ q.country}}</b>, we are a part of the highly successtful {{ q.industry}} in our nation. <br>
-
 {% if q.Privacy %}
 <h2>Privacy Policy</h2>
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, praesentium nesciunt, sint obcaecati unde sit dolor animi laboriosam corporis quisquam dolorem iusto nemo, aliquam voluptatum deleniti vitae consequuntur rem cumque!
 {% endif %}
-
 {% if q.Advertisment %}
 <h2>Ad Policy</h2>
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, esse enim beatae commodi aliquid officia deserunt eveniet similique laudantium vel quam ratione mollitia dolor facere voluptate qui labore ut! Nulla!
@@ -32,14 +27,35 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ q.Your_Website_Name}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{% static '/css/gen.css' %}">
+    <link rel="stylesheet" href="{% static '/js/pdf.js' %}">
+    <script>
+
+      window.onload = function () {
+        document.getElementById("downloads")
+            .addEventListener("click", () => {
+                const invoice = this.document.getElementById("dob");
+                console.log(invoice);
+                console.log(window);
+                var opt = {
+                    margin: 1,
+                    filename: 'myfile.pdf',
+                    image: { type: 'jpg' },
+                    html2canvas: { scale: 2.4, scrollY: 0 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'p' },
+                    
+                };
+                html2pdf().from(invoice).set(opt).save();
+            })
+    }
+    </script>
 </head>
 <body>
     <header>
         <nav>
             <div class="mobile-menu">
-                <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px">
+                <a href="/"><img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px"></a>
                 <a href="" class="hamburger" onclick="toggleMenu()">
                     <span class="bars"></span>
                     <span class="bars"></span>
@@ -48,25 +64,18 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
             
             </div>
             <ul class="nav-links">
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                
             </ul>
             <div class="nav-btns">
-                {% if user.is_authenticated %}
-                <a href="/account/logout"><button class="btn-1">Logout</button></a>
-                {% else %}
-                <a href="/account/login"><button class="btn-1">Login</button></a>
-                <a href="/account/register"><button class="btn-2">Get Started</button></a>
-                {% endif %}
+                
            </div>
         </nav>
     </header>
     <main>
-        
+      <br><br><br><br>
          <div class="con">
-            <div class="htxt"></div>
+          <div id="invoice">
+            
             <!-- <div class="htxt">
               {% if q.poli %}
            <h1>Your Privacy Policy has<br>
@@ -81,19 +90,27 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
             <div class="view">
                 <!-- <iframe type="text/html" src="{% url 'temp2' 'slug_text' %}"  height="700" > </iframe> -->
 
-                <div class="iframe">
+                <div class="dob", id="dob">
+                  <style>
+                    .dob {
+                      width: 80%;
+                      
+                      margin: auto;
+                  }
+                  
+                  </style>
+                  
                 <!-- <This is your first template <b>{{ user.first_name }}</b> <br>
-
                 The name of my company is <b>{{ q.Your_Website_Name }}</b> and this is our website <b>{{ q.Your_Website_Url }}</b> <br>
-
                 Our HQ is based in <b>{{ q.country}}</b>, we are a part of the highly successtful {{ q.industry}} in our nation. <br> -->
 
                <!-- <h1>Privacy Policy </h1>
                 <p>Last updated: 2022-08-06</p>  -->
-                {{ q.industry }}
+
                 {% if q.term %}
                   {% if q.industry == 'Art' %}
-                <!-- <h2>Privacy Policy</h2> -->
+                <!-- <h2>Privacy Policy</h2> --><br><br>
+                
                   <h1 class="main-heading">TERMS AND CONDITION</h1>
                   <div class="introduction">
                     <h2>INTRODUCTON</h2>
@@ -203,7 +220,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
                       because the ordered Goods are not available, the Buyer will have 7 days
                       to provide written notice to cancel the order. <b> {{ q.Your_Website_Name }}</b> will, upon
                       receipt of such notice, refund moneys paid in full. The Buyer agrees and
-                      acknowledges that all specifications and advertising issued by <b> {{ q.Your_Website_Name }}</b> and any descriptions or illustrations contained in [COMPANY NAME]
+                      acknowledges that all specifications and advertising issued by <b> {{ q.Your_Website_Name }}</b> and any descriptions or illustrations contained in {{ q.Your_Website_Name}}
                       marketing materials are provided for the sole purpose of giving an
                       approximate idea of the Goods described in them. <b> {{ q.Your_Website_Name }}</b> is not
                       bound by such descriptions which do not form a part of these Terms and
@@ -808,7 +825,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
                     <p style="text-align: start;">
                       This Terms of Service Agreement (the "Agreement") governs your use of
                       this website, <b>{{ q.Your_Website_Url }}</b> (the "Website"), <b>{{ q.Your_Website_Name }}</b>
-                      ("Business Name") offer of products for purchase on this Website, or
+                     {{ q.Your_Website_Name }} offer of products for purchase on this Website, or
                       your purchase of products available on this Website. This Agreement
                       includes, and incorporates by this reference, the policies and
                       guidelines referenced below. <b>{{ q.Your_Website_Name }}</b> reserves the right to change
@@ -839,11 +856,11 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
                       NAME] sales reps, while they are calling you, of your desire to opt out
                       from further direct company communications and solicitations, you are
                       agreeing to continue to receive further emails and call
-                      solicitations[COMPANY NAME] and its designated in house or third party
+                      solicitations{{ q.Your_Website_Name}} and its designated in house or third party
                       call team(s). Opt Out Procedure: We provide 3 easy ways to opt out of
                       from future solicitations. 1. You may use the opt out link found in any
                       email solicitation that you may receive. 2. You may also choose to opt
-                      out, via sending your email address to:[COMPANY EMAIL ADDRESS] 3. You
+                      out, via sending your email address to:{{ q.Email }} 3. You
                       may send a written remove request to <b>{{ q.Address }}</b>. Proprietary
                       Rights. <b>{{ q.Your_Website_Name }}</b> has proprietary rights and trade secrets in the
                       Products. You may not copy, reproduce, resell or redistribute any
@@ -903,20 +920,20 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
                       interactions between users. <b>{{ q.Your_Website_Name }}</b> reserves the right, but has
                       no obligation, to monitor interactions between and among users of the
                       Website and to remove any content <b>{{ q.Your_Website_Name }}</b> deems objectionable, in
-                      MuscleUP Nutrition's sole discretion.
+                      {{ q.Your_Website_Name}} sole discretion.
                     </p>
                   </div>
                   <div class="disclaimer">
                     <h2>DISCLAIMER OF WARRANTIES</h2>
                     <p style="text-align: start;">
-                      Your Use Of This Website And/Or Products Are At Your Sole Risk. The  Website And Products Are Offered On An "As Is" And "As Available" Basis. <b>{{ q.Your_Website_Name }}</b> Expressly Disclaims All Warranties Of Any Kind, Whether Express Or Implied, Including, But Not Limited To, Implied Warranties Of Merchantability, Fitness For A Particular Purpose And Non-Infringement With Respect To The Products Or Website Content, Or Any Reliance Upon Or Use Of The Website Content Or Products. ("Products" Include Trial  Products.) Without Limiting The Generality Of The Foregoing, [Companyname] Makes No Warranty: That The Information Provided On This Website Is Accurate, Reliable, Complete, Or Timely. That The Links To Third-Party Websites Are To Information That Is Accurate, Reliable,  Complete, Or Timely. No Advice Or Information, Whether Oral Or Written, Obtained By You From This Website Will Create Any Warranty Not Expressly Stated Herein. As To The Results That May Be Obtained From The Use Of The Products Or That Defects In Products Will Be Corrected. Regarding Any Products Purchased Or Obtained Through The Website. Some Jurisdictions Do Not Allow The Exclusion Of Certain Warranties, So Some  Of The Above Exclusions May Not Apply To You.
+                      Your Use Of This Website And/Or Products Are At Your Sole Risk. The  Website And Products Are Offered On An "As Is" And "As Available" Basis. <b>{{ q.Your_Website_Name }}</b> Expressly Disclaims All Warranties Of Any Kind, Whether Express Or Implied, Including, But Not Limited To, Implied Warranties Of Merchantability, Fitness For A Particular Purpose And Non-Infringement With Respect To The Products Or Website Content, Or Any Reliance Upon Or Use Of The Website Content Or Products. ("Products" Include Trial  Products.) Without Limiting The Generality Of The Foregoing, {{ q.Your_Website_Name}} Makes No Warranty: That The Information Provided On This Website Is Accurate, Reliable, Complete, Or Timely. That The Links To Third-Party Websites Are To Information That Is Accurate, Reliable,  Complete, Or Timely. No Advice Or Information, Whether Oral Or Written, Obtained By You From This Website Will Create Any Warranty Not Expressly Stated Herein. As To The Results That May Be Obtained From The Use Of The Products Or That Defects In Products Will Be Corrected. Regarding Any Products Purchased Or Obtained Through The Website. Some Jurisdictions Do Not Allow The Exclusion Of Certain Warranties, So Some  Of The Above Exclusions May Not Apply To You.
   
                     </p>
                   </div>
                   <div class="limitation-of-liability">
                     <h2>LIMITATION OF LIABILITY</h2>
                     <p style="text-align: start;">
-                      <b>{{ Q.Your_website_name }}</b> Entire Liability, And Your Exclusive Remedy, In Law, In Equity, Or Othwerwise, With Respect To The Website Content And Products And/Or For Any Breach Of This Agreement Is Solely Limited To The Amount You Paid, Less Shipping And Handling, For Products Purchased Via The Website. [Company Name] Will Not Be Liable For Any Direct, Indirect, Incidental, Special Or Consequential Damages In Connection With This Agreement Or The Products In Any Manner, Including Liabilities Resulting From (1) The Use Or The Inability To Use The Website Content Or  Products; (2) The Cost Of Procuring Substitute Products Or Content; (3) Any Products Purchased Or Obtained Or Transactions Entered Into Through The Website; Or (4) Any Lost Profits You Allege. Some Jurisdictions Do Not Allow The Limitation Or Exclusion Of Liability For Incidental Or Consequential Damages So Some Of The Above Limitations May Not Apply To
+                      <b>{{ Q.Your_website_name }}</b> Entire Liability, And Your Exclusive Remedy, In Law, In Equity, Or Othwerwise, With Respect To The Website Content And Products And/Or For Any Breach Of This Agreement Is Solely Limited To The Amount You Paid, Less Shipping And Handling, For Products Purchased Via The Website. {{ q.Your_Website_Name}} Will Not Be Liable For Any Direct, Indirect, Incidental, Special Or Consequential Damages In Connection With This Agreement Or The Products In Any Manner, Including Liabilities Resulting From (1) The Use Or The Inability To Use The Website Content Or  Products; (2) The Cost Of Procuring Substitute Products Or Content; (3) Any Products Purchased Or Obtained Or Transactions Entered Into Through The Website; Or (4) Any Lost Profits You Allege. Some Jurisdictions Do Not Allow The Limitation Or Exclusion Of Liability For Incidental Or Consequential Damages So Some Of The Above Limitations May Not Apply To
                       You.
                       
                     </p>
@@ -936,7 +953,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
                       proprietary right of any person or entity; (5) your violation of any
                       provision of this Agreement; or (6) any information or data you supplied
                       to {{ q.Your_Website_Name }} When {{ q.Your_Website_Name }} is threatened with suit or sued by
-                      a third party, [COMPANY NAME] may seek written assurances from you
+                      a third party, {{ q.Your_Website_Name}} may seek written assurances from you
                       concerning your promise to indemnify {{ q.Your_Website_Name }}; your failure to
                       provide such assurances may be considered by {{ q.Your_Website_Name }}to be a
                       material breach of this Agreement. {{ q.Your_Website_Name }} will have the right to
@@ -955,7 +972,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
                     <h2>PRIVACY</h2>
                     <p style="text-align: start;">
                       {{ q.Your_Website_Name }} believes strongly in protecting user privacy and
-                      providing you with notice of MuscleUP Nutrition's use of data. Please
+                      providing you with notice of {{ q.Your_Website_Name}} use of data. Please
                       refer to {{ q.Your_Website_Name }} privacy policy, incorporated by reference
                       herein, that is posted on the Website.
                     </p>
@@ -1243,12 +1260,10 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
                     </li>
                   </ul>
                 </div>
-<!-- 
                 {% if q.Privacy %}
                 <h2>Privacy Policy</h2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, praesentium nesciunt, sint obcaecati unde sit dolor animi laboriosam corporis quisquam dolorem iusto nemo, aliquam voluptatum deleniti vitae consequuntur rem cumque!
                 {% endif %}
-
                 {% if q.Advertisment %}
                 <h2>Ad Policy</h2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, esse enim beatae commodi aliquid officia deserunt eveniet similique laudantium vel quam ratione mollitia dolor facere voluptate qui labore ut! Nulla!
@@ -1260,6 +1275,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
             </div> -->
             </div>
         </div>
+      </div>
         
         <div class="txt">
             <h2></h2>
@@ -1268,24 +1284,27 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
         
         <div class="b">
         <div class="btnn">
-           <div class="b">
+          <div class="b1">
             <!--  <div class="b1"> -->
-                <a href="#"><button class="butt"><i class="fa-solid fa-cloud-arrow-down" style="width:100px;"></i><br>
-                Download</button></a>
+                <button id="downloads" class="butt"><i class="fa-solid fa-cloud-arrow-down" style="width:100px;"></i>
+                Download</button>
             </div>
             <div class="b1">
-                {% post_to_twitter "Hi, checkout this awesome template generated by tcgen78!" object_or_url "Share via Twitter" %}
-                  </div>
-                  <div class="b1">
-                {% post_to_linkedin object_or_url "Share to Linkedin" %}
-                 </div>
-                <div class="b1">
-                <a href=""></a> {% send_email "Hi, checkout this awesome template generated by tcgen78!" "Share Via Email" %}
-                </div>
-                <div class="b1">
-                    {% copy_to_clipboard object_or_url "Copy to Clipboard" %}
-                </div>
-        </div> 
+                <a href="#"><button class="butt"><i class="fa-solid fa-arrow-up-from-bracket"></i><br>Embed</button></a>
+                
+            </div>
+            <div class="b1">
+              <div class="dropdown">
+                <button class="butt" ><i class="fa-solid fa-share-nodes"></i><br>Share</button>
+                <div class="dropdown-content">
+                  {% post_to_linkedin object_or_url "Share to Linkedin" %}
+                 {% post_to_twitter  object_or_url "Share via Twitter" %}
+                  {% send_email object_or_url "Share Via Email" %}
+                 {% copy_to_clipboard object_or_url "Copy to Clipboard" %}
+                </div></div>
+            </div> 
+
+          
        
     
             <!-- <div class="b1">
@@ -1317,6 +1336,45 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
     </footer> -->
     {% add_copy_script %}
 </body>
+
+<style>
+  .butt1 {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffc07f;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 15px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #721121;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .butt {background-color: #3e8e41;}
+  </style>
+
 </html>
 
 
