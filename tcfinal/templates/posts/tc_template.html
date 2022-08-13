@@ -77,28 +77,33 @@
        <main>
         <div class="con">
             <div class="htxt">
-           <h1>Your Generated Terms and Conditions<br></h1> 
+
+           <h1>Your Generated Privacy Policy<br></h1> 
+
            
            </div>
             <div class="view">
                 <section style="color:#7c746c; text-align:center">
-        <h2 >Here are your generated T&C </h2><br>
+
+        <h2 >Here are your Privacy Policies</h2><br>
 
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for templates.." title="Type in a keyword">
-
+        
         <table id="myTable" class="iframe">
             <tr class="header">
                 <th ><a href="template">All Templates</a></th>
-                <th ><a href="pptemplate">Privacy Policy Templates</a></th>
+                <th ><a href="tctemplate">Terms and Condition Templates</a></th>
             
             </tr>
             <tr class="header">
-                <th style="text-align: end;">Terms and Condition Templates</th>
+                <th style="text-align: end;">Privacy Policy Templates</th>
                 <th></th>
+            
             </tr>
             {% for post in user.publications.all%}
             <tr>
-                {% if post.term %}
+                {% if post.poli %}
+
             <td > 
                 <a class="active" href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></td>
                 <td></td>
@@ -108,6 +113,7 @@
     
             </table>
 
+<<<
         </section>
         </div>
         </div>
@@ -182,5 +188,5 @@ function myFunction() {
   }
     </script>
 </body>
-</html>
 
+</html>

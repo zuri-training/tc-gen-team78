@@ -6,12 +6,14 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import Post
 from django.views.generic.detail import DetailView
-from .forms import PostForm
-from django.views import generic
+from django.contrib.auth.forms import PasswordChangeForm
+from django.template.loader import render_to_string, get_template
 from django.urls import reverse_lazy
-from django.views.generic import UpdateView, DetailView
-from django.contrib.auth.forms import UserChangeForm
+from django.views.generic import UpdateView, View
 from django.contrib.auth.views import PasswordChangeView
+from .utils import render_to_pdf
+from io import BytesIO
+from xhtml2pdf import pisa
 
 from .forms import PostForm, PasswordChangingForm
 
@@ -144,6 +146,9 @@ def pptemplate(request):
     }
     return render(request, "posts/pp_template.html", context)
 
+
+@login_required(login_url="login")
+
 def templated(request, slug_text):
     q = Post.objects.filter(slug = slug_text)
     if q.exists():
@@ -153,6 +158,16 @@ def templated(request, slug_text):
 
     users = User.objects.all()
     return render(request, "posts/templated.html", {'q':q, 'users':users})
+
+def templatedshare(request, slug_text):
+    q = Post.objects.filter(slug = slug_text)
+    if q.exists():
+        q = q.first()
+    else:
+        return HttpResponse("Page not found error")
+
+    users = User.objects.all()
+    return render(request, "posts/templatedshare.html", {'q':q, 'users':users})
 
 
 def delete_template(request, slug_text):
@@ -220,7 +235,40 @@ class PasswordsChangeView(PasswordChangeView):
 def password_change_done(request):
     return render(request, 'password_reset/password_change_done.html', {})
 
-   
+def profile(request):
+    return render(request, "profile.html")
+
+def render_to_pdf(template_src, context_dict={}):
+	template = get_template(template_src)
+	html  = template.render(context_dict)
+	result = BytesIO()
+	pdf = pisa.pisaDocument(BytesIO(html.encode("ISO-8859-1")), result)
+	if not pdf.err:
+		return HttpResponse(result.getvalue(), content_type='application/pdf')
+	return None
+
+class ViewPDF(View):
+	def get(self, request, *args, **kwargs):
+
+		pdf = render_to_pdf('posts/templatedshare.html')
+		return HttpResponse(pdf, content_type='application/pdf')
+
+
+#Automaticly downloads to PDF file
+class DownloadPDF(View):
+	def get(self, request, *args, **kwargs):
+		
+		pdf = render_to_pdf('posts/templated.html')
+
+		response = HttpResponse(pdf, content_type='application/pdf')
+		filename = "Invoice_%s.pdf" %("12341231")
+		content = "attachment; filename='%s'" %(filename)
+		response['Content-Disposition'] = content
+		return response
+
+
+
+
 
 
 
