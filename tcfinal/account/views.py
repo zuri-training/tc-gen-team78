@@ -1,8 +1,5 @@
 
-from base64 import urlsafe_b64decode
-import email
-from inspect import Parameter
-from multiprocessing import context
+from fileinput import filename
 from django import forms
 from django.shortcuts import redirect, render
 from django.contrib import messages
@@ -24,7 +21,6 @@ from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -150,7 +146,9 @@ def pptemplate(request):
     }
     return render(request, "posts/pp_template.html", context)
 
+
 @login_required(login_url="login")
+
 def templated(request, slug_text):
     q = Post.objects.filter(slug = slug_text)
     if q.exists():
@@ -221,8 +219,14 @@ class PostUpdateView(UpdateView):
 
     fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording', 'Phone', 'Email']
     success_url = reverse_lazy('draft')
-   
 
+class UserUpdateView(UpdateView):
+    form_class = UserChangeForm
+    model = User
+    template_name = 'draft.html'
+
+    fields = ['first_name', 'last_name', 'username', 'email']
+    success_url = reverse_lazy('userlogged')
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangingForm
@@ -231,7 +235,7 @@ class PasswordsChangeView(PasswordChangeView):
 def password_change_done(request):
     return render(request, 'password_reset/password_change_done.html', {})
 
-
 def profile(request):
     return render(request, "profile.html")
+
 

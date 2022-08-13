@@ -16,6 +16,7 @@
     {% for post in user.publications.all%}
     <h2><a href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></h2>
     {% endfor %}
+
 {% else %}
 <li>Create an account</li>
 {% endif %} -->
@@ -76,11 +77,14 @@
        <main>
         <div class="con">
             <div class="htxt">
+
            <h1>Your Generated Privacy Policy<br></h1> 
+
            
            </div>
             <div class="view">
                 <section style="color:#7c746c; text-align:center">
+
         <h2 >Here are your Privacy Policies</h2><br>
 
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for templates.." title="Type in a keyword">
@@ -99,6 +103,7 @@
             {% for post in user.publications.all%}
             <tr>
                 {% if post.poli %}
+
             <td > 
                 <a class="active" href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></td>
                 <td></td>
@@ -108,7 +113,7 @@
     
             </table>
 
-
+<<<
         </section>
         </div>
         </div>
@@ -183,4 +188,5 @@ function myFunction() {
   }
     </script>
 </body>
+
 </html>
