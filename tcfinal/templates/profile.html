@@ -5,13 +5,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <link rel="stylesheet" href="{% static '/css/profile.css' %}">
+    <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
+
+    <title>Dashboard</title>
 </head>
 <body>
-    <h1>This is your profile</h1>
-    <li> First Name: {{ user.first_name }} </li>
-    <li> Last Name: {{ user.last_name }} </li>
-    <li> Email Address: {{ user.email }} </li>
-    <li> Username: {{ user.username }} </li>
+    <nav>
+        <div class="logo-container">
+            <img src="{% static '/assets/Logo_white.svg' %}" alt="logo" class="">
+        </div>
+        <div class="add-btns">
+            <div class="support-btn">
+                <a href=""><i class="fa-solid fa-comments"></i></a>
+                <span class="">Support</span>
+            </div>
+            <div class="user-act-btn">
+                <a href=""><img src="{% static '/assets/p.png' %}" class="img"></img></a>
+                <span class="">User Account</span>
+            </div>
+        </div>
+    </nav>
+    <main>
+      <div class="imgsec">
+          <img src="{% static '/assets/p.png' %}"></img>
+          <h2>{{ user.first_name}} {{ user.last_name }}</h2>
+          <p>{{ user.email }}</p>
+      </div>  
+      <div class="formsec">
+          <h1>Update Profile</h1>
+          <div class="form">
+              <form method="POST" action="profile"> 
+               {% csrf_token %}
+                  <label>First Name</label><br>
+                  <input type="text" name="first_name" id="first_name" placeholder="Jacob" value={{user.first_name}}><br>
+                  <!-- {{ form.first_name }} -->
+                  <label>Last Name</label><br>
+                  <input type="text" name="last_name" id="last_name" placeholder="Jones" value={{user.last_name}}><br>
+                  <label>Username</label><br>
+                  <input type="text" id="username" name="username" placeholder="Jones" value={{user.username}}><br>
+                  <label>Email</label><br>
+                  <input type="email" name="email" id="email" placeholder="jacob12jones@gmail.com" value={{user.email}}><br>
+                  <input type="submit" class="submit" value="Update">
+              </form>
+          </div>
+          <div class="lsec">
+              <a href="#"><button class="btn">log out</button></a>
+              <a href="#"><button>Delete account</button></a>
+              <a href="#"><button>Reset password</button>
+          </div></a>
+      </div>
+        
+        
+    </main>
+       <footer>
+        <div class="disclaimer-questions">
+            <div class="footerlinks">
+                <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p>
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
+                </ul>
+            </div>
+            <p>Questions? Email us at support@78tcgen.com</p>
+        </div>
+        <div class="ft-logo">
+            <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+            <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
+        </div>
+    </footer>
 </body>
 </html>

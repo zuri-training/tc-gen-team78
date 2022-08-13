@@ -1,32 +1,24 @@
 
-from base64 import urlsafe_b64decode
-import email
-from inspect import Parameter
-from multiprocessing import context
+from fileinput import filename
 from django import forms
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from .models import Post
 from django.views.generic.detail import DetailView
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse
-from django.contrib.auth.forms import PasswordResetForm
-from django.template.loader import render_to_string
-from django.db.models.query_utils import Q
-from django.contrib.auth.tokens import default_token_generator
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
+from .forms import PostForm
+from django.views import generic
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView, DetailView
+from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.views import PasswordChangeView
 
-from .forms import PostForm
+from .forms import PostForm, PasswordChangingForm
 
 from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -101,7 +93,29 @@ def new(request):
                 return redirect("/account/template")
         else:
             form = PostForm()
-        return render(request, "tcform.html", {"form": form})
+        return render(request, "posts/new.html", {"form": form})
+    else:
+        return redirect('first')
+
+@login_required(login_url="login")
+def newtc(request):
+    if request.user.is_authenticated:
+        if request.method == "POST":
+            form = PostForm(request.POST)
+            # name = request.POST['name']
+            # country = request.POST['country']
+            # duration = request.POST['duration']
+            # industry = request.POST['industry']
+            if form.is_valid():
+                print('I work')
+                instance = form.save(commit=False)
+                instance.user = request.user
+                instance.save()
+                return redirect("/account/template")
+        else:
+            form = PostForm()
+            
+        return render(request, "posts/newtc.html", {"form": form})
     else:
         return redirect('first')
 
@@ -114,7 +128,22 @@ def template(request):
     }
     return render(request, "posts/template.html", context)
 
-@login_required(login_url="login")
+def tctemplate(request):
+    
+    context = {
+        'users': User.objects.all(),
+        'posts': Post.objects.all(),
+    }
+    return render(request, "posts/tc_template.html", context)
+
+def pptemplate(request):
+    
+    context = {
+        'users': User.objects.all(),
+        'posts': Post.objects.all(),
+    }
+    return render(request, "posts/pp_template.html", context)
+
 def templated(request, slug_text):
     q = Post.objects.filter(slug = slug_text)
     if q.exists():
@@ -153,52 +182,45 @@ def draft(request):
     }
     return render(request, "draft.html", context)
 
+def ppdraft(request):
+    
+    context = {
+        'users': User.objects.all(),
+        'posts': Post.objects.all(),
+    }
+    return render(request, "pp_draft.html", context)
+
+def tcdraft(request):
+    
+    context = {
+        'users': User.objects.all(),
+        'posts': Post.objects.all(),
+    }
+    return render(request, "tc_draft.html", context)
+
 class PostUpdateView(UpdateView):
     model = Post
     template_name = 'blog/pp-form-business-info.html'
 
-    fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording']
+    fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording', 'Phone', 'Email']
     success_url = reverse_lazy('draft')
+
+class UserUpdateView(UpdateView):
+    form_class = UserChangeForm
+    model = User
+    template_name = 'draft.html'
+
+    fields = ['first_name', 'last_name', 'username', 'email']
+    success_url = reverse_lazy('userlogged')
+
+class PasswordsChangeView(PasswordChangeView):
+    form_class = PasswordChangingForm
+    success_url: reverse_lazy('password_change_done')
+
+def password_change_done(request):
+    return render(request, 'password_reset/password_change_done.html', {})
+
    
-
-
-def password_reset_request(request):
-    if request.method =='POST':
-        password_form = PasswordResetForm(request.POST)
-        if password_form.is_valid():
-            data = password_form.cleaned_data.get['email']
-            user_email = User.objects.filter(Q(email=data))
-            if user_email.exists():
-                for user in user_email:
-                    subject = 'Password Request'
-                    email_template_name = 'password_reset/password_reset_subject.txt'
-                    parameters = {
-                        'email' : user.email,
-                        'domain': '127.0.0.1:8080',
-                        'site_name': '78tcgen',
-                        'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                        'token': default_token_generator.make_token(user),
-                        'protocol': 'http',
-                    }
-                    email = render_to_string(email_template_name, parameters)
-                    try:
-                        send_mail(subject, email, '', [user.email], fail_silently=False)
-                    except:
-                        return HttpResponse('invalid Header')
-                    return redirect('password_reset_done')
-    else:
-        password_form = PasswordResetForm()
-    context = {
-        'password_form': password_form,
-
-    }
-    
-    return render(request, 'password_reset/password_reset_form.html', context)
-
-
-
-
-
 
 
 

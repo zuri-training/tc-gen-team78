@@ -17,14 +17,12 @@
     <nav>
         <div class="mobile-menu">
             <div class="logo-container">
-                <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="">
+                <a href="/"><img src="{% static '/assets/Logo.svg' %}" alt="logo" class=""></a>
             </div>
             <a href="" class="hamburger" onclick="toggleMenu()">
                 <span class="bars"></span>
                 <span class="bars"></span>
                 <span class="bars"></span>
-                <span class="bars"></span>
-                
             </a>
         </div>
         
@@ -35,16 +33,16 @@
                 </a>
             </div>
             <div class="user-act-btn">
-                <a href="">
+                <a href="profile">
                 <img src="{% static '/assets/profile-circle.svg' %}" alt="profile icon">
-                <span class="">User Account</span>
+                <span class="">{{ user.first_name }}</span>
                 </a>
             </div>
         </div>
     </nav>
     <main>
         <section class="headings">
-            <h1>Privacy Policy Generator</h1>
+            <h1>Terms and Condition Generator</h1>
             <div style="text-align:center;margin-top:40px;">
     <span class="step"><p class="pee"><br><br>Business Information</p></span>
     <span class="step"><p class="pee"><br><br>Business Information</p></span>
@@ -65,10 +63,10 @@
                     <option value="agriclture">Agriculture</option>
                 </select>
             </div>--->
-            
             <div class="input-wrapper">
-                <label for="Your_Website_Name">Your Website Name</label>
-                {{ form.Your_Website_Name }}
+                <label for="term">By filling this form, you accept that your details will be used to generate a Terms
+                    and Conditions Template for you</label>
+                {{ form.term}}
             </div>
             <div class="input-wrapper">
                 <label for="Your_Website_Url">Your Website Url</label>
@@ -83,15 +81,15 @@
             
             <div class="tab">
             <div class="input-wrapper">
+                <label for="Your_Website_Name">Your Website Name</label>
+                {{ form.Your_Website_Name}}
+            </div>
+            <div class="input-wrapper">
                 <label for="country">country</label>
-                {{ form.country }}
+                {{ form.country}}
             </div>
             <div class="input-wrapper">
-                <label for="Policy_Effective_Date">Policy Effective Date</label>
-                {{ form.Policy_Effective_Date}}
-            </div>
-            <div class="input-wrapper">
-                <label for="Address">address</label>
+                <label for="address">address</label>
                 {{ form.Address}}
             </div>
             <div class="input-wrapper">
@@ -101,9 +99,13 @@
             <div class="input-wrapper">
                 <label for="Email">Company Email Address</label>
                 {{ form.Email}}
+            </div
+            <div class="input-wrapper">
+                <label for="pcdate">pcdate</label>
+                {{ form.Policy_Effective_Date}}
             </div>
             <div class="input-wrapper">
-                <label for="gdrp_wording">gdrp</label>
+                <label for="gdrp">gdrp</label>
                 {{ form.gdrp_wording}}
             </div>
 
@@ -115,32 +117,11 @@
                 <label for="Advertisment">Advertisment</label>
                 {{ form.Advertisment}}
             </div>
-            <div class="input-wrapper">
-                <label for="Advertisment">PP</label>
-                {{ form.poli}}
-            </div>
-            <div class="input-wrapper">
-                <label for="Advertisment">Term</label>
-                {{ form.term}}
-            </div>
             </div>
             
             
-           <!-- <div class="tab"> -->
-           
-            <!-- <div class="input-wrapper">
-                <label for="gdrp_wording">gdrp</label>
-                {{ form.gdrp_wording}}
-            </div>
-
-            <div class="input-wrapper">
-                <label for="Privacy">Privacy</label>
-                {{ form.Privacy}}
-            </div>
-            <div class="input-wrapper">
-                <label for="Advertisment">Advertisment</label>
-                {{ form.Advertisment}}
-            </div> -->
+           <div class="tab">
+   
             
             <!---<div class="input-wrapper">
                 <label for="">Are you a business or an individual?</label>
@@ -155,7 +136,7 @@
                     </div>
                 </div>--->
             
-            <!-- </div> -->
+            </div>
             <div class="button-grp">
                 <button type="submit" class="continue-later" id="prevBtn" onclick="nextPrev(-1)"><i class='fa'>Previous &#xf112; </i></button>
       <button type="submit" class="next-button" id="nextBtn" onclick="nextPrev(1)"><i class='fa'>&#xf064;</i></button>
@@ -175,7 +156,7 @@
         </div>
         <div class="ft-logo">
             <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
-            <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
+            <img src="./assets/Logo_white.svg" alt="logo">
         </div>
     </footer>
 <script>
@@ -255,3 +236,5 @@ function fixStepIndicator(n) {
 </script>
 </body>
 </html>
+
+

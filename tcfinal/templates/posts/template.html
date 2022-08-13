@@ -57,10 +57,10 @@
             
             </div>
             <ul class="nav-links">
-                <li><a href="#">Our team</a></li>
-                <li><a href="#">FAQs</a></li>
+                <li><a href="teamdetails">Our team</a></li>
+                <li><a href="faq">FAQs</a></li>
                 
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="contact">Contact Us</a></li>
             </ul>
             <div class="nav-btns">
             {% if user.is_authenticated %}
@@ -74,87 +74,56 @@
         
     </header>
 
-        <!-- <h1>Completed Documents</h1>
-        <p class="p">Find all your completed documents and download them here!</p>
-        <div class="sec">
-            <a href="#">Terms and Conditions</a>
-            <a href="#" style="text-align:center">Privacy policies</a>
-        </div>
-        <div class="m" style="margin-bottom:120px">
-        <div class="d1">
-            <div class="img">
-               <img src="{% static '/assets/blur.png' %}" > 
-            </div>
-            <div class="time">
-                <p>Last saved: 22 Aug 2022</p>
-            </div>
-            <h1 class="h1">{website name }</h1> 
-            <div class="a">
-              <a href="#" ><button class="btnu">Download</button></a>  
-                
-            </div>
-            
-        </div>        
-       </div>
-       
-         <div class="m" style="margin-bottom:120px">
-        <div class="d1">
-            <div class="img">
-               <img src="{% static '/assets/blur.png' %}" > 
-            </div>
-            <div class="time">
-                <p>Last saved: 22 Aug 2022</p>
-            </div>
-            <h1 class="h1">{website name }</h1> 
-            <div class="a">
-              <a href="#" ><button class="btnu">Download </button></a>  
-                
-            </div>
-            
-        </div>        
-       </div> -->
-
        <main>
         <div class="con">
             <div class="htxt">
-           <h1>Your Generated Terms and Conditions<br></h1> 
+           <h1>Your Generated Templates<br></h1> 
            
            </div>
             <div class="view">
                 <section style="color:#7c746c; text-align:center">
-        <h2 >Here is your template</h2><br>
+        <h2 >Here are your templates</h2><br>
 
-        <!-- {% if user.is_authenticated %}
-        <li>Hello, {{user.first_name}}</li> -->
-
-        <!-- {% for user in users %}
-        {{ user.first_name }}
-            {% for post in user.publications.all%}
-            <h2>{{post.name}}</h2>
-            {% endfor %}
-        {% endfor %} -->
-
-
-        <!-- {{ user.first_name }} -->
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for templates.." title="Type in a keyword">
 
         <table id="myTable" class="iframe">
         <tr class="header">
-            <th >Templates</th>
+            <th ><a href="tctemplate">Terms and Conditions Templates</a></th>
+            <th ><a href="pptemplate">Privacy Policy Templates</a></th>
         
         </tr>
+        <tr class="header">
+            <th style="text-align: end;">All Templates</th>
+            <th></th>
+            </tr>
+        
         {% for post in user.publications.all%}
         <tr>
-        <td ><a class="active" href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></td>
+        <td >{% if post.poli and post.term == False %} 'Privacy for,'
+            {% else %} T&C for, 
+            {% endif %}
+            <a class="active" href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></td>
+            <td></td>
             
         </tr>
         {% endfor %}
-
-        {% else %}
-
-        <li>Create an account</li>
-        {% endif %}
         </table>
+
+        <!-- <table id="myTable" class="iframe">
+            <tr class="header">
+                <th >Templates</th>
+            
+            </tr>
+            {% for post in user.publications.all%}
+            <tr>
+                {% if post.term %}
+            <td > 
+                <a class="active" href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+    
+            </table> -->
 
         </section>
         </div>

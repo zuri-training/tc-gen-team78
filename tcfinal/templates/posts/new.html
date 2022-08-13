@@ -64,8 +64,13 @@
                 </select>
             </div>--->
             <div class="input-wrapper">
+                <label for="term">By filling this form, you accept that your details will be used to generate a Terms
+                    and Conditions Template for you</label>
+                {{ form.poli}}
+            </div>
+            <div class="input-wrapper">
                 <label for="website_url">Your Website Url</label>
-                {{ form.website_url}}
+                {{ form.Your_Website_Url}}
             </div>
             <div class="input-wrapper">
                 <label for="industry">Your industry</label>
@@ -77,23 +82,27 @@
             <div class="tab">
             <div class="input-wrapper">
                 <label for="website_name">Your Website Name</label>
-                {{ form.website_name}}
+                {{ form.Your_Website_Name}}
             </div>
             <div class="input-wrapper">
-                <label for="country">country</label>
+                <label for="country">Company Country</label>
                 {{ form.country}}
             </div>
             <div class="input-wrapper">
-                <label for="company_address">address</label>
-                {{ form.company_address}}
+                <label for="company_address">Company Address</label>
+                {{ form.Address}}
             </div>
+            <div class="input-wrapper">
+                <label for="Phone">Company Phone Number</label>
+                {{ form.Phone}}
             </div>
-            
-            
-           <div class="tab">
+            <div class="input-wrapper">
+                <label for="Email">Company Email Address</label>
+                {{ form.Email}}
+            </div>
             <div class="input-wrapper">
                 <label for="pcdate">pcdate</label>
-                {{ form.policy_effective_date}}
+                {{ form.Policy_Effective_Date}}
             </div>
             <div class="input-wrapper">
                 <label for="gdrp">gdrp</label>
@@ -108,6 +117,11 @@
                 <label for="Advertisment">Advertisment</label>
                 {{ form.Advertisment}}
             </div>
+            </div>
+            
+            
+           <div class="tab">
+            
             
             <!---<div class="input-wrapper">
                 <label for="">Are you a business or an individual?</label>

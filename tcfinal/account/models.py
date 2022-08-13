@@ -29,10 +29,14 @@ class Post(models.Model):
     country = models.CharField(max_length=100)
     Policy_Effective_Date = models.DateField(auto_now_add=False, default=date.today)
     Address = models.CharField(max_length=100, null=True)
-    INDUSTRY_CHOICES = [('Banking', 'Banking'), ('Finance', 'Finance'), ('Tech', 'Tech'), ('Entertainment', 'Entertainment'), ('Art', 'Art'), ('E-Commerce', 'E-Commerce')]
+    Phone = models.CharField(max_length=14, null=True)
+    Email = models.CharField(max_length=100, null=True)
+    INDUSTRY_CHOICES = [('Generic', 'Generic'), ('Finance', 'Finance'), ('Tech', 'Tech'), ('Entertainment', 'Entertainment'), ('Art', 'Art'), ('E-Commerce', 'E-Commerce')]
     industry = models.CharField(max_length=13, choices=INDUSTRY_CHOICES)
-    Privacy = models.BooleanField(default=False) 
-
+    Privacy = models.BooleanField(default=False)
+    updated = models.DateTimeField(auto_now=True)
+    poli = models.BooleanField(default=False)
+    term = models.BooleanField(default=False)
     Advertisment= models.BooleanField(default=False)
     gdrp_wording = models.BooleanField(default=False)
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='publications')
