@@ -1,0 +1,188 @@
+{% load static %}
+
+
+<!-- {% if user.is_authenticated %}
+<li>Hello, {{user.first_name}}</li> -->
+
+<!-- {% for user in users %}
+{{ user.first_name }}
+    {% for post in user.publications.all%}
+    <h2>{{post.Your_Website_Name}}</h2>
+    {% endfor %}
+{% endfor %} -->
+
+
+<!-- {{ user.first_name }}
+    {% for post in user.publications.all%}
+    <h2><a href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></h2>
+    {% endfor %}
+
+{% else %}
+<li>Create an account</li>
+{% endif %} -->
+<!-- {% for post in posts %}
+    {{ post.Your_Website_Name }}
+    {{ post.country }}
+    {{ user.last_name }}
+{% endfor %} -->
+<!-- {% for post in posts %}
+{{ post.industry }}
+{% endfor %} -->
+
+<!-- {% for post in posts %}
+<h2>{{ post.name }}</h2>
+{% for user in post.user_set.all%}
+<h2>{{user.first_name}}</h2>
+{% endfor %}
+{% endfor %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page title</title>
+    <link rel="stylesheet" href="{% static '/css/draft.css' %}">
+</head>
+<body>
+       <header>
+        <nav>
+            <div class="mobile-menu">
+               <a href="/"> <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px"></a>
+                <a href="" class="hamburger" onclick="toggleMenu()">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                </a>
+            
+            </div>
+            <ul class="nav-links">
+                <li><a href="teamdetails">Our team</a></li>
+                <li><a href="faq">FAQs</a></li>
+                
+                <li><a href="contact">Contact Us</a></li>
+            </ul>
+            <div class="nav-btns">
+            {% if user.is_authenticated %}
+            <a href="/account/logout"><button class="btn-1">Logout</button></a>
+            {% else %}
+                <a href="#"><button class="btn-1">Login</button></a>
+                <a href="#"><button class="btn-2">Get Started</button></a>
+                {% endif %}
+            </div>
+           
+        
+    </header>
+
+       <main>
+        <div class="con">
+            <div class="htxt">
+           <h1>Your Generated Privacy Policy<br></h1> 
+           
+           </div>
+            <div class="view">
+                <section style="color:#7c746c; text-align:center">
+        <h2 >Here are your Privacy Policies</h2><br>
+
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for templates.." title="Type in a keyword">
+        
+        <table id="myTable" class="iframe">
+            <tr class="header">
+                <th ><a href="template">All Templates</a></th>
+                <th ><a href="tctemplate">Terms and Condition Templates</a></th>
+            
+            </tr>
+            <tr class="header">
+                <th style="text-align: end;">Privacy Policy Templates</th>
+                <th></th>
+            
+            </tr>
+            {% for post in user.publications.all%}
+            <tr>
+                {% if post.poli %}
+            <td > 
+                <a class="active" href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></td>
+                <td></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+    
+            </table>
+
+
+        </section>
+        </div>
+        </div>
+
+        <div class="txt">
+        <h2></h2>
+        </div>
+
+        </main>
+       
+       <footer> 
+           <div class="disclaimer-questions"> 
+               <div class="footerlinks"> 
+                   <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p> 
+                   <ul>
+                        <li><a href="">Privacy Policy</a></li> 
+                        <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li> 
+                   </ul> 
+              </div> 
+              <p>Questions? Email us at support@78tcgen.com</p> 
+              </div> 
+              <div class="ft-logo"> 
+                  <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p> 
+                  <img src="{% static '/assets/Logo_white.svg' %}" alt="logo"> </div> 
+    </footer>
+    
+    <script>
+        // Mobile reponsiveness
+let menu = document.querySelector('.hamburger');
+
+function toggleMenu() {
+    let navLinks = document.querySelector('.nav-links');
+    let navBtns = document.querySelector('.nav-btns');
+
+    if (((navLinks.style.display === 'flex') && (navBtns.style.display === 'flex')) && (navLinks.style.flexDirection !== 'column')){
+        
+        navLinks.style.display = 'none';
+        navBtns.style.display = 'none';
+        
+        console.log(true);
+    }else{
+        navLinks.style.display = 'flex';
+        navBtns.style.display = 'flex';
+        //addBtns.style.display = 'flex';
+        console.log(false);
+    }
+}
+
+menu.addEventListener('click', (e) => {
+    e.preventDefault();
+    // toggleMenu();
+});
+
+// Main
+function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
+    </script>
+</body>
+</html>
+

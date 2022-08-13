@@ -128,6 +128,22 @@ def template(request):
     }
     return render(request, "posts/template.html", context)
 
+def tctemplate(request):
+    
+    context = {
+        'users': User.objects.all(),
+        'posts': Post.objects.all(),
+    }
+    return render(request, "posts/tc_template.html", context)
+
+def pptemplate(request):
+    
+    context = {
+        'users': User.objects.all(),
+        'posts': Post.objects.all(),
+    }
+    return render(request, "posts/pp_template.html", context)
+
 def templated(request, slug_text):
     q = Post.objects.filter(slug = slug_text)
     if q.exists():
@@ -166,11 +182,27 @@ def draft(request):
     }
     return render(request, "draft.html", context)
 
+def ppdraft(request):
+    
+    context = {
+        'users': User.objects.all(),
+        'posts': Post.objects.all(),
+    }
+    return render(request, "pp_draft.html", context)
+
+def tcdraft(request):
+    
+    context = {
+        'users': User.objects.all(),
+        'posts': Post.objects.all(),
+    }
+    return render(request, "tc_draft.html", context)
+
 class PostUpdateView(UpdateView):
     model = Post
     template_name = 'blog/pp-form-business-info.html'
 
-    fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording']
+    fields = ['Your_Website_Name', 'Your_Website_Url', 'country', 'Policy_Effective_Date', 'Address', 'industry', 'Privacy', 'Advertisment', 'gdrp_wording', 'Phone', 'Email']
     success_url = reverse_lazy('draft')
 
 class UserUpdateView(UpdateView):
