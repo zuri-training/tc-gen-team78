@@ -1,41 +1,6 @@
 {% load static %}
 
 
-<!-- {% if user.is_authenticated %}
-<li>Hello, {{user.first_name}}</li> -->
-
-<!-- {% for user in users %}
-{{ user.first_name }}
-    {% for post in user.publications.all%}
-    <h2>{{post.Your_Website_Name}}</h2>
-    {% endfor %}
-{% endfor %} -->
-
-
-<!-- {{ user.first_name }}
-    {% for post in user.publications.all%}
-    <h2><a href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></h2>
-    {% endfor %}
-
-{% else %}
-<li>Create an account</li>
-{% endif %} -->
-<!-- {% for post in posts %}
-    {{ post.Your_Website_Name }}
-    {{ post.country }}
-    {{ user.last_name }}
-{% endfor %} -->
-<!-- {% for post in posts %}
-{{ post.industry }}
-{% endfor %} -->
-
-<!-- {% for post in posts %}
-<h2>{{ post.name }}</h2>
-{% for user in post.user_set.all%}
-<h2>{{user.first_name}}</h2>
-{% endfor %}
-{% endfor %} -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page title</title>
     <link rel="stylesheet" href="{% static '/css/draft.css' %}">
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
+    <link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
+
 </head>
 <body>
        <header>
@@ -118,21 +86,27 @@
 
         </main>
        
-       <footer> 
-           <div class="disclaimer-questions"> 
-               <div class="footerlinks"> 
-                   <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p> 
-                   <ul>
-                        <li><a href="">Privacy Policy</a></li> 
-                        <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li> 
-                   </ul> 
-              </div> 
-              <p>Questions? Email us at support@78tcgen.com</p> 
-              </div> 
-              <div class="ft-logo"> 
-                  <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p> 
-                  <img src="{% static '/assets/Logo_white.svg' %}" alt="logo"> </div> 
-    </footer>
+        <footer>
+            <div class="ft-logo">
+                <p>Questions? Email us at support@78tcgen.com</p>
+                <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
+            </div>
+            <div class="disclaimer-questions">
+                <div class="footerlinks">
+                    <p>Disclaimer: Please note that legal information, including legal templates and legal policies, is not legal advice.
+                        Information and services provided on the site are for informational and self-help purposes only and
+                        are not to be a substitute for professional legal advice. <a href="#"> Read the full disclaimer.</a></p>
+                </div>
+                <div class="footer-txt">
+                   
+                    <ul>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
+                    </ul>
+                    <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+                </div> 
+            </div>
+        </footer>
     
     <script>
         // Mobile reponsiveness

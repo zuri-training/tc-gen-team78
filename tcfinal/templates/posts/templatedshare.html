@@ -1,24 +1,6 @@
-!<!-- {% extends "base.html" %} -->
+
 {% load static %}
 {% load social_share %}
-<!-- {% block title %}Create Post {% endblock %}
-{% block content %} -->
-<!-- <h2>Here is your template</h2><br>
-This is your first template <b>{{ user.first_name }}</b> <br>
-The name of my company is <b>{{ q.website_name }}</b> and this is our website <b>{{ q.website_url }}</b> <br>
-Our HQ is based in <b>{{ q.country}}</b>, we are a part of the highly successtful {{ q.industry}} in our nation. <br>
-{% if q.Privacy %}
-<h2>Privacy Policy</h2>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, praesentium nesciunt, sint obcaecati unde sit dolor animi laboriosam corporis quisquam dolorem iusto nemo, aliquam voluptatum deleniti vitae consequuntur rem cumque!
-{% endif %}
-{% if q.Advertisment %}
-<h2>Ad Policy</h2>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, esse enim beatae commodi aliquid officia deserunt eveniet similique laudantium vel quam ratione mollitia dolor facere voluptate qui labore ut! Nulla!
-{% endif %}
-{% if q.gdrp_wording %}
-<h2>gdrp wording</h2>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id ullam rem eveniet sit sed, sequi illo cupiditate? Odio aspernatur eveniet soluta omnis quia velit eius suscipit sit.
-{% endif %} -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +12,9 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{% static '/css/gen.css' %}">
     <link rel="stylesheet" href="{% static '/js/pdf.js' %}">
+    <link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
+
+
     <script>
 
       window.onload = function () {
@@ -54,7 +39,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
 <body>
     <header>
         <nav>
-            <div class="mobile-menu">
+         <div class="mobile-menu">
                 <a href="/"><img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px"></a>
                 <a href="" class="hamburger" onclick="toggleMenu()">
                     <span class="bars"></span>
@@ -88,7 +73,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
            </div>
            {% endif %} -->
             <div class="view">
-                <!-- <iframe type="text/html" src="{% url 'temp2' 'slug_text' %}"  height="700" > </iframe> -->
 
                 <div class="dob", id="dob">
                   <style>
@@ -1299,41 +1283,15 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
                 <div class="dropdown-content">
                   {% post_to_linkedin object_or_url "Share to Linkedin" %}
                  {% post_to_twitter  object_or_url "Share via Twitter" %}
+                 {% post_to_whatsapp  object_or_url "Share via Whatsapp" %}
                   {% send_email object_or_url "Share Via Email" %}
                  {% copy_to_clipboard object_or_url "Copy to Clipboard" %}
                 </div></div>
             </div> 
+        </div>
+        </div>
+    </main>
 
-          
-       
-    
-            <!-- <div class="b1">
-              {% post_to_twitter "New Template: Awesome template, check am!" object_or_url "Post to Twitter" %}
-              {% post_to_facebook "New Template: Awesome template, check am!" object_or_url "Post to Facebook" %}
-              {% send_email "New Template: Awesome template, check am!" object_or_url "Share Via Mail" %}
-              {% post_to_whatsapp "New Template: Awesome template, check am!" object_or_url "Share Via Whatsapp" %}
-              {% copy_to_clipboard object_or_url "Copy to clipbioard" %}
-          </div> -->
-          <!--  </div> --> 
-        </div>
-        </div>
-    <!-- </main>
-    <footer>
-        <div class="disclaimer-questions">
-            <div class="footerlinks">
-                <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p>
-                <ul>
-                    <li><a href="">Privacy Policy</a></li>
-                    <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
-                </ul>
-            </div>
-            <p>Questions? Email us at support@78tcgen.com</p>
-        </div>
-        <div class="ft-logo">
-            <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
-            <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
-        </div>
-    </footer> -->
     {% add_copy_script %}
 </body>
 
@@ -1380,4 +1338,3 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
 
 
 
-<!-- {% endblock %} -->

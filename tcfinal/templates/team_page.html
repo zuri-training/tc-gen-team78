@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team page</title>
     <link rel="stylesheet" href="{% static '/css/team_page.css' %}">
+    <link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
+
 
     <!--GOOGLE FONT-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;0,600;0,800;0,900;1,100;1,200;1,400&display=swap" rel="stylesheet">
@@ -32,7 +34,7 @@
         <ul class="nav-links">
             <li><a href="teamdetails">Our team</a></li>
             <li><a href="faq">FAQs</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="contact">Contact Us</a></li>
         </ul>
         <div class="nav-btns">
           {% if user.is_authenticated %}
