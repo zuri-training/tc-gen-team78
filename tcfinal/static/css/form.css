@@ -1,0 +1,211 @@
+
+:root{
+accent-color: #721121;
+}
+
+a{
+text-decoration: none;
+color: #333;
+}
+
+h1{
+padding: 4.5rem 0 1rem;
+}
+.headings a:hover{
+text-decoration: none;
+}
+
+.headings .steps{
+width: 46%;
+margin: 0 auto 4.5rem;
+display: flex;
+justify-content: space-evenly;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+width: 40px;
+height: 40px;
+margin: 0 2px;
+background-color: #555;
+border: none;  
+border-radius: 50%;
+display: inline-block;
+opacity: 1;
+}
+.pee{
+font-size: 1rem;
+text-align: center;
+opacity: 0;
+}
+
+.pee.active{
+opacity: 2;
+ color: #721121;
+}
+
+.step.active {
+opacity: 1;
+}
+
+
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+opacity: 1;
+background-color: #721121;
+}
+
+/* Form */
+form{
+width: 83%;
+margin: 0 auto 136px;
+}
+
+form h4{
+text-align: left;
+color: #721121;
+padding-bottom: 32px;
+font-weight: 600;
+font-size: 24px;
+}
+
+form .input-wrapper{
+width: 100%;
+display: flex;
+flex-direction: column;
+margin-bottom: 2rem;
+}
+
+form .input-wrapper label{
+margin-bottom: 8px;
+text-align: left;
+line-height: 24px;
+font-weight: 600;
+}
+
+form .input-wrapper input, select, datetime-local{
+border: 2px solid #aaaaaa;
+border-radius: 12px;
+padding: 16px 24px;
+}
+
+form .input-wrapper input:focus, select:focus, input[type="radio" i]:focus{
+border-color: #721121;
+outline: none;
+}
+
+.radio-btn-grp, .radio-btn{
+display: flex;
+align-items: center;
+}
+
+.radio-btn-grp label{
+margin-left: 19px;
+}
+
+.radio-btn-grp .btn-ind{
+margin-left: 82px;
+}
+
+form .input-wrapper .radio-btn label{
+font-weight: 400;
+margin-bottom: 0;
+}
+
+input[type="radio" i]{
+width: 33px;
+height: 33px;
+border-color: #333;
+outline: none;
+}
+
+::selection{
+margin-right: 16px;
+}
+
+.button-grp{
+margin:88px auto 0;
+width: 90%;
+display: flex;
+justify-content: center;
+}
+
+.button-grp button{
+padding: 16px 24px;
+border-radius: 16px;
+cursor: pointer;
+border: none;
+outline: none;
+font-size: 20px;
+line-height: 32px;
+font-weight: 600;
+}
+
+.button-grp button i{
+color: #fff;
+padding-left: 129px;
+}
+
+.continue-later{
+background-color: #ffc07f;
+}
+
+.next-button{
+background-color: #721121;
+color: #fff;
+margin-left: 32px;
+}
+
+/* Hide all steps by default: */
+.tab {
+display: none;
+}
+
+@media (max-width:481px){
+h1{
+    font-size: 28px;
+}
+.headings .steps{
+    width: 90%;
+}
+form h4{
+    font-size: 20px;
+}
+form .input-wrapper input, select{
+    padding: 12px 16px;
+}
+form .input-wrapper{
+    margin-bottom: 1.2rem;
+}
+form .input-wrapper label, .steps a p{
+    font-size: .8rem;
+}
+input[type="radio" i]{
+    width: 20px;
+}
+.radio-btn-grp .btn-ind {
+    margin-left: 40px;
+}
+.steps a small{
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+}
+.button-grp{
+    flex-direction: column;
+    align-items: center;
+}
+.button-grp button {
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: .8rem;
+}
+.next-button{
+    margin-left: 0;
+    margin-top: 1rem;
+}
+.grey-bar{
+    margin-top: .5rem;
+}
+}

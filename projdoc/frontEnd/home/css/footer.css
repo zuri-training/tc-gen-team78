@@ -95,6 +95,9 @@ footer .disclaimer-questions{
         flex-direction: row-reverse;
         align-items: center;
     }
+    .ft-logo p{
+        width: 65%;
+    }
     footer .disclaimer-questions{
         width:90%;
     }
