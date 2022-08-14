@@ -1,7 +1,7 @@
 *{
     padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+    margin: auto;
+    
     max-width: 100%;
 }
 /* /* CSS HEX */
@@ -31,7 +31,7 @@ $astra: #fce4c4;
 --astra: rgba(252,228,196,1);
 
 
-*/
+
 .h1 {
     color: red;
 }
@@ -128,9 +128,14 @@ nav ul {
     width: 80%;
     background-color: #ffc07f;
     border-radius: 1rem;
-    padding: 3rem;
+    padding: 5px;
     padding-left: 3.2rem;
     margin-bottom: 5%;
+    margin: auto;
+}
+.dob {
+    width: 80%;
+   
     margin: auto;
 }
 
@@ -151,13 +156,21 @@ nav ul {
     justify-content: space-between;
 }
 
-.b1, .butt {
+.b1, .butt, .butt1 {
     height: 89px;
     width: 150px;
     border-radius: 1.5rem;
     background-color: #ffc07f;
 }
 .butt {
+    outline: none;
+    border: none;
+    color: #721121;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.butt1 {
     outline: none;
     border: none;
     color: #721121;
@@ -307,16 +320,9 @@ footer li{
     .con p {
         margin-top: 4%;
         margin-bottom: 7%;
-        font-size: 11px;
+        font-size: 20px;
     }
-    .iframe {
-        width: 90%;
-        background-color: #ffc07f;
-        border-radius: 1rem;
-        padding: 2.2rem;
-        padding-left: 2rem;
-        margin-bottom: 10%;
-    }
+    
     .txt {
         margin-bottom: 6%;
     }
@@ -324,13 +330,13 @@ footer li{
         width: 90%;
         
     }
-    .b1, .butt {
+    .b1, .butt, .butt1 {
         height: 55px;
         width: 80px;
         border-radius: .5rem;
         background-color: #ffc07f;
     }
-    .butt {
+    .butt, .butt1 {
     	font-size: 13px;
     }
     footer{

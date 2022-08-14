@@ -27,5 +27,7 @@ urlpatterns = [
     path('templated/<slug:slug>/update/', PostUpdateView.as_view(), name='update'),
     path('password/', PasswordsChangeView.as_view(template_name='password_reset/change-password.html')),
     path('password_change_done', views.password_change_done, name='password_change_done'),
+    path('pdf_view/', views.ViewPDF.as_view(), name="pdf_view"),
+    path('pdf_download/', views.DownloadPDF.as_view(), name="pdf_download"),
 
 ]

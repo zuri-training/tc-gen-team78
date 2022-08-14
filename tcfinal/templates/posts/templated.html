@@ -54,6 +54,7 @@
 
                 <div class="iframe">
 
+
                 {% if q.term %}
                   {% if q.industry == 'Art' %}
                 <!-- <h2>Privacy Policy</h2> -->
@@ -1147,6 +1148,7 @@
                   {% endif %}
                 {% endif %}
 
+
             </div>
         </div>
         
@@ -1165,10 +1167,12 @@
               <a href="{% url 'delete_template' q.slug %}"><button class="butt"><i class="fa-solid fa-share-nodes"></i><br>Delete</button></a>
           </div> 
 
+
           <div class="b1">
             <a href="{% url 'templatedshare' q.slug %}"><button class="butt"><i class="fa-solid fa-arrow-up-from-bracket"></i><br>Export</button></a>
 
         </div>        
+
         </div>
     </main>
     <!-- <footer>

@@ -1,4 +1,5 @@
 
+
 {% load static %}
 {% load social_share %}
 
@@ -12,8 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{% static '/css/gen.css' %}">
     <link rel="stylesheet" href="{% static '/js/pdf.js' %}">
-    <link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
 
+    <link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
 
     <script>
 
@@ -24,10 +25,13 @@
                 console.log(invoice);
                 console.log(window);
                 var opt = {
+
                     margin: 1,
                     filename: 'myfile.pdf',
                     image: { type: 'jpg' },
                     html2canvas: { scale: 2.4, scrollY: 0 },
+
+                   
                     jsPDF: { unit: 'in', format: 'letter', orientation: 'p' },
                     
                 };
@@ -39,8 +43,11 @@
 <body>
     <header>
         <nav>
+
          <div class="mobile-menu">
                 <a href="/"><img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px"></a>
+
+           
                 <a href="" class="hamburger" onclick="toggleMenu()">
                     <span class="bars"></span>
                     <span class="bars"></span>
@@ -73,6 +80,7 @@
            </div>
            {% endif %} -->
             <div class="view">
+
 
                 <div class="dob", id="dob">
                   <style>
@@ -204,7 +212,9 @@
                       because the ordered Goods are not available, the Buyer will have 7 days
                       to provide written notice to cancel the order. <b> {{ q.Your_Website_Name }}</b> will, upon
                       receipt of such notice, refund moneys paid in full. The Buyer agrees and
+
                       acknowledges that all specifications and advertising issued by <b> {{ q.Your_Website_Name }}</b> and any descriptions or illustrations contained in {{ q.Your_Website_Name}}
+
                       marketing materials are provided for the sole purpose of giving an
                       approximate idea of the Goods described in them. <b> {{ q.Your_Website_Name }}</b> is not
                       bound by such descriptions which do not form a part of these Terms and
@@ -840,7 +850,9 @@
                       NAME] sales reps, while they are calling you, of your desire to opt out
                       from further direct company communications and solicitations, you are
                       agreeing to continue to receive further emails and call
+
                       solicitations{{ q.Your_Website_Name}} and its designated in house or third party
+
                       call team(s). Opt Out Procedure: We provide 3 easy ways to opt out of
                       from future solicitations. 1. You may use the opt out link found in any
                       email solicitation that you may receive. 2. You may also choose to opt
@@ -904,7 +916,9 @@
                       interactions between users. <b>{{ q.Your_Website_Name }}</b> reserves the right, but has
                       no obligation, to monitor interactions between and among users of the
                       Website and to remove any content <b>{{ q.Your_Website_Name }}</b> deems objectionable, in
+
                       {{ q.Your_Website_Name}} sole discretion.
+
                     </p>
                   </div>
                   <div class="disclaimer">
@@ -917,7 +931,9 @@
                   <div class="limitation-of-liability">
                     <h2>LIMITATION OF LIABILITY</h2>
                     <p style="text-align: start;">
+
                       <b>{{ Q.Your_website_name }}</b> Entire Liability, And Your Exclusive Remedy, In Law, In Equity, Or Othwerwise, With Respect To The Website Content And Products And/Or For Any Breach Of This Agreement Is Solely Limited To The Amount You Paid, Less Shipping And Handling, For Products Purchased Via The Website. {{ q.Your_Website_Name}} Will Not Be Liable For Any Direct, Indirect, Incidental, Special Or Consequential Damages In Connection With This Agreement Or The Products In Any Manner, Including Liabilities Resulting From (1) The Use Or The Inability To Use The Website Content Or  Products; (2) The Cost Of Procuring Substitute Products Or Content; (3) Any Products Purchased Or Obtained Or Transactions Entered Into Through The Website; Or (4) Any Lost Profits You Allege. Some Jurisdictions Do Not Allow The Limitation Or Exclusion Of Liability For Incidental Or Consequential Damages So Some Of The Above Limitations May Not Apply To
+
                       You.
                       
                     </p>
@@ -937,7 +953,9 @@
                       proprietary right of any person or entity; (5) your violation of any
                       provision of this Agreement; or (6) any information or data you supplied
                       to {{ q.Your_Website_Name }} When {{ q.Your_Website_Name }} is threatened with suit or sued by
+
                       a third party, {{ q.Your_Website_Name}} may seek written assurances from you
+
                       concerning your promise to indemnify {{ q.Your_Website_Name }}; your failure to
                       provide such assurances may be considered by {{ q.Your_Website_Name }}to be a
                       material breach of this Agreement. {{ q.Your_Website_Name }} will have the right to
@@ -956,7 +974,9 @@
                     <h2>PRIVACY</h2>
                     <p style="text-align: start;">
                       {{ q.Your_Website_Name }} believes strongly in protecting user privacy and
+
                       providing you with notice of {{ q.Your_Website_Name}} use of data. Please
+
                       refer to {{ q.Your_Website_Name }} privacy policy, incorporated by reference
                       herein, that is posted on the Website.
                     </p>
@@ -1244,6 +1264,7 @@
                     </li>
                   </ul>
                 </div>
+
                 {% if q.Privacy %}
                 <h2>Privacy Policy</h2>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, praesentium nesciunt, sint obcaecati unde sit dolor animi laboriosam corporis quisquam dolorem iusto nemo, aliquam voluptatum deleniti vitae consequuntur rem cumque!
@@ -1283,14 +1304,18 @@
                 <div class="dropdown-content">
                   {% post_to_linkedin object_or_url "Share to Linkedin" %}
                  {% post_to_twitter  object_or_url "Share via Twitter" %}
+
                  {% post_to_whatsapp  object_or_url "Share via Whatsapp" %}
+
                   {% send_email object_or_url "Share Via Email" %}
                  {% copy_to_clipboard object_or_url "Copy to Clipboard" %}
                 </div></div>
             </div> 
+
         </div>
         </div>
     </main>
+
 
     {% add_copy_script %}
 </body>
@@ -1334,6 +1359,7 @@
   </style>
 
 </html>
+
 
 
 
