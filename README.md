@@ -85,3 +85,4 @@ A platform that allows users to generate t&c and privacy policy
 * Fill out the form on the next page 
 * Preview and download your template.
 ![p](figma/p)
+

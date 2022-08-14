@@ -1,24 +1,6 @@
-<!-- {% extends "base.html" %} -->
 {% load static %}
 {% load social_share %}
-<!-- {% block title %}Create Post {% endblock %}
-{% block content %} -->
-<!-- <h2>Here is your template</h2><br>
-This is your first template <b>{{ user.first_name }}</b> <br>
-The name of my company is <b>{{ q.website_name }}</b> and this is our website <b>{{ q.website_url }}</b> <br>
-Our HQ is based in <b>{{ q.country}}</b>, we are a part of the highly successtful {{ q.industry}} in our nation. <br>
-{% if q.Privacy %}
-<h2>Privacy Policy</h2>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, praesentium nesciunt, sint obcaecati unde sit dolor animi laboriosam corporis quisquam dolorem iusto nemo, aliquam voluptatum deleniti vitae consequuntur rem cumque!
-{% endif %}
-{% if q.Advertisment %}
-<h2>Ad Policy</h2>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, esse enim beatae commodi aliquid officia deserunt eveniet similique laudantium vel quam ratione mollitia dolor facere voluptate qui labore ut! Nulla!
-{% endif %}
-{% if q.gdrp_wording %}
-<h2>gdrp wording</h2>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id ullam rem eveniet sit sed, sequi illo cupiditate? Odio aspernatur eveniet soluta omnis quia velit eius suscipit sit.
-{% endif %} -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,12 +11,13 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  
     <link rel="stylesheet" href="{% static '/css/gen.css' %}">
+    <link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
 </head>
 <body>
     <header>
         <nav>
             <div class="mobile-menu">
-                <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px">
+               <a href="/"> <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px"></a>
                 <a href="" class="hamburger" onclick="toggleMenu()">
                     <span class="bars"></span>
                     <span class="bars"></span>
@@ -68,18 +51,10 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
            </div>
            {% endif %}
             <div class="view">
-                <!-- <iframe type="text/html" src="{% url 'temp2' 'slug_text' %}"  height="700" > </iframe> -->
 
                 <div class="iframe">
-                <!-- <This is your first template <b>{{ user.first_name }}</b> <br>
-
-                The name of my company is <b>{{ q.Your_Website_Name }}</b> and this is our website <b>{{ q.Your_Website_Url }}</b> <br>
-                Our HQ is based in <b>{{ q.country}}</b>, we are a part of the highly successtful {{ q.industry}} in our nation. <br> -->
 
 
-               <!-- <h1>Privacy Policy </h1>
-                <p>Last updated: 2022-08-06</p>  -->
-                {{ q.industry }}
                 {% if q.term %}
                   {% if q.industry == 'Art' %}
                 <!-- <h2>Privacy Policy</h2> -->
@@ -1174,78 +1149,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
                 {% endif %}
 
 
-                
-               
-                  
-                   
-                
-              
-                <!-- 
-                <div>
-                  <h1>Ecommerce Privacy Policy Template</h1>
-                  <p>
-                    Our Privacy Policy was last updated on 08-08-2022. <br />
-                    This Privacy Policy describes Our policies and procedures on the
-                    collection, use and disclosure of Your information when you use the
-                    Service and tells You about Your privacy rights and how the law protects
-                    You. <br /> We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information
-                    in accordance with this Privacy Policy. <br />
-                    <h3>Interpretation and Definitions</h3> <br />
-                    Interpretation <br /> The words of which the initial letter is capitalized have meanings defined under the following
-                    conditions.
-                  </p>
-                  <p>
-                    The following definitions shall have the same meaning regardless of
-                    whether they appear in singular or in plural. <br /> Definitions <br /> For the purposes
-                    of this Privacy Policy:
-                  </p> <br />
-                  <ul>
-                    <li>
-                      <p>
-                        "Account" means a unique account created for You to access our Service
-                        or parts of our Service. "Company" (referred to as either "the
-                        Company", "We", "Us" or "Our" in this Agreement) refers to [COMPANY
-                        INFORMATION]
-                      </p>
-                    </li>
-                    <li>
-                      <p>"Country" refers to [COMPANY_COUNTRY].</p>
-                    </li>
-                    <li>
-                      <p>
-                        "Cookies" are small files that are placed on Your computer, mobile
-                        device or any other device by a website, containing the details of
-                        Your browsing history on that website among its many uses.
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        "Device" means any device that can access the Service such as a
-                        computer, a cell phone or a digital tablet.
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        "Personal Data" is any information that relates to an identified or
-                        identifiable individual.
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-
-                {% if q.Privacy %}
-                <h2>Privacy Policy</h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, praesentium nesciunt, sint obcaecati unde sit dolor animi laboriosam corporis quisquam dolorem iusto nemo, aliquam voluptatum deleniti vitae consequuntur rem cumque!
-                {% endif %}
-                {% if q.Advertisment %}
-                <h2>Ad Policy</h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, esse enim beatae commodi aliquid officia deserunt eveniet similique laudantium vel quam ratione mollitia dolor facere voluptate qui labore ut! Nulla!
-                {% endif %}
-                {% if q.gdrp_wording %}
-                <h2>gdrp wording</h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id ullam rem eveniet sit sed, sequi illo cupiditate? Odio aspernatur eveniet soluta omnis quia velit eius suscipit sit.
-                {% endif %}
-            </div> -->
             </div>
         </div>
         
@@ -1264,42 +1167,15 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
               <a href="{% url 'delete_template' q.slug %}"><button class="butt"><i class="fa-solid fa-share-nodes"></i><br>Delete</button></a>
           </div> 
 
+
           <div class="b1">
             <a href="{% url 'templatedshare' q.slug %}"><button class="butt"><i class="fa-solid fa-arrow-up-from-bracket"></i><br>Export</button></a>
 
+        </div>        
+
         </div>
-       
-          <!-----
-            <div class="b1"><button class="butt" ><i class="fa-solid fa-cloud-arrow-down" style="width:100px;"></i><br>
-              {% post_to_twitter "Hi, checkout this awesome template generated by tcgen78!" object_or_url "Share via Twitter" %}</button>
-              <a href="{% url 'delete_template' q.slug %}"><button class="butt"><i class="fa-regular fa-share-nodes"></i><br>Delete</button></a> 
-          </div>
-          <div class="b1">
-            {% post_to_linkedin object_or_url "Share to Linkedin" %}
-             <a href="{% url 'delete_template' q.slug %}"><button class="butt"><i class="fa-regular fa-share-nodes"></i><br>Delete</button></a> -
-        </div>
-        <div class="b1">
-        <a href=""></a> {% send_email "Hi, checkout this awesome template generated by tcgen78!" "Share Via Email" %}
-           <a href="{% url 'delete_template' q.slug %}"><button class="butt"><i class="fa-regular fa-share-nodes"></i><br>Delete</button></a> 
-      </div>
-      <div class="b1">
-        {% copy_to_clipboard object_or_url "Copy to Clipboard" %}
-         <a href="{% url 'delete_template' q.slug %}"><button class="butt"><i class="fa-regular fa-share-nodes"></i><br>Delete</button></a> -
-    </div>
-   
-             <div class="b1">
-              {% post_to_twitter "New Template: Awesome template, check am!" object_or_url "Post to Twitter" %}
-              {% post_to_facebook "New Template: Awesome template, check am!" object_or_url "Post to Facebook" %}
-              {% send_email "New Template: Awesome template, check am!" object_or_url "Share Via Mail" %}
-              {% post_to_whatsapp "New Template: Awesome template, check am!" object_or_url "Share Via Whatsapp" %}
-              {% copy_to_clipboard object_or_url "Copy to clipbioard" %}
-               <a href="{% url 'delete_template' q.slug %}"><button class="butt"><i class="fa-regular fa-share-nodes"></i><br>Delete</button></a> 
-          </div> 
-           </div> --> 
-        
-        </div>
-    <!-- </main>
-    <footer>
+    </main>
+    <!-- <footer>
         <div class="disclaimer-questions">
             <div class="footerlinks">
                 <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p>
@@ -1314,7 +1190,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
             <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
             <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
         </div>
-    </footer> -->
+    </footer>  -->
     {% add_copy_script %}
 </body>
 <style>
@@ -1359,4 +1235,3 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic asperiores illum id
 
 
 
-<!-- {% endblock %} -->

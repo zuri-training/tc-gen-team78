@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static '/css/contact-us.css' %}">
     <!-- <link rel="stylesheet" href="{%static './css/footer.css'%}"> -->
     <link rel="stylesheet" href="{% static '/css/footerindex.css' %}">
+    <link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
     <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -24,16 +25,16 @@
             </div>
             <div class="links-btns">
                 <ul class="nav-links">
-                    <li><a href="#">Our Team</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#" class="active-link">Contact Us</a></li>
+                    <li><a href="teamdetails">Our Team</a></li>
+                    <li><a href="faq">FAQs</a></li>
+                    <li><a href="contact" class="active-link">Contact Us</a></li>
                 </ul>
                 <div class="nav-btns">
                     {% if user.is_authenticated %}
                     <a href="logout"><button class="btn-1">Logout</button></a>
                     {% else %}
-                    <a href="#"><button class="btn-1">Login</button></a>
-                    <a href="#"><button class="btn-2">Get Started</button></a>
+                    <a href="login"><button class="btn-1">Login</button></a>
+                    <a href="register"><button class="btn-2">Get Started</button></a>
                     {% endif %}
                 </div>
             </div>

@@ -7,7 +7,7 @@
     max-width: 100%;
 }
 /* header */
-header{
+/* header{
     padding-top: 2rem;
     border:0 0 1px solid #a5a5a5;
 }
@@ -22,9 +22,9 @@ header nav{
 header img{
     width: 64px;
     height: 64px;
-}
+} */
 
-nav ul {
+/* nav ul {
     list-style: none;
     justify-content: space-between;
     align-items: center;
@@ -47,15 +47,15 @@ nav ul {
 
 .nav-links:last-child{
     padding-right: 40px;
-}
+} */
 
-.nav-btns{
+/* .nav-btns{ */
     /* width: 17%; */
-    display: flex;
+    /* display: flex;
     align-items: center;
-}
+} */
 
-.nav-btns a button{
+/* .nav-btns a button{
     border: 2px solid #721121;
     border-radius: 20px;
     line-height: 32px;
@@ -74,7 +74,138 @@ nav ul {
 
 .hamburger{
     display: none;
+} */
+
+/* Navbar */
+header{
+    padding-top: 1rem;
+    border:0 0 1px solid #a5a5a5;
 }
+
+header nav{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    justify-content: space-between;
+    /* padding:0 120px; */
+    width: 83%;
+    margin: 0 auto;
+}
+
+header .nav-logo{
+    width: 64px;
+    height: 64px;
+}
+
+nav ul {
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    /* width: 50%; */
+    margin-right: 40px;
+}
+
+.links-btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links li{
+    list-style-type: none;
+    margin-right: 48px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #333;
+    line-height: 24px;
+}
+
+.nav-links:last-child{
+    padding-right: 40px;
+}
+
+.nav-btns{
+    /* width: 17%; */
+    display: flex;
+    align-items: center;
+}
+
+.nav-btns a button{
+    border: 2px solid #721121;
+    border-radius: 8px;
+    line-height: 32px;
+    padding: 4px 1.5rem;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 4px 24px;
+}
+
+.nav-btns .btn-1{
+    color: #721121;
+    background-color: #fff;
+    margin-right: 1rem;
+}
+
+.nav-btns .btn-2{
+    color:#fff;
+    background-color: #721121;
+}
+
+.hamburger{
+    display: none;
+}
+
+/* Hover, Active, Focus states */
+a:active{
+    background-color: transparent;
+}
+
+.nav-links a:hover{
+    color: #a1606b;
+}
+
+.nav-links a:focus{
+    color: #721121;
+    border: 2px solid #e3cfd3;
+    border-radius: 16px;
+    padding: 8px 16px;
+}
+
+.nav-links a:active, .nav-links .active-link{
+    color: #4c0b16;
+}
+
+.nav-btns .btn-1:hover{
+    background-color: rgba(138, 57, 70, 0.1);
+    border: 2px solid #b98890;
+}
+
+.nav-btns .btn-1:focus{
+    background-color: rgba(138, 57, 70, 0.2);
+}
+
+.nav-btns .btn-1:active{
+    color: #4c0b16;
+    border: 2px solid #4c0b16;
+}
+
+.nav-btns .btn-2:hover{
+    background-color: #8a3946;
+    box-shadow: 0px 4px 8px rgba(114, 17, 33, 0.32);
+}
+
+.nav-btns .btn-2:focus{
+    border: 2px solid #ffc07f;
+}
+
+.nav-btns .btn-2:active{
+    background-color: #4c0b16;
+}
+
+/* Navbar ends */
 
 h1, h2 {
     color: #292828;
@@ -190,7 +321,7 @@ footer li{
 
 
 /* For mobile */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     footer{
         padding:24px 40px 32px;
     }
@@ -199,8 +330,8 @@ footer li{
         align-items: flex-start;
         margin-bottom: 2rem;
     }
-}
-@media(max-width:769px){
+} */
+/* @media(max-width:769px){
     header{
         padding-top: 1rem;
     }
@@ -266,9 +397,118 @@ footer li{
         display: none;
         align-items: flex-start;
         /* visibility: hidden; */
+    /* }
+
+    nav ul{
+        margin-bottom: .6rem;
+    }
+}  */
+
+@media (max-width:992px){
+    header nav{
+        width: 100%;
+        padding: 0 33px 0 26px;
+    }
+
+    .nav-links li{
+        margin-right: 24px;
+    }
+
+    .nav-links a{
+        font-size: .8rem;
+    }
+
+    .nav-btns .btn-1{
+        display: none;
+    }
+
+    .nav-btns a button{
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width:481px) {
+    
+    header nav{
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header .nav-logo{
+        width: 48px;
+        height: 48px;
+    }
+
+    .nav-btns{
+        flex-direction: column;
+        width: fit-content;
+        align-items: center;
+        align-self: center;
+        padding: 0;
+        display: none;
+    }
+
+    .nav-btns a button{
+        margin-bottom: 1rem;
+        padding: 2px 10px;
+        line-height: normal;
+        border-color: #fff;
+    }
+
+    .hamburger{
+        width: 35px;
+        height: 25px;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .links-btns{
+        flex-direction: column;
+        height: 65%;
+    }
+
+    .mobile-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: inherit;
+    }
+    
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        align-items: center;
     }
 
     nav ul{
         margin-bottom: .6rem;
+    }
+
+    .nav-links li{
+        margin-bottom: 48px;
+    }
+
+    .nav-links a{
+        color: #fff;
+    }
+
+    /* For active and focus states */
+
+   .nav-links a:hover{
+        color: #a1606b;
+    }
+    
+    .nav-links a:focus, .nav-links a:active{
+        color:#fff;
+    }
+    footer .disclaimer-questions,.footerlinks{
+        text-align: center;
+        width: 100%;
     }
 }

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
+    <link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
     <script src="https://kit.fontawesome.com/0c4d6ce46a.js" crossorigin="anonymous"></script>
 
     <title>Dashboard</title>
@@ -58,20 +60,25 @@
         
         
     </main>
-       <footer>
+    <footer>
+        <div class="ft-logo">
+            <p>Questions? Email us at support@78tcgen.com</p>
+            <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
+        </div>
         <div class="disclaimer-questions">
             <div class="footerlinks">
-                <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p>
+                <p>Disclaimer: Please note that legal information, including legal templates and legal policies, is not legal advice.
+                    Information and services provided on the site are for informational and self-help purposes only and
+                    are not to be a substitute for professional legal advice. <a href="#"> Read the full disclaimer.</a></p>
+            </div>
+            <div class="footer-txt">
+               
                 <ul>
                     <li><a href="">Privacy Policy</a></li>
                     <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
                 </ul>
-            </div>
-            <p>Questions? Email us at support@78tcgen.com</p>
-        </div>
-        <div class="ft-logo">
-            <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
-            <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
+                <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+            </div> 
         </div>
     </footer>
 </body>

@@ -1,41 +1,6 @@
 {% load static %}
 
 
-<!-- {% if user.is_authenticated %}
-<li>Hello, {{user.first_name}}</li> -->
-
-<!-- {% for user in users %}
-{{ user.first_name }}
-    {% for post in user.publications.all%}
-    <h2>{{post.Your_Website_Name}}</h2>
-    {% endfor %}
-{% endfor %} -->
-
-
-<!-- {{ user.first_name }}
-    {% for post in user.publications.all%}
-    <h2><a href="/account/templated/{{ post.slug }}">{{post.Your_Website_Name}}</a></h2>
-    {% endfor %}
-
-{% else %}
-<li>Create an account</li>
-{% endif %} -->
-<!-- {% for post in posts %}
-    {{ post.Your_Website_Name }}
-    {{ post.country }}
-    {{ user.last_name }}
-{% endfor %} -->
-<!-- {% for post in posts %}
-{{ post.industry }}
-{% endfor %} -->
-
-<!-- {% for post in posts %}
-<h2>{{ post.name }}</h2>
-{% for user in post.user_set.all%}
-<h2>{{user.first_name}}</h2>
-{% endfor %}
-{% endfor %} -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,35 +8,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page title</title>
     <link rel="stylesheet" href="{% static '/css/draft.css' %}">
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
+    <link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
+
 </head>
 <body>
-       <header>
-        <nav>
+    <header class="header">
+        <nav class="nav-js">
             <div class="mobile-menu">
-               <a href="/"> <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px"></a>
+                <a href="/"><img src="{% static '/assets/Logo.svg' %}" alt="logo" class="nav-logo"></a>
                 <a href="" class="hamburger" onclick="toggleMenu()">
-                    <span class="bars"></span>
-                    <span class="bars"></span>
-                    <span class="bars"></span>
+                    <img src="{% static '/assets/menu.svg' %}" alt="menu" width="32px" height="32px" class="menu-btn">
                 </a>
             
             </div>
-            <ul class="nav-links">
-                <li><a href="teamdetails">Our team</a></li>
-                <li><a href="faq">FAQs</a></li>
-                
-                <li><a href="contact">Contact Us</a></li>
-            </ul>
-            <div class="nav-btns">
-            {% if user.is_authenticated %}
-            <a href="/account/logout"><button class="btn-1">Logout</button></a>
-            {% else %}
-                <a href="#"><button class="btn-1">Login</button></a>
-                <a href="#"><button class="btn-2">Get Started</button></a>
-                {% endif %}
+            <div class="links-btns">
+                <ul class="nav-links">
+                    <li><a href="teamdetails">Our Team</a></li>
+                    <li><a href="faq">FAQs</a></li>
+                    <li><a href="contact" class="active-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-btns">
+                    {% if user.is_authenticated %}
+                    <a href="logout"><button class="btn-1">Logout</button></a>
+                    {% else %}
+                    <a href="login"><button class="btn-1">Login</button></a>
+                    <a href="register"><button class="btn-2">Get Started</button></a>
+                    {% endif %}
+                </div>
             </div>
-           
-        
+        </nav>
     </header>
 
        <main>
@@ -124,69 +90,93 @@
 
         </main>
        
-       <footer> 
-           <div class="disclaimer-questions"> 
-               <div class="footerlinks"> 
-                   <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a></p> 
-                   <ul>
-                        <li><a href="">Privacy Policy</a></li> 
-                        <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li> 
-                   </ul> 
-              </div> 
-              <p>Questions? Email us at support@78tcgen.com</p> 
-              </div> 
-              <div class="ft-logo"> 
-                  <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p> 
-                  <img src="{% static '/assets/Logo_white.svg' %}" alt="logo"> </div> 
-    </footer>
+        <footer>
+            <div class="ft-logo">
+                <p>Questions? Email us at support@78tcgen.com</p>
+                <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
+            </div>
+            <div class="disclaimer-questions">
+                <div class="footerlinks">
+                    <p>Disclaimer: Please note that legal information, including legal templates and legal policies, is not legal advice.
+                        Information and services provided on the site are for informational and self-help purposes only and
+                        are not to be a substitute for professional legal advice. <a href="#"> Read the full disclaimer.</a></p>
+                </div>
+                <div class="footer-txt">
+                   
+                    <ul>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
+                    </ul>
+                    <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+                </div> 
+            </div>
+        </footer>
     
-    <script>
-        // Mobile reponsiveness
-let menu = document.querySelector('.hamburger');
-
-function toggleMenu() {
-    let navLinks = document.querySelector('.nav-links');
-    let navBtns = document.querySelector('.nav-btns');
-
-    if (((navLinks.style.display === 'flex') && (navBtns.style.display === 'flex')) && (navLinks.style.flexDirection !== 'column')){
-        
-        navLinks.style.display = 'none';
-        navBtns.style.display = 'none';
-        
-        console.log(true);
-    }else{
-        navLinks.style.display = 'flex';
-        navBtns.style.display = 'flex';
-        //addBtns.style.display = 'flex';
-        console.log(false);
-    }
-}
-
-menu.addEventListener('click', (e) => {
-    e.preventDefault();
-    // toggleMenu();
-});
-
-// Main
-function myFunction() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }       
-    }
-  }
-    </script>
+        <script>
+            // Mobile reponsiveness
+           let menu = document.querySelector('.hamburger');
+           let menuClose = document.querySelector('.menu-btn');
+       
+           function toggleMenu() {
+               let navLinks = document.querySelector('.nav-links');
+               let navBtns = document.querySelector('.nav-btns');
+               let header = document.querySelector(".header");
+               let navbar = document.querySelector('.nav-js');
+       
+               if (((navLinks.style.display === 'flex') && (navBtns.style.display === 'flex')) && (navLinks.style.flexDirection !== 'column')){
+                   menuClose.src = './assets/menu.svg';
+                   navLinks.style.display = 'none';
+                   navBtns.style.display = 'none';
+                   navbar.style.height = 'auto';
+                   navbar.style.backgroundColor = '#fff';
+                       
+                   console.log(true);
+               }else{
+                   navLinks.style.display = 'flex';
+                   navBtns.style.display = 'flex';
+                   // addBtns.style.display = 'flex';
+                   menuClose.src = './assets/close-circle.svg';
+                   navbar.style.height = '100vh';
+                   navbar.style.backgroundColor = '#721121';
+                   navbar.style.color = '#fff';
+                   header.style.paddingTop = '0px';
+                   console.log(false);
+                   }
+               }
+       
+               menu.addEventListener('click', (e) => {
+                   e.preventDefault();
+                   // toggleMenu();
+               });
+       
+       
+               
+               // Footer
+               let year = document.getElementById('year');
+               let yyyy = new Date();
+               year.textContent = yyyy.getFullYear();
+       
+   
+   // Main
+   function myFunction() {
+       var input, filter, table, tr, td, i, txtValue;
+       input = document.getElementById("myInput");
+       filter = input.value.toUpperCase();
+       table = document.getElementById("myTable");
+       tr = table.getElementsByTagName("tr");
+       for (i = 0; i < tr.length; i++) {
+         td = tr[i].getElementsByTagName("td")[0];
+         if (td) {
+           txtValue = td.textContent || td.innerText;
+           if (txtValue.toUpperCase().indexOf(filter) > -1) {
+             tr[i].style.display = "";
+           } else {
+             tr[i].style.display = "none";
+           }
+         }       
+       }
+     }
+       </script>
 </body>
 
 </html>
