@@ -4,36 +4,40 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static '/css/a.css' %}">
-<link rel="stylesheet" href="{% static '/css/footerindex.css' %}">
+<link rel="stylesheet" href="{% static '/css/footer.css' %}">
+<link rel="shortcut icon" href="{% static '/assets/Logo.svg' %}">
 <!-- THIS PART IS IMPORTANT {bootstrap cdn}-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- It Ends here -->
 </head>
 <body>
- <header>
-        <nav>
-            <div class="mobile-menu">
-               <a href="/"> <img src="{% static '/assets/Logo.svg' %}" alt="logo" class="" width="90px" height="39px"></a>
-                <a href="" class="hamburger" onclick="toggleMenu()">
-                    <span class="bars"></span>
-                    <span class="bars"></span>
-                    <span class="bars"></span>
-                </a>
-            
-            </div>
+  <header class="header">
+    <nav class="nav-js">
+        <div class="mobile-menu">
+            <a href="/"><img src="{% static '/assets/Logo.svg' %}" alt="logo" class="nav-logo"></a>
+            <a href="" class="hamburger" onclick="toggleMenu()">
+                <img src="{% static '/assets/menu.svg' %}" alt="menu" width="32px" height="32px" class="menu-btn">
+            </a>
+        
+        </div>
+        <div class="links-btns">
             <ul class="nav-links">
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="teamdetails">Our Team</a></li>
+                <li><a href="faq">FAQs</a></li>
+                <li><a href="contact" class="active-link">Contact Us</a></li>
             </ul>
             <div class="nav-btns">
-                <a href="#"><button class="btn-1">Logout</button></a>
-               
-           
-        </nav>
-    </header>
+                {% if user.is_authenticated %}
+                <a href="logout"><button class="btn-1">Logout</button></a>
+                {% else %}
+                <a href="login"><button class="btn-1">Login</button></a>
+                <a href="register"><button class="btn-2">Get Started</button></a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</header>
 
 
 <h1 class="mt-5 mb-5">Frequently Asked Questions</h1>
@@ -79,25 +83,25 @@
 
 </div>
 <footer>
-    <div class="ft-logo">
-        <p>Questions? Email us at support@78tcgen.com</p>
-        <img src="{% static '/assets/Logo_white.svg' %}"  alt="logo">
-    </div>
-    <div class="disclaimer-questions">
-        <div class="footerlinks">
-            <p>Disclaimer: Please note that legal information, including legal templates and legal policies, is not legal advice.
-                Information and services provided on the site are for informational and self-help purposes only and
-                are not to be a substitute for professional legal advice. <a href="#"> Read the full disclaimer.</a></p>
-        </div>
-        <div class="footer-txt">
-           
-            <ul>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
-            </ul>
-            <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
-        </div> 
-    </div>
+  <div class="ft-logo">
+      <p>Questions? Email us at support@78tcgen.com</p>
+      <img src="{% static '/assets/Logo_white.svg' %}"  alt="logo">
+  </div>
+  <div class="disclaimer-questions">
+      <div class="footerlinks">
+          <p>Disclaimer: Please note that legal information, including legal templates and legal policies, is not legal advice.
+              Information and services provided on the site are for informational and self-help purposes only and
+              are not to be a substitute for professional legal advice. <a href="#"> Read the full disclaimer.</a></p>
+      </div>
+      <div class="footer-txt">
+         
+          <ul>
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
+          </ul>
+          <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+      </div> 
+  </div>
 </footer>
    
 <script>
@@ -118,31 +122,52 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
- // Mobile reponsiveness
-let menu = document.querySelector('.hamburger');
 
-function toggleMenu() {
-    let navLinks = document.querySelector('.nav-links');
-    let navBtns = document.querySelector('.nav-btns');
+  // Mobile reponsiveness
+ let menu = document.querySelector('.hamburger');
+ let menuClose = document.querySelector('.menu-btn');
 
-    if (((navLinks.style.display === 'flex') && (navBtns.style.display === 'flex')) && (navLinks.style.flexDirection !== 'column')){
-        
-        navLinks.style.display = 'none';
-        navBtns.style.display = 'none';
-        
-        console.log(true);
-    }else{
-        navLinks.style.display = 'flex';
-        navBtns.style.display = 'flex';
-        //addBtns.style.display = 'flex';
-        console.log(false);
-    }
-}
+ function toggleMenu() {
+     let navLinks = document.querySelector('.nav-links');
+     let navBtns = document.querySelector('.nav-btns');
+     let header = document.querySelector(".header");
+     let navbar = document.querySelector('.nav-js');
 
-menu.addEventListener('click', (e) => {
-    e.preventDefault();
-    // toggleMenu();
-});
+     if (((navLinks.style.display === 'flex') && (navBtns.style.display === 'flex')) && (navLinks.style.flexDirection !== 'column')){
+         menuClose.src = './assets/menu.svg';
+         navLinks.style.display = 'none';
+         navBtns.style.display = 'none';
+         navbar.style.height = 'auto';
+         navbar.style.backgroundColor = '#fff';
+             
+         console.log(true);
+     }else{
+         navLinks.style.display = 'flex';
+         navBtns.style.display = 'flex';
+         // addBtns.style.display = 'flex';
+         menuClose.src = './assets/close-circle.svg';
+         navbar.style.height = '100vh';
+         navbar.style.backgroundColor = '#721121';
+         navbar.style.color = '#fff';
+         header.style.paddingTop = '0px';
+         console.log(false);
+         }
+     }
+
+     menu.addEventListener('click', (e) => {
+         e.preventDefault();
+         // toggleMenu();
+     });
+
+
+     
+     // Footer
+     let year = document.getElementById('year');
+     let yyyy = new Date();
+     year.textContent = yyyy.getFullYear();
+
+
+
 
 </script>
 
