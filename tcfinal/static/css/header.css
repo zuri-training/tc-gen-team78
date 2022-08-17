@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+button{
+    cursor: pointer;    
+}
+
+h4{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+h5{
+    line-height: 32px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+h6{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+p{
+    line-height: 24px;
+    font-size: 20px;
+}
+
+body{
+    color: #333333;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    padding: 4px 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.logo{
+    width: 64px;
+    height: 64px;
+}
+
+.add-btns{
+    display: flex;
+    align-items: center;
+    /* width: 24%; */
+}
+
+.hamburger{
+    display: none;
+}
+
+.add-btns a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+}
+
+a:hover, a span:hover{
+    text-decoration: underline;
+    color: #721121;
+}
+
+.user-act-btn{
+    margin-left: 64px;
+}
+
+.add-btns span{
+    padding-left: 12px;
+}
+
+.tagline{
+    font-size: 20px;
+    line-height: 24px;
+    color: #858585;
+    padding-bottom: 64px;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    color: #721121;
+    line-height: 48px;
+   
+}
+
+
+/* For mobile */
+
+@media (max-width:768px){
+    nav{
+        padding:4px 20px;
+    }
+    h1{
+        font-size: calc(32px + (48 - 32) * ((100vw - 300px) / (1440 - 300)));
+        line-height: normal;
+    }
+    .tagline, h1{
+        width: 85%;
+        margin: 0 auto;
+    }
+
+
+    footer{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .hamburger{
+        display: flex;
+        flex-direction: column;
+        width: 30px;
+        height: 30px;
+        justify-content: space-evenly;
+    }
+
+    .hamburger .bars{
+        width: inherit;
+        height: 3px;
+        background-color: #721121;
+        border-radius: 5px;
+    }
+
+    .hamburger .bars:last-child{
+        align-self: flex-end;
+    }
+
+    .hamburger .bars:nth-child(odd){
+        width: 65%;
+    }
+    .mobile-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: inherit;
+    }
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    nav .add-btns{
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        align-items: flex-end;
+    }
+    .user-act-btn{
+        margin-left: 30px;
+    }
+    .tagline{
+        font-size: 1rem;
+    }
+    h1{
+        padding-top: 50px;
+    }
+    footer{
+        padding:24px 40px 32px;
+    }
+    footer .disclaimer-questions, .ft-logo{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+    }
+}

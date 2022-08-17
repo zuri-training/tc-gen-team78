@@ -1,0 +1,238 @@
+/*changed all the codes here*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+:root{
+    accent-color: #721121;
+}
+
+button{
+    cursor: pointer;
+    outline: none;
+    border: 2px solid #721121;
+    border-radius: 20px;  
+}
+
+button, .input-container label{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 64px;
+    margin-bottom: 48px;
+}
+
+p{
+    line-height: 24px;
+    font-size: 1rem;
+}
+
+body{
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    padding: 24px 120px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+nav a{
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+.navlink a:nth-of-type(odd){
+    line-height: 24px;
+    margin-right: 24px;
+}
+
+.navlink a button{
+    color: #721121;
+    padding: 12px 24px;   
+    background-color: transparent;
+}
+
+/* Main */
+
+main{
+    padding: 48px 120px 56px;
+    justify-content: space-evenly;
+}
+
+main, .remember-pwd, .remember, .continue-with, .other-options, .other-options a{
+    display: flex;
+    align-items: center;
+}
+
+.signin-illustration, .signin-text{
+    height: auto;
+    width: 588px;
+}
+
+.input-container{
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container label{
+    padding-bottom: 8px;
+}
+
+::placeholder{
+    color: #aaa;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.input-container input, ::placeholder{
+    padding: 20px 16px;
+}
+
+.input-container input{
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.input-container i{
+    position: absolute;
+    color: #808080;
+    bottom: 18px;
+    right: 18px;
+}
+
+.remember-pwd{
+    justify-content: space-between;  
+    font-size: 1rem; 
+    margin-bottom: 32px;
+}
+
+.remember-pwd a{
+    color: #ff1212;
+    text-decoration: none;
+}
+
+.remember input:where([type='checkbox']){
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 2px solid #333;
+}
+
+.remember label{
+    color: #000;
+    margin-left: 8px;
+}
+
+form button{
+    width: 100%;
+    padding: 12px 32px;
+    background-color: #721121;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.line{
+    width: 37.3%;
+    height: 2px;
+    background-color: #d9d9d9;
+}
+
+.continue-with{
+    width: 100%;
+}
+
+.continue-with p{
+    text-align: center;
+    padding:0 8px;
+}
+
+.terms{
+    text-align: center;
+    padding-top: 160px;
+}
+
+.terms a{
+    color: #721121;
+}
+
+.other-options{
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 40px auto 0;
+}
+
+.other-options a{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(114, 17, 33, 0.32);
+    justify-content: center;
+}
+
+.other-options a i{
+    color: #721121;
+}
+
+
+@media (max-width: 835px){
+    nav{
+        padding: 32px;
+    }
+
+    .signin-illustration{
+        display: none;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .signin-text{
+        width: 100%;
+    }
+
+    .other-options{
+        margin-top: 24px;
+    }
+
+    main{
+        padding-right:32px ;
+        padding-left: 32px;
+    }
+
+    .line{
+        width: 40.2%;
+    }
+
+    .terms{
+        padding-top: 56px;
+        width: 68.8%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 360px){
+    nav{
+        padding: 10px;
+    }
+    .other-options{
+        display: block;
+    }
+}

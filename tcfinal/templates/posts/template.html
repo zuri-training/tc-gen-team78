@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="{% static '/css/gen.css' %}">
+    <link rel="stylesheet" href="{% static '/css/header.css' %}">
+    <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static '/css/footer.css' %}">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 50%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myTable {
+            border-collapse: collapse;
+            width: 50%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #myTable a {
+            color: #555;
+        }
+
+        #myTable tr.header,
+        #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="mobile-menu">
+                <div class="logo-container">
+                    <a href="/"><img src="{% static '/assets/Logo.svg' %}" alt="logo" class=""></a>
+                </div>
+                <a href="" class="hamburger" onclick="toggleMenu()">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                </a>
+            </div>
+
+            <div class="add-btns">
+                <div class="support-btn">
+                    <a href=""><img src="{% static '/assets/support-icon.svg' %}" alt="support icon">
+                        <span class="">Support</span>
+                    </a>
+                </div>
+                <div class="user-act-btn">
+                    <a href="profile">
+                        <img src="{% static '/assets/profile-circle.svg' %}" alt="profile icon">
+                        <span class="">{{ user.first_name }}</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="con">
+            <div class="htxt">
+                <h1>Your Generated Terms and Conditions<br></h1>
+
+            </div>
+            <div class="view">
+                <section style="color:#7c746c; text-align:center">
+                    <h2>Here is your template</h2><br>
+
+                    {% if user.is_authenticated %}
+                    <li>Hello, {{user.first_name}}</li>
+
+                    <!-- {% for user in users %}
+{{ user.first_name }}
+    {% for post in user.publications.all%}
+    <h2>{{post.name}}</h2>
+    {% endfor %}
+{% endfor %} -->
+
+
+
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for templates.."
+                        title="Type in a keyword">
+
+                    <table id="myTable" class="iframe">
+                        <tr class="header">
+                            <th>Templates</th>
+
+                        </tr>
+                        {% for post in user.publications.all%}
+                        <tr>
+                            <td><a class="active" href="/account/templated/{{ post.slug }}">{{post.industry}}</a></td>
+
+                        </tr>
+                        {% endfor %}
+
+                        {% else %}
+
+                        <li>Create an account</li>
+                        {% endif %}
+
+                    </table>
+
+                </section>
+            </div>
+        </div>
+
+        <div class="txt">
+            <h2></h2>
+        </div>
+
+
+
+    </main>
+    <footer>
+        <div class="disclaimer-questions">
+            <div class="footerlinks">
+                <p>Disclaimer: We offer legal information not legal advice.<a href="#"> Read the full disclaimer.</a>
+                </p>
+                <ul>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href=""><span class="circle-divider"></span>Terms of Use</a></li>
+                </ul>
+            </div>
+            <p>Questions? Email us at support@78tcgen.com</p>
+        </div>
+        <div class="ft-logo">
+            <p>78TC Gen &copy; <span id='year'></span>. All rights reserved.</p>
+            <img src="{% static '/assets/Logo_white.svg' %}" alt="logo">
+        </div>
+    </footer>
+    <script src="{% static '/js/dashboard.js' %}"></script>
+</body>
+
+</body>
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+</html>
